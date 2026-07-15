@@ -184,7 +184,7 @@
 
   <div class="stats">
     <div class="stat">
-      <span class="stat-num">9<span>+</span></span>
+      <span class="stat-num">{{ $totalModul }}<span>+</span></span>
       <span class="stat-label">Modules</span>
     </div>
     <div class="stat-divider"></div>

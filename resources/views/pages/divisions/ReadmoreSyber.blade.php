@@ -725,7 +725,6 @@
     height: auto;                 /* Mengikuti aspect ratio */
     border-radius: 50%;
     object-fit: cover;
-    rotate: -90deg;
     background: transparent;
   }
 </style>

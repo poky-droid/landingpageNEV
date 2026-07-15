@@ -35,7 +35,7 @@
         <div class="detail-meta">
           <div class="meta-item"><span class="meta-label">Focus area</span><span class="meta-value">Server & Infrastructure</span></div>
           <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-value">Ansible, Nagios, Proxmox</span></div>
-          <div class="meta-item"><span class="meta-label">Members</span><span class="meta-value">12 engineers</span></div>
+          <div class="meta-item"><span class="meta-label">Members</span><span class="meta-value">{{ $totalSysadminMembers }}</span></div>
         </div>
       </div>
     </div>
@@ -60,7 +60,7 @@
         <div class="detail-meta">
           <div class="meta-item"><span class="meta-label">Focus area</span><span class="meta-value">Offense & Defense</span></div>
           <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-value">Burp Suite, Metasploit, Wireshark</span></div>
-          <div class="meta-item"><span class="meta-label">Members</span><span class="meta-value">18 engineers</span></div>
+          <div class="meta-item"><span class="meta-label">Members</span><span class="meta-value">{{ $totalCybersecurityMembers }}</span></div>
         </div>
       </div>
     </div>
@@ -85,7 +85,7 @@
         <div class="detail-meta">
           <div class="meta-item"><span class="meta-label">Focus area</span><span class="meta-value">Architecture & Connectivity</span></div>
           <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-value">Cisco, pfSense, GNS3</span></div>
-          <div class="meta-item"><span class="meta-label">Members</span><span class="meta-value">14 engineers</span></div>
+          <div class="meta-item"><span class="meta-label">Members</span><span class="meta-value">{{ $totalNetworkingMembers }}</span></div>
         </div>
       </div>
     </div>
