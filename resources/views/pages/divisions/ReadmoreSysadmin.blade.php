@@ -633,10 +633,10 @@
     .hero-title { font-size: 72px; }
   }
   .member-avatar-img {
-    width: 100%;                  /* Mengisi penuh kontainer pembungkusnya */
-    max-width: 150px;             /* Ukuran maksimal pas layar gede */
-    aspect-ratio: 1 / 1;          /* Memastikan gambar tetep bulat sempurna (kotak 1:1) */
-    height: auto;                 /* Mengikuti aspect ratio */
+    width: 100%;                  /* Fills the wrapper container fully */
+    max-width: 150px;             /* Max size on larger screens */
+    aspect-ratio: 1 / 1;          /* Keeps the image a perfect circle (1:1 square) */
+    height: auto;                 /* Follows the aspect ratio */
     border-radius: 50%;
     object-fit: cover;
     background: transparent;
@@ -651,7 +651,7 @@
   <div class="hero-label fade-up fade-up-d1">DIVISION DETAIL — INFRASTRUCTURE</div>
   <h1 class="hero-title fade-up fade-up-d2">SYS<span>ADMIN</span></h1>
   <p class="hero-desc fade-up fade-up-d3">
-    Mengelola dan memelihara infrastruktur server, sistem operasi, serta layanan jaringan agar berjalan optimal 24/7. Dari provisioning hingga monitoring, tim ini memastikan uptime dan performa terjaga.
+    Manages and maintains server infrastructure, operating systems, and network services to keep everything running smoothly 24/7. From provisioning to monitoring, this team ensures uptime and performance stay rock solid.
   </p>
   <div class="hero-tags fade-up fade-up-d4">
     <span class="tag">Linux</span>
@@ -668,7 +668,7 @@
       <div class="section-label">OUR PEOPLE</div>
       <h2 class="section-title">The Team</h2>
     </div>
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);">12 ENGINEERS TOTAL</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);"> {{ $totalAnggota }} ENGINEERS TOTAL</div>
   </div>
   <div class="team-grid">
     @foreach ($anggota as $item)
@@ -734,35 +734,35 @@
         <span class="resp-num">01</span>
         <span class="resp-text">
           <strong>Server Provisioning & Configuration</strong>
-          Setup dan konfigurasi server baru mulai dari bare-metal hingga VM, termasuk hardening dan optimasi performa.
+          Setting up and configuring new servers, from bare-metal to VMs, including hardening and performance optimization.
         </span>
       </li>
       <li class="resp-item">
         <span class="resp-num">02</span>
         <span class="resp-text">
           <strong>Network Management</strong>
-          Pengelolaan infrastruktur jaringan, routing, firewall, dan VPN untuk konektivitas yang aman dan stabil.
+          Managing network infrastructure, routing, firewalls, and VPNs for secure and stable connectivity.
         </span>
       </li>
       <li class="resp-item">
         <span class="resp-num">03</span>
         <span class="resp-text">
           <strong>Monitoring & Alerting</strong>
-          Implementasi sistem monitoring real-time dengan Nagios, Grafana, dan custom alerting untuk deteksi dini.
+          Implementing real-time monitoring systems with Nagios, Grafana, and custom alerting for early detection.
         </span>
       </li>
       <li class="resp-item">
         <span class="resp-num">04</span>
         <span class="resp-text">
           <strong>Backup & Disaster Recovery</strong>
-          Strategi backup terstruktur dan prosedur pemulihan untuk menjamin kelangsungan operasional.
+          Structured backup strategies and recovery procedures to ensure operational continuity.
         </span>
       </li>
       <li class="resp-item">
         <span class="resp-num">05</span>
         <span class="resp-text">
           <strong>Automation & Scripting</strong>
-          Otomasi tugas-tugas repetitif menggunakan Ansible, Bash, dan Python untuk efisiensi operasional.
+          Automating repetitive tasks using Ansible, Bash, and Python for operational efficiency.
         </span>
       </li>
     </ul>
@@ -776,32 +776,32 @@
       <div class="tool-card">
         <div class="tool-icon">INFRA</div>
         <div class="tool-name">Proxmox VE</div>
-        <div class="tool-desc">Virtualization platform untuk manajemen VM dan container berbasis KVM dan LXC.</div>
+        <div class="tool-desc">Virtualization platform for managing VMs and containers based on KVM and LXC.</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">AUTOMATE</div>
         <div class="tool-name">Ansible</div>
-        <div class="tool-desc">Configuration management dan automation untuk deployment yang konsisten dan repeatable.</div>
+        <div class="tool-desc">Configuration management and automation for consistent, repeatable deployments.</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">MONITOR</div>
         <div class="tool-name">Nagios</div>
-        <div class="tool-desc">Monitoring infrastructure end-to-end dengan notifikasi real-time dan dashboard komprehensif.</div>
+        <div class="tool-desc">End-to-end infrastructure monitoring with real-time notifications and a comprehensive dashboard.</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">OS</div>
         <div class="tool-name">Linux</div>
-        <div class="tool-desc">Primary OS environment — Ubuntu, Debian, dan RHEL untuk berbagai workload production.</div>
+        <div class="tool-desc">Primary OS environment — Ubuntu, Debian, and RHEL for a variety of production workloads.</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">CONTAINER</div>
         <div class="tool-name">Docker</div>
-        <div class="tool-desc">Containerization untuk deployment aplikasi yang portable, ringan, dan mudah di-scale.</div>
+        <div class="tool-desc">Containerization for portable, lightweight, and easily scalable application deployment.</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">WINDOWS</div>
         <div class="tool-name">Windows Server</div>
-        <div class="tool-desc">Active Directory, DNS, DHCP, dan layanan enterprise berbasis Windows Server environment.</div>
+        <div class="tool-desc">Active Directory, DNS, DHCP, and other enterprise services in a Windows Server environment.</div>
       </div>
     </div>
   </div>

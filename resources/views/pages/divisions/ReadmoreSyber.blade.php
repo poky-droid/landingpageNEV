@@ -720,10 +720,10 @@
     .incident-header { padding: 32px 24px 24px; }
   }
   .member-avatar-img {
-    width: 100%;                  /* Mengisi penuh kontainer pembungkusnya */
-    max-width: 150px;             /* Ukuran maksimal pas layar gede */
-    aspect-ratio: 1 / 1;          /* Memastikan gambar tetep bulat sempurna (kotak 1:1) */
-    height: auto;                 /* Mengikuti aspect ratio */
+    width: 100%;                  /* Fills the wrapper container fully */
+    max-width: 150px;             /* Max size on larger screens */
+    aspect-ratio: 1 / 1;          /* Keeps the image a perfect circle (1:1 square) */
+    height: auto;                 /* Follows the aspect ratio */
     border-radius: 50%;
     object-fit: cover;
     background: transparent;
@@ -737,7 +737,7 @@
   <div class="hero-label fade-up fade-up-d1">DIVISION DETAIL — CYBERSECURITY</div>
   <h1 class="hero-title fade-up fade-up-d2">CYBER<span>SEC</span></h1>
   <p class="hero-desc fade-up fade-up-d3">
-    Melindungi aset digital, mendeteksi ancaman siber, dan merespons insiden secara real-time. Dari penetration testing hingga threat intelligence dan SIEM, tim ini adalah garis pertahanan terakhir organisasi.
+    Protects digital assets, detects cyber threats, and responds to incidents in real time. From penetration testing to threat intelligence and SIEM, this team is the organization's last line of defense.
   </p>
   <div class="hero-tags fade-up fade-up-d4">
     <span class="tag">Penetration Testing</span>
@@ -781,7 +781,7 @@
       <div class="section-label">OUR PEOPLE</div>
       <h2 class="section-title">The Team</h2>
     </div>
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);">8 ENGINEERS TOTAL</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);">{{ $totalAnggota }} ENGINEERS TOTAL</div>
   </div>
   <div class="team-grid">
     @foreach ($anggota as $item)
@@ -847,35 +847,35 @@
         <span class="resp-num">01</span>
         <span class="resp-text">
           <strong>Penetration Testing & Red Team</strong>
-          Simulasi serangan siber terhadap sistem, jaringan, dan aplikasi untuk mengidentifikasi celah keamanan sebelum dieksploitasi penyerang nyata.
+          Simulating cyberattacks against systems, networks, and applications to identify security gaps before real attackers can exploit them.
         </span>
       </li>
       <li class="resp-item">
         <span class="resp-num">02</span>
         <span class="resp-text">
           <strong>Security Operations Center (SOC)</strong>
-          Pemantauan ancaman 24/7 melalui SIEM, analisis log, deteksi anomali, dan respons insiden terkoordinasi secara real-time.
+          24/7 threat monitoring through SIEM, log analysis, anomaly detection, and coordinated real-time incident response.
         </span>
       </li>
       <li class="resp-item">
         <span class="resp-num">03</span>
         <span class="resp-text">
           <strong>Threat Intelligence</strong>
-          Pengumpulan, analisis, dan distribusi intelijen ancaman dari berbagai sumber untuk memperkuat postur keamanan organisasi secara proaktif.
+          Collecting, analyzing, and distributing threat intelligence from multiple sources to proactively strengthen the organization's security posture.
         </span>
       </li>
       <li class="resp-item">
         <span class="resp-num">04</span>
         <span class="resp-text">
           <strong>Vulnerability Management</strong>
-          Identifikasi, penilaian, dan remediasi kerentanan secara berkelanjutan menggunakan scanning otomatis dan penilaian risiko berbasis konteks.
+          Continuous identification, assessment, and remediation of vulnerabilities using automated scanning and context-based risk prioritization.
         </span>
       </li>
       <li class="resp-item">
         <span class="resp-num">05</span>
         <span class="resp-text">
           <strong>Digital Forensics & Incident Response</strong>
-          Investigasi mendalam pasca-insiden, preservasi barang bukti digital, analisis root cause, dan penyusunan laporan forensik komprehensif.
+          In-depth post-incident investigation, digital evidence preservation, root cause analysis, and comprehensive forensic reporting.
         </span>
       </li>
     </ul>
@@ -889,32 +889,32 @@
       <div class="tool-card">
         <div class="tool-icon">PENTEST</div>
         <div class="tool-name">Metasploit</div>
-        <div class="tool-desc">Framework penetration testing terkemuka untuk eksploitasi kerentanan, post-exploitation, dan pembuatan laporan keamanan.</div>
+        <div class="tool-desc">Leading penetration testing framework for vulnerability exploitation, post-exploitation, and security reporting.</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">SIEM</div>
         <div class="tool-name">Splunk / Wazuh</div>
-        <div class="tool-desc">Platform SIEM enterprise untuk korelasi log, deteksi ancaman berbasis aturan, dan respons insiden otomatis.</div>
+        <div class="tool-desc">Enterprise SIEM platform for log correlation, rule-based threat detection, and automated incident response.</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">RECON</div>
         <div class="tool-name">Nmap / Shodan</div>
-        <div class="tool-desc">Reconnaissance dan pemindaian jaringan untuk pemetaan permukaan serangan dan identifikasi aset yang terekspos.</div>
+        <div class="tool-desc">Reconnaissance and network scanning for attack surface mapping and identifying exposed assets.</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">FORENSIC</div>
         <div class="tool-name">Autopsy / Volatility</div>
-        <div class="tool-desc">Alat forensik digital untuk analisis disk, memori, dan artefak sistem pasca-insiden secara mendalam.</div>
+        <div class="tool-desc">Digital forensics tools for in-depth post-incident disk, memory, and system artifact analysis.</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">MALWARE</div>
         <div class="tool-name">Cuckoo Sandbox</div>
-        <div class="tool-desc">Sandbox analisis malware otomatis untuk detonasi sampel berbahaya dan ekstraksi indikator kompromi (IoC).</div>
+        <div class="tool-desc">Automated malware analysis sandbox for detonating malicious samples and extracting indicators of compromise (IoC).</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">VULN</div>
         <div class="tool-name">Nessus / OpenVAS</div>
-        <div class="tool-desc">Scanner kerentanan komprehensif dengan database CVE terkini untuk assessment dan prioritasi risiko berkelanjutan.</div>
+        <div class="tool-desc">Comprehensive vulnerability scanner with up-to-date CVE database for continuous assessment and risk prioritization.</div>
       </div>
     </div>
   </div>
@@ -935,7 +935,7 @@
     <div class="incident-idx">01</div>
     <div>
       <div class="incident-name">Red Team Exercise — Internal Infrastructure</div>
-      <div class="incident-desc">Simulasi serangan APT terhadap infrastruktur internal untuk menguji ketahanan deteksi dan respons tim blue team.</div>
+      <div class="incident-desc">Simulating an APT attack against internal infrastructure to test the blue team's detection and response resilience.</div>
     </div>
     
   </div>
@@ -943,7 +943,7 @@
     <div class="incident-idx">02</div>
     <div>
       <div class="incident-name">CVE Patch Audit — Web Application Stack</div>
-      <div class="incident-desc">Audit dan remediasi kerentanan kritis pada stack aplikasi web setelah pembaruan advisory CISA dan NVD terbaru.</div>
+      <div class="incident-desc">Auditing and remediating critical vulnerabilities in the web application stack following the latest CISA and NVD advisory updates.</div>
     </div>
     
   </div>
@@ -951,7 +951,7 @@
     <div class="incident-idx">03</div>
     <div>
       <div class="incident-name">Zero-Trust Architecture — Phase 2 Rollout</div>
-      <div class="incident-desc">Implementasi lanjutan kebijakan zero-trust termasuk identity verification, micro-segmentation, dan least-privilege enforcement.</div>
+      <div class="incident-desc">Continued rollout of zero-trust policies, including identity verification, micro-segmentation, and least-privilege enforcement.</div>
     </div>
     
   </div>
@@ -959,7 +959,7 @@
     <div class="incident-idx">04</div>
     <div>
       <div class="incident-name">Threat Hunt — Lateral Movement Indicators</div>
-      <div class="incident-desc">Proactive threat hunting berbasis hipotesis untuk mendeteksi pergerakan lateral tersembunyi dalam segmen jaringan internal.</div>
+      <div class="incident-desc">Hypothesis-driven proactive threat hunting to detect hidden lateral movement within internal network segments.</div>
     </div>
     
   </div>

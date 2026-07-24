@@ -26,7 +26,7 @@
   font-size: 10px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #333333;
+  color: #dfd6d6ff;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -50,7 +50,7 @@
 
 .sub {
   font-size: clamp(12px, 2vw, 13px);
-  color: #333;
+  color: #dfd6d6b2;
   text-align: center;
   line-height: 1.8;
   max-width: min(340px, 90vw);
@@ -127,7 +127,7 @@
 .stat-num span { color: #FF0033; }
 .stat-label {
   font-size: 10px;
-  color: #2a2a2a;
+  color: #ffff;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -175,7 +175,7 @@
 <div class="wrap1">
   <p class="eyebrow">Open Source</p>
   <h2 class="heading">Our<br><span>Repository</span></h2>
-  <p class="sub">Semua materi, source code, dan dokumentasi tersedia secara terbuka. Jelajahi, fork, dan kontribusi.</p>
+  <p class="sub">All learning materials, source code, and documentation are openly available. Explore, fork, and contribute.</p>
 
   <a class="repo-btn" id="repo-btn" href="#" data-url="https://github.com">
     <span>Visit Our Repository</span>

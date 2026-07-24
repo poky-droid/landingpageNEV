@@ -633,10 +633,10 @@
     .projects-header { padding: 32px 24px 24px; }
   }
   .member-avatar-img {
-    width: 100%;                  /* Mengisi penuh kontainer pembungkusnya */
-    max-width: 150px;             /* Ukuran maksimal pas layar gede */
-    aspect-ratio: 1 / 1;          /* Memastikan gambar tetep bulat sempurna (kotak 1:1) */
-    height: auto;                 /* Mengikuti aspect ratio */
+    width: 100%;                  /* Fills the wrapper container fully */
+    max-width: 150px;             /* Max size on larger screens */
+    aspect-ratio: 1 / 1;          /* Keeps the image a perfect circle (1:1 square) */
+    height: auto;                 /* Follows the aspect ratio */
     border-radius: 50%;
     object-fit: cover;
     rotate: -90deg;
@@ -652,7 +652,7 @@
   <div class="hero-label fade-up fade-up-d1">DIVISION DETAIL — CONNECTIVITY</div>
   <h1 class="hero-title fade-up fade-up-d2">NET<span>WORK</span></h1>
   <p class="hero-desc fade-up fade-up-d3">
-    Merancang, mengimplementasikan, dan mengamankan infrastruktur jaringan skala enterprise. Dari arsitektur LAN/WAN hingga SDN dan keamanan perimeter, tim ini menjaga konektivitas tetap cepat, andal, dan terlindungi.
+    Designs, implements, and secures enterprise-scale network infrastructure. From LAN/WAN architecture to SDN and perimeter security, this team keeps connectivity fast, reliable, and protected.
   </p>
   <div class="hero-tags fade-up fade-up-d4">
     <span class="tag">Cisco</span>
@@ -672,7 +672,7 @@
       <div class="section-label">OUR PEOPLE</div>
       <h2 class="section-title">The Team</h2>
     </div>
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);">9 ENGINEERS TOTAL</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);">{{ $totalAnggota }} ENGINEERS TOTAL</div>
   </div>
   <div class="team-grid">
     @foreach ($anggota as $item)
@@ -738,35 +738,35 @@
         <span class="resp-num">01</span>
         <span class="resp-text">
           <strong>Network Design & Architecture</strong>
-          Perancangan topologi jaringan LAN, WAN, dan hybrid cloud yang skalabel, redundan, dan sesuai kebutuhan bisnis.
+          Designing scalable, redundant LAN, WAN, and hybrid cloud network topologies tailored to business needs.
         </span>
       </li>
       <li class="resp-item">
         <span class="resp-num">02</span>
         <span class="resp-text">
           <strong>Routing & Switching</strong>
-          Konfigurasi dan optimasi protokol routing dinamis (BGP, OSPF, EIGRP) serta manajemen VLAN dan trunking antar switch.
+          Configuring and optimizing dynamic routing protocols (BGP, OSPF, EIGRP) along with VLAN management and inter-switch trunking.
         </span>
       </li>
       <li class="resp-item">
         <span class="resp-num">03</span>
         <span class="resp-text">
           <strong>Network Security</strong>
-          Implementasi firewall, IDS/IPS, segmentasi jaringan, dan zero-trust architecture untuk proteksi perimeter menyeluruh.
+          Implementing firewalls, IDS/IPS, network segmentation, and zero-trust architecture for comprehensive perimeter protection.
         </span>
       </li>
       <li class="resp-item">
         <span class="resp-num">04</span>
         <span class="resp-text">
           <strong>VPN & Remote Access</strong>
-          Setup dan manajemen VPN site-to-site maupun remote access menggunakan IPSec, WireGuard, dan SSL/TLS tunnel.
+          Setting up and managing site-to-site and remote access VPNs using IPSec, WireGuard, and SSL/TLS tunnels.
         </span>
       </li>
       <li class="resp-item">
         <span class="resp-num">05</span>
         <span class="resp-text">
           <strong>Network Monitoring & Optimization</strong>
-          Analisis trafik real-time, troubleshooting mendalam, dan optimasi performa menggunakan NetFlow, SNMP, dan Wireshark.
+          Real-time traffic analysis, deep troubleshooting, and performance optimization using NetFlow, SNMP, and Wireshark.
         </span>
       </li>
     </ul>
@@ -780,32 +780,32 @@
       <div class="tool-card">
         <div class="tool-icon">ROUTING</div>
         <div class="tool-name">Cisco IOS</div>
-        <div class="tool-desc">Platform routing dan switching enterprise untuk konfigurasi jaringan skala besar yang andal.</div>
+        <div class="tool-desc">Enterprise routing and switching platform for configuring large-scale, reliable networks.</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">FIREWALL</div>
         <div class="tool-name">pfSense</div>
-        <div class="tool-desc">Open-source firewall dan router berbasis FreeBSD dengan fitur enterprise-grade dan fleksibilitas tinggi.</div>
+        <div class="tool-desc">Open-source FreeBSD-based firewall and router with enterprise-grade features and high flexibility.</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">MONITOR</div>
         <div class="tool-name">PRTG / Zabbix</div>
-        <div class="tool-desc">Network monitoring end-to-end dengan visualisasi trafik, alerting, dan analisis historis mendalam.</div>
+        <div class="tool-desc">End-to-end network monitoring with traffic visualization, alerting, and deep historical analysis.</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">SDN</div>
         <div class="tool-name">OpenDaylight</div>
-        <div class="tool-desc">Software-Defined Networking controller untuk otomasi dan manajemen jaringan secara terpusat.</div>
+        <div class="tool-desc">Software-Defined Networking controller for centralized network automation and management.</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">VPN</div>
         <div class="tool-name">WireGuard</div>
-        <div class="tool-desc">VPN modern dengan kriptografi state-of-the-art, performa tinggi, dan konfigurasi yang sederhana.</div>
+        <div class="tool-desc">A modern VPN with state-of-the-art cryptography, high performance, and simple configuration.</div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">ANALYZE</div>
         <div class="tool-name">Wireshark</div>
-        <div class="tool-desc">Packet analyzer untuk inspeksi mendalam, troubleshooting, dan analisis forensik trafik jaringan.</div>
+        <div class="tool-desc">Packet analyzer for deep inspection, troubleshooting, and forensic analysis of network traffic.</div>
       </div>
     </div>
   </div>

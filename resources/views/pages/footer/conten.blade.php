@@ -122,8 +122,8 @@ footer {
   <div class="footer-top">
 
     <div>
-      <p class="brand-name">NETWORK <span>EVOLUSION</span></p>
-      <p class="brand-desc">Komunitas belajar jaringan, keamanan siber, dan sistem administrasi. Hubungi kami lewat media sosial di bawah.</p>
+      <p class="brand-name">NETWORK <span>EVOLUTION</span></p>
+      <p class="brand-desc">A learning community focused on networking, cybersecurity, and system administration. Follow and connect with us on our social media platforms below.</p>
     </div>
 
     <div>

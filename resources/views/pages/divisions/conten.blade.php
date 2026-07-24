@@ -31,7 +31,7 @@
     </div>
     <div class="detail-panel" id="detail-0">
       <div class="detail-inner">
-        <p class="detail-desc">Mengelola dan memelihara infrastruktur server, sistem operasi, serta layanan jaringan agar berjalan optimal 24/7. Dari provisioning hingga monitoring, tim ini memastikan uptime dan performa terjaga.</p>
+        <p class="detail-desc">Manages and maintains server infrastructure, operating systems, and network services to keep everything running smoothly 24/7. From provisioning to monitoring, this team ensures uptime and performance stay rock solid.</p>
         <div class="detail-meta">
           <div class="meta-item"><span class="meta-label">Focus area</span><span class="meta-value">Server & Infrastructure</span></div>
           <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-value">Ansible, Nagios, Proxmox</span></div>
@@ -56,7 +56,7 @@
     </div>
     <div class="detail-panel" id="detail-1">
       <div class="detail-inner">
-        <p class="detail-desc">Melindungi aset digital dari ancaman siber melalui vulnerability assessment, ethical hacking, dan incident response. Tim ini selalu selangkah lebih maju dari para attacker.</p>
+        <p class="detail-desc">Protects digital assets from cyber threats through vulnerability assessments, ethical hacking, and incident response. This team always stays one step ahead of attackers.</p>
         <div class="detail-meta">
           <div class="meta-item"><span class="meta-label">Focus area</span><span class="meta-value">Offense & Defense</span></div>
           <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-value">Burp Suite, Metasploit, Wireshark</span></div>
@@ -81,7 +81,7 @@
     </div>
     <div class="detail-panel" id="detail-2">
       <div class="detail-inner">
-        <p class="detail-desc">Merancang dan mengoptimalkan arsitektur jaringan yang andal, cepat, dan aman. Mulai dari konfigurasi router & switch hingga implementasi zero-trust network access.</p>
+        <p class="detail-desc">Designs and optimizes network architecture that is reliable, fast, and secure. From router and switch configuration to implementing zero-trust network access.</p>
         <div class="detail-meta">
           <div class="meta-item"><span class="meta-label">Focus area</span><span class="meta-value">Architecture & Connectivity</span></div>
           <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-value">Cisco, pfSense, GNS3</span></div>
@@ -98,7 +98,7 @@
   </div>
 
   <!-- <div class="bottom-row">
-    <p class="cta-text">Tertarik bergabung? <span>Kami selalu buka untuk talenta baru.</span></p>
+    <p class="cta-text">Interested in joining? <span>We're always open to new talent.</span></p>
     <button class="join-btn">Join Us</button>
   </div> -->
 </div>

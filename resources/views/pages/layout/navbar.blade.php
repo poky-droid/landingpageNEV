@@ -66,11 +66,17 @@
     padding: 0;
     gap: 10px;
 }
+.navbar-nav li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 .nav-link {
     color: #aaa;
     text-decoration: none;
     position: relative;
     display: block;
+    gap : 4px;
     padding: 8px 14px;
     font-size: 15px;
     transition: color 0.3s;
@@ -133,13 +139,24 @@
     }
     .navbar-nav {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
         gap: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .navbar-nav li {
+        width: 100%;
+        margin: 0;
+        padding: 0 20px;
+        list-style: none;
     }
     .nav-link {
         font-size: 1.1rem;
-        padding: 12px 20px;
-        text-align: center;
+        padding: 12px 28px;
+        text-align: left;
+        width: 100%;
     }
     .nav-link::after { display: none; }
 }

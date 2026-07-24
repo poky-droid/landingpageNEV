@@ -1,9 +1,8 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="icon" type="image/png" href="{{ asset('images/logoatas.png') }}?v={{ time() }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <nav class="navbar-custom">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/#">
         <img src="{{ asset('images/logo.png') }}" alt="Logo" width="50" height="30">
         <span class="logo-glow">NEV</span>
     </a>
@@ -67,11 +66,17 @@
     padding: 0;
     gap: 10px;
 }
+.navbar-nav li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 .nav-link {
     color: #aaa;
     text-decoration: none;
     position: relative;
     display: block;
+    gap : 4px;
     padding: 8px 14px;
     font-size: 15px;
     transition: color 0.3s;
@@ -113,8 +118,9 @@
 .custom-toggler.active .bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -8px); }
 .custom-toggler:hover .bar { background: #FF0033; }
 
-@media (max-width: 768px) {
-    .custom-toggler { display: block !important; }
+/* ===== MOBILE ===== */
+@media (max-width: 767px) {
+    .custom-toggler { display: block; }
 
     .navbar-menu {
         position: fixed;
@@ -132,14 +138,25 @@
         opacity: 1;
     }
     .navbar-nav {
-        flex-direction: column !important;
-        align-items: center;
+        flex-direction: column;
+        align-items: stretch;
         gap: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .navbar-nav li {
+        width: 100%;
+        margin: 0;
+        padding: 0 20px;
+        list-style: none;
     }
     .nav-link {
         font-size: 1.1rem;
-        padding: 12px 20px;
-        text-align: center;
+        padding: 12px 28px;
+        text-align: left;
+        width: 100%;
     }
     .nav-link::after { display: none; }
 }
