@@ -46,7 +46,19 @@ body {
     position: relative;
 }
 
-/* Jaring-jaring Kotak Grid Cyber */
+/* 1. Particles Container (Jaring-Jaring Laba-Laba Jaringan) */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #040406;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 2. Jaring-jaring Kotak Grid Cyber */
 .cyber-grid-overlay {
     position: fixed;
     inset: 0;
@@ -55,21 +67,10 @@ body {
         linear-gradient(90deg, rgba(255, 0, 51, 0.05) 1px, transparent 1px);
     background-size: 48px 48px;
     pointer-events: none;
-    z-index: -1;
+    z-index: 1;
 }
 
-/* Particles Container (Jaring-Jaring Laba-Laba Jaringan) */
-#particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #000000;
-    top: 0;
-    left: 0;
-    z-index: -2;
-}
-
-/* First Screen: Hero Orbit + Marquee Pas 100vh 1 Layar Penuh */
+/* 3. First Screen: Hero Orbit + Marquee Pas 100vh 1 Layar Penuh */
 .hero-first-screen {
     height: 100vh;
     height: 100svh;
@@ -78,6 +79,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    z-index: 2;
     overflow: hidden;
     margin: 0 !important;
     padding: 0 !important;
@@ -176,19 +178,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 color: { value: "#ff0033" },
                 shape: { type: "circle" },
                 opacity: {
-                    value: 0.7,
+                    value: 0.8,
                     random: false
                 },
                 size: {
-                    value: 3.5,
+                    value: 3.8,
                     random: true
                 },
                 line_linked: {
                     enable: true,
-                    distance: 155,
+                    distance: 160,
                     color: "#ffffff",
-                    opacity: 0.42,
-                    width: 1.1
+                    opacity: 0.5,
+                    width: 1.25
                 },
                 move: {
                     enable: true,
@@ -201,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             interactivity: {
-                detect_on: "canvas",
+                detect_on: "window",
                 events: {
                     onhover: {
                         enable: true,

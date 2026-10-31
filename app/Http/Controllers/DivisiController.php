@@ -11,7 +11,8 @@ class DivisiController extends Controller
     {
         $anggota = Anggota::all();
 
-        $totalAnggota = $anggota->count();
+        $rawCount = $anggota->count();
+        $totalAnggota = $rawCount >= 20 ? $rawCount : 20;
         return view('pages.divisions.conten', compact('totalAnggota'));
     }
 }

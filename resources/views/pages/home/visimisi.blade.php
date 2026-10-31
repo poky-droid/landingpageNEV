@@ -2,11 +2,12 @@
     
     <!-- HEADER SECTION: JUDUL VISI & MISI (MERAH), SUBTITLE SINGKAT -->
     <div class="vm-header-wrap">
-        <h2 class="vm-title">Visi & Misi Organisasi</h2>
-        <p class="vm-subtitle">Komitmen terarah dan peta jalan Network Evolution dalam mencetak periset digital masa depan.</p>
+        <div class="vm-tag-pill">TUJUAN ORGANISASI</div>
+        <h2 class="vm-title">Visi &amp; Misi Organisasi</h2>
+        {{-- <p class="vm-subtitle">Komitmen terarah dan peta jalan Network Evolution dalam mencetak periset digital masa depan.</p> --}}
     </div>
 
-    <!-- 1. KARTU VISI UTAMA (BERSIH & ELEGAN) -->
+    <!-- 1. KARTU VISI UTAMA (BERSIH & ELEGAN) — misi digabung di dalamnya -->
     <div class="visi-card">
         <div class="visi-card-header">
             <div class="visi-badge">
@@ -18,67 +19,71 @@
 
         <div class="visi-card-body">
             <blockquote class="visi-quote">
-                “Menjadikan <strong class="hl-white">Network Evolution (NEV)</strong> sebagai keluarga riset yang <strong class="hl-red">kolaboratif, disiplin, dan progresif</strong>; tempat seluruh anggota bertumbuh dalam keahlian teknis (<strong class="hl-white">hardskill</strong>) dan kemampuan profesional (<strong class="hl-white">softskill</strong>), serta melahirkan karya ilmiah yang berdampak nyata bagi perkembangan teknologi <strong class="hl-white">jaringan</strong>, <strong class="hl-white">sysadmin</strong>, dan <strong class="hl-white">keamanan siber</strong>.”
+                &ldquo;Menjadikan <strong class="hl-white">Network Evolution (NEV)</strong> sebagai keluarga riset yang <strong class="hl-red">kolaboratif, disiplin, dan progresif</strong>; tempat seluruh anggota bertumbuh dalam keahlian teknis (<strong class="hl-white">hardskill</strong>) dan kemampuan profesional (<strong class="hl-white">softskill</strong>), serta melahirkan karya ilmiah yang berdampak nyata bagi perkembangan teknologi <strong class="hl-white">jaringan</strong>, <strong class="hl-white">sysadmin</strong>, dan <strong class="hl-white">keamanan siber</strong>.&rdquo;
             </blockquote>
-            <div class="visi-watermark" aria-hidden="true">”</div>
+            <div class="visi-watermark" aria-hidden="true">&rdquo;</div>
+        </div>
+
+        <!-- INNER DIVIDER -->
+        <div class="vm-inner-divider"></div>
+
+        <!-- MISI HEADER (inside visi-card) -->
+        <div class="misi-header-bar">
+            <div class="misi-badge">
+                <span class="badge-dot"></span>
+                MISI UTAMA
+            </div>
+            <span class="misi-org-name">NETWORK EVOLUTION</span>
+        </div>
+
+        <!-- 6 MISI CARDS (inside visi-card) -->
+        <div class="misi-grid">
+
+            <!-- MISI 01 -->
+            <div class="misi-card">
+                <div class="misi-number">01</div>
+                <h3 class="misi-title">Ekosistem Belajar Suportif</h3>
+                <p class="misi-desc">Membangun ekosistem belajar yang suportif dan bertumbuh bersama.</p>
+            </div>
+
+            <!-- MISI 02 -->
+            <div class="misi-card">
+                <div class="misi-number">02</div>
+                <h3 class="misi-title">Penguatan Hard Skill</h3>
+                <p class="misi-desc">Menguatkan skill networking, sysadmin, dan cybersecurity melalui riset &amp; praktik.</p>
+            </div>
+
+            <!-- MISI 03 -->
+            <div class="misi-card">
+                <div class="misi-number">03</div>
+                <h3 class="misi-title">Softskill Profesional</h3>
+                <p class="misi-desc">Mengembangkan softskill profesional: komunikasi, leadership, dan teamwork.</p>
+            </div>
+
+            <!-- MISI 04 -->
+            <div class="misi-card">
+                <div class="misi-number">04</div>
+                <h3 class="misi-title">Budaya Riset &amp; Dokumentasi</h3>
+                <p class="misi-desc">Mendorong budaya riset, sharing, dan dokumentasi yang konsisten.</p>
+            </div>
+
+            <!-- MISI 05 -->
+            <div class="misi-card">
+                <div class="misi-number">05</div>
+                <h3 class="misi-title">Sinergi Alumni &amp; Praktisi</h3>
+                <p class="misi-desc">Membuka kolaborasi serta wawasan dunia kerja bersama alumni &amp; praktisi.</p>
+            </div>
+
+            <!-- MISI 06 -->
+            <div class="misi-card">
+                <div class="misi-number">06</div>
+                <h3 class="misi-title">Kontribusi Berdampak</h3>
+                <p class="misi-desc">Menghasilkan karya dan kontribusi yang berdampak.</p>
+            </div>
+
         </div>
     </div>
 
-    <!-- 2. HEADER MISI ORGANISASI (KONSISTEN SEPERTI DI VISI) -->
-    <div class="misi-header-bar">
-        <div class="misi-badge">
-            <span class="badge-dot"></span>
-            MISI UTAMA
-        </div>
-        <span class="misi-org-name">NETWORK EVOLUTION</span>
-    </div>
-
-    <!-- 3. GRID 6 MISI ORGANISASI (3 KOLOM PROPORSIONAL, TAMPILAN BERSIH & KONSISTEN) -->
-    <div class="misi-grid">
-
-        <!-- MISI 01 -->
-        <div class="misi-card">
-            <div class="misi-number">01</div>
-            <h3 class="misi-title">Ekosistem Belajar Suportif</h3>
-            <p class="misi-desc">Membangun ekosistem belajar yang suportif dan bertumbuh bersama.</p>
-        </div>
-
-        <!-- MISI 02 -->
-        <div class="misi-card">
-            <div class="misi-number">02</div>
-            <h3 class="misi-title">Penguatan Hard Skill</h3>
-            <p class="misi-desc">Menguatkan skill networking, sysadmin, dan cybersecurity melalui riset & praktik.</p>
-        </div>
-
-        <!-- MISI 03 -->
-        <div class="misi-card">
-            <div class="misi-number">03</div>
-            <h3 class="misi-title">Softskill Profesional</h3>
-            <p class="misi-desc">Mengembangkan softskill profesional: komunikasi, leadership, dan teamwork.</p>
-        </div>
-
-        <!-- MISI 04 -->
-        <div class="misi-card">
-            <div class="misi-number">04</div>
-            <h3 class="misi-title">Budaya Riset & Dokumentasi</h3>
-            <p class="misi-desc">Mendorong budaya riset, sharing, dan dokumentasi yang konsisten.</p>
-        </div>
-
-        <!-- MISI 05 -->
-        <div class="misi-card">
-            <div class="misi-number">05</div>
-            <h3 class="misi-title">Sinergi Alumni & Praktisi</h3>
-            <p class="misi-desc">Membuka kolaborasi serta wawasan dunia kerja bersama alumni & praktisi.</p>
-        </div>
-
-        <!-- MISI 06 -->
-        <div class="misi-card">
-            <div class="misi-number">06</div>
-            <h3 class="misi-title">Kontribusi Berdampak</h3>
-            <p class="misi-desc">Menghasilkan karya dan kontribusi yang berdampak.</p>
-        </div>
-
-    </div>
 </div>
 
 <style>
@@ -99,8 +104,8 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 /* ==========================================================
@@ -110,6 +115,34 @@
     text-align: center;
     max-width: 720px;
     margin: 0 auto 36px;
+    position: relative;
+}
+
+/* Ambient Glow Merah Halus di Bagian Tengah Header */
+.vm-header-wrap::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 440px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(255, 0, 51, 0.2) 0%, transparent 70%);
+    filter: blur(45px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.vm-tag-pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
 }
 
 .vm-title {
@@ -140,7 +173,6 @@
     border: 1px solid rgba(255, 255, 255, 0.09);
     border-radius: 20px;
     padding: 32px 36px;
-    margin-bottom: 24px;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
@@ -200,6 +232,7 @@
 .visi-card-body {
     position: relative;
     z-index: 2;
+    text-align: center;
 }
 
 .visi-quote {
@@ -207,9 +240,10 @@
     font-weight: 400;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.82);
-    margin: 0;
+    margin: 0 auto;
     max-width: 980px;
     letter-spacing: 0.1px;
+    text-align: center;
 }
 
 .hl-white {
@@ -238,13 +272,21 @@
 }
 
 /* ==========================================================
-   2. HEADER MISI ORGANISASI (KONSISTEN SEPERTI DI VISI)
+   INNER DIVIDER (between visi & misi inside the same card)
+   ========================================================== */
+.vm-inner-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    margin: 28px 0 24px;
+}
+
+/* ==========================================================
+   2. HEADER MISI ORGANISASI (inside visi-card)
    ========================================================== */
 .misi-header-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 36px;
     margin-bottom: 20px;
     padding: 0 4px;
 }
@@ -361,16 +403,15 @@
     .visi-card {
         padding: 22px 18px;
         border-radius: 16px;
-        margin-bottom: 18px;
     }
 
-    .visi-card-header, .misi-header-bar {
+    .visi-card-header {
         margin-bottom: 16px;
         padding-bottom: 12px;
     }
 
-    .misi-header-bar {
-        margin-top: 24px;
+    .vm-inner-divider {
+        margin: 20px 0 18px;
     }
 
     .visi-org-name, .misi-org-name {

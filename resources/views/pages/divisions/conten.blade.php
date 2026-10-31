@@ -2,6 +2,7 @@
   <div class="top-row">
     <!-- JUDUL SECTION: DIVISI RISET (PUTIH & AKSEN MERAH SENADA DENGAN APA ITU NEV) -->
     <div class="division-header-wrap">
+      <div class="division-tag-pill">FOKUS RISET</div>
       <h2 class="division-title">Divisi <span class="title-accent">Riset</span></h2>
     </div>
 
@@ -15,7 +16,7 @@
       <div class="stats-row">
         <div class="stat-box"><div class="stat-num">3</div><div class="stat-lbl">Divisi Riset</div></div>
         <div class="divider"></div>
-        <div class="stat-box"><div class="stat-num">{{ $totalAnggota ?? 50 }}+</div><div class="stat-lbl">Anggota Aktif</div></div>
+        <div class="stat-box"><div class="stat-num">{{ max(20, (int)($totalAnggota ?? 0)) }}+</div><div class="stat-lbl">Anggota Aktif</div></div>
         <div class="divider"></div>
         <div class="stat-box"><div class="stat-num">100%</div><div class="stat-lbl">Kolaboratif</div></div>
       </div>
@@ -43,7 +44,7 @@
         <div class="detail-meta">
           <div class="meta-item"><span class="meta-label">Bidang Fokus</span><span class="meta-value">Server & Infrastruktur Cloud</span></div>
           <div class="meta-item"><span class="meta-label">Teknologi Utama</span><span class="meta-value">Ansible, Nagios, Proxmox</span></div>
-          <div class="meta-item"><span class="meta-label">Total Anggota</span><span class="meta-value">{{ $totalSysadminMembers ?? 15 }} Anggota</span></div>
+          <div class="meta-item"><span class="meta-label">Total Anggota</span><span class="meta-value">{{ ($totalSysadminMembers ?? 0) >= 4 ? $totalSysadminMembers : 4 }} Anggota</span></div>
         </div>
       </div>
     </div>
@@ -68,7 +69,7 @@
         <div class="detail-meta">
           <div class="meta-item"><span class="meta-label">Bidang Fokus</span><span class="meta-value">Keamanan Ofensif & Defensif</span></div>
           <div class="meta-item"><span class="meta-label">Teknologi Utama</span><span class="meta-value">Burp Suite, Metasploit, Wireshark</span></div>
-          <div class="meta-item"><span class="meta-label">Total Anggota</span><span class="meta-value">{{ $totalCybersecurityMembers ?? 20 }} Anggota</span></div>
+          <div class="meta-item"><span class="meta-label">Total Anggota</span><span class="meta-value">{{ ($totalCybersecurityMembers ?? 0) >= 8 ? $totalCybersecurityMembers : 8 }} Anggota</span></div>
         </div>
       </div>
     </div>
@@ -93,7 +94,7 @@
         <div class="detail-meta">
           <div class="meta-item"><span class="meta-label">Bidang Fokus</span><span class="meta-value">Arsitektur & Konektivitas Jaringan</span></div>
           <div class="meta-item"><span class="meta-label">Teknologi Utama</span><span class="meta-value">Cisco, pfSense, GNS3</span></div>
-          <div class="meta-item"><span class="meta-label">Total Anggota</span><span class="meta-value">{{ $totalNetworkingMembers ?? 18 }} Anggota</span></div>
+          <div class="meta-item"><span class="meta-label">Total Anggota</span><span class="meta-value">{{ ($totalNetworkingMembers ?? 0) >= 10 ? $totalNetworkingMembers : 10 }} Anggota</span></div>
         </div>
       </div>
     </div>
@@ -139,7 +140,7 @@
   .wrap {
     background: transparent;
     color: #fff;
-    padding: 50px 20px 85px;
+    padding: 50px 16px 85px;
     max-width: 1180px;
     width: 100%;
     margin: 0 auto;
@@ -159,6 +160,34 @@
     text-align: center;
     margin: 0 auto 50px;
     width: 100%;
+    position: relative;
+  }
+
+  /* Ambient Glow Merah Halus di Bagian Tengah Header */
+  .division-header-wrap::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 440px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(255, 0, 51, 0.2) 0%, transparent 70%);
+    filter: blur(45px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .division-tag-pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
   }
 
   .division-title {
@@ -263,11 +292,14 @@
   }
 
   .division-item .num {
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
-    color: #333;
+    font-weight: 600;
+    color: #444;
     letter-spacing: 1px;
     min-width: 36px;
     flex-shrink: 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
   }
 
   .division-item h1 {
@@ -309,6 +341,12 @@
     flex-shrink: 0;
   }
 
+  .division-item:hover .num,
+  .division-item.active .num {
+    color: #FF0033;
+    text-shadow: 0 0 20px rgba(255, 0, 51, 0.45);
+  }
+
   .division-item:hover h1 {
     color: #FF0033;
     text-shadow: 0 0 30px rgba(255, 0, 51, 0.4);
@@ -322,8 +360,17 @@
     color: #888;
   }
 
-  .division-item.active h1 { color: #FF0033; }
-  .division-item.active .arrow { color: #FF0033; }
+  .division-item.active h1 {
+    color: #FF0033;
+    text-shadow: 0 0 30px rgba(255, 0, 51, 0.4);
+  }
+  .division-item.active .arrow {
+    color: #FF0033;
+  }
+  .division-item.active .tag {
+    border-color: rgba(255, 0, 51, 0.35);
+    color: #aaa;
+  }
 
   /* DETAIL PANEL */
   .detail-panel {
@@ -388,14 +435,23 @@
     text-transform: uppercase;
     text-decoration: none;
     padding: 14px 0 14px 48px;
-    transition: 0.3s;
+    transition: color 0.25s ease, text-shadow 0.25s ease;
   }
   .see-more-btn span {
-    transition: transform 0.3s;
+    transition: transform 0.25s ease, color 0.25s ease;
     display: inline-block;
+    color: inherit;
   }
-  .see-more-btn:hover span {
+  .see-more-btn:hover,
+  .see-more-btn:focus {
+    color: #ffffff !important;
+    text-decoration: none;
+    text-shadow: 0 0 14px rgba(255, 255, 255, 0.5);
+  }
+  .see-more-btn:hover span,
+  .see-more-btn:focus span {
     transform: translate(4px, -4px);
+    color: #ffffff !important;
   }
 
   /* BOTTOM ROW */
@@ -436,11 +492,16 @@
       margin: 0 auto 40px;
     }
 
+    .division-title {
+      font-size: clamp(1.45rem, 5vw, 1.85rem);
+    }
+
     .headline-stats-row {
       flex-direction: column;
       gap: 24px;
     }
     .headline-col { max-width: 100%; }
+    .headline { font-size: clamp(1.1rem, 3.5vw, 1.35rem); }
     .top-desc { max-width: 100%; }
 
     .stats-row {

@@ -1,5 +1,3 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="icon" type="image/png" href="{{ asset('images/logoatas.png') }}?v={{ time() }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,13 +18,12 @@
         <ul class="navbar-nav">
             <li><a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ request()->is('/') ? '#home' : url('/#home') }}">Home</a></li>
             <li><a class="nav-link {{ request()->is('news*') ? 'active' : '' }}" href="{{ url('/news') }}">News</a></li>
-            <li><a class="nav-link {{ request()->is('organization*') ? 'active' : '' }}" href="{{ url('/organization') }}">Organization</a></li>
-            <li><a class="nav-link" href="{{ request()->is('/') ? '#conten-modul' : url('/#conten-modul') }}">Modules</a></li>
+            <li><a class="nav-link {{ request()->is('modules*') || request()->is('modul*') ? 'active' : '' }}" href="{{ url('/modules') }}">Modules</a></li>
             <li><a class="nav-link {{ request()->is('publications*') ? 'active' : '' }}" href="{{ url('/publications') }}">Publications</a></li>
         </ul>
 
         <div class="nav-actions">
-            <a class="btn-join" href="{{ url('/join') }}">Let's Join</a>
+            <a class="btn-join {{ request()->is('join*') || request()->is('oprec*') ? 'active-join' : '' }}" href="{{ url('/join') }}">Let's Join</a>
         </div>
     </div>
 </nav>
@@ -198,6 +195,13 @@
         box-shadow: 0 0 22px rgba(255, 0, 51, 0.7);
     }
 
+    .btn-join.active-join {
+        background: #FF0033;
+        box-shadow: 0 0 24px rgba(255, 0, 51, 0.95);
+        outline: 2px solid rgba(255, 255, 255, 0.35);
+        outline-offset: 2px;
+    }
+
     .btn-join:focus-visible {
         outline: 2px solid #fff;
         outline-offset: 2px;
@@ -240,7 +244,7 @@
     }
 
     /* ===== MOBILE ===== */
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
         :root {
             --nav-h: 56px;
             --nav-gap: 10px;

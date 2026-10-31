@@ -197,17 +197,17 @@
              ========================================================== -->
         <div class="hero-center-box">
             
-            <!-- Badge Glassmorphism: 3 Divisi | 0+ Anggota -->
+            <!-- Badge Glassmorphism: 3 Divisi | 20+ Anggota -->
             <div class="hero-glass-badge">
                 <span class="stat-text"><strong class="stat-highlight">3</strong> Divisi</span>
                 <span class="stat-pipe">|</span>
-                <span class="stat-text"><strong class="stat-highlight">{{ $totalAnggota ?? 0 }}+</strong> Anggota</span>
+                <span class="stat-text"><strong class="stat-highlight">{{ max(20, (int)($totalAnggota ?? 0)) }}+</strong> Anggota</span>
             </div>
 
             <!-- Headline Utama (Font Bold Biasa 700) -->
             <h1 class="hero-main-title">
-                Wadah Riset & Kolaborasi<br>
-                <span class="hero-title-accent">Kampus Membangun</span>
+                Research Group<br>
+                <span class="hero-title-accent">Network Evolution</span>
             </h1>
 
             <!-- Sub Hashtag (Pure Putih) -->

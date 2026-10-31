@@ -17,11 +17,16 @@ class HomeController extends Controller
         
         foreach ($news as $item) {
             if ($item->gambar) {
-                $item->gambar_url = Storage::disk('s3')->temporaryUrl($item->gambar, Carbon::now()->addHours(24));
+                try {
+                    $item->gambar_url = Storage::disk('s3')->temporaryUrl($item->gambar, Carbon::now()->addHours(24));
+                } catch (\Throwable $e) {
+                    $item->gambar_url = asset($item->gambar);
+                }
             }
         }
 
-        $totalAnggota = Anggota::count();
+        $rawCount = Anggota::count();
+        $totalAnggota = $rawCount >= 20 ? $rawCount : 20;
 
         $totalSysadminMembers = Anggota::whereHas('divisi', function ($q) {
             $q->where('nama_divisi', 'Sysadmin');

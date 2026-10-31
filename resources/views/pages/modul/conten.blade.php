@@ -4,10 +4,10 @@
 
 .wrap1 {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1180px;
   margin: 0 auto;
 
-  padding: clamp(32px, 8vw, 80px) clamp(16px, 5vw, 40px);
+  padding: clamp(32px, 8vw, 80px) 16px;
 
   display: flex;
   flex-direction: column;
@@ -137,16 +137,49 @@
   background: #111;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 768px) {
+  .wrap1 {
+    padding: clamp(28px, 6vw, 44px) 20px;
+    gap: 28px;
+    border-radius: 12px;
+  }
+  .heading {
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+  }
+  .sub {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+  .repo-btn {
+    padding: 14px 20px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+  .stats {
+    gap: 20px;
+  }
+  .stat-num {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
   .stat-divider { display: none; }
-  .stats { gap: 24px; }
+  .stats {
+    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
 }
 
 .launch-overlay {
   position: fixed;
   inset: 0;
-  background: transparent;
-  z-index: 9999;
+  background: rgba(6, 6, 8, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 99999;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -154,20 +187,20 @@
   padding: 24px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
 }
 .launch-overlay.show { opacity: 1; pointer-events: all; }
-.launch-label { font-size: 10px; color: #333; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; text-align: center; }
-.launch-title { font-size: clamp(1rem, 4vw, 2rem); font-weight: 700; color: #eee; margin-bottom: 40px; text-align: center; }
+.launch-label { font-size: 11px; color: #888; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; text-align: center; }
+.launch-title { font-size: clamp(1.4rem, 4vw, 2.2rem); font-weight: 700; color: #eee; margin-bottom: 30px; text-align: center; }
 .launch-title span { color: #FF0033; }
-.launch-bar-wrap { width: min(220px, 70vw); height: 1px; background: #1a1a1a; margin-bottom: 16px; overflow: hidden; }
-.launch-bar { height: 100%; background: #FF0033; width: 0%; box-shadow: 0 0 8px #FF0033; }
-.launch-pct { font-size: 10px; color: #333; letter-spacing: 2px; }
+.launch-bar-wrap { width: min(260px, 75vw); height: 3px; background: rgba(255, 255, 255, 0.1); border-radius: 99px; margin-bottom: 16px; overflow: hidden; }
+.launch-bar { height: 100%; background: #FF0033; width: 0%; box-shadow: 0 0 12px #FF0033; border-radius: 99px; }
+.launch-pct { font-size: 11px; color: #888; letter-spacing: 2px; font-family: monospace; }
 </style>
 
 <div class="launch-overlay" id="overlay">
   <p class="launch-label">Our Repository</p>
-  <p class="launch-title">Redirecting to <span>GitHub</span></p>
+  <p class="launch-title">Redirecting to <span>Medium NEV</span></p>
   <div class="launch-bar-wrap"><div class="launch-bar" id="launch-bar"></div></div>
   <p class="launch-pct" id="launch-pct">0%</p>
 </div>
@@ -177,14 +210,14 @@
   <h2 class="heading">Our<br><span>Repository</span></h2>
   <p class="sub">All learning materials, source code, and documentation are openly available. Explore, fork, and contribute.</p>
 
-  <a class="repo-btn" id="repo-btn" href="#" data-url="https://github.com">
+  <a class="repo-btn" id="repo-btn" href="#" data-url="https://medium.networkevolution.my.id">
     <span>Visit Our Repository</span>
     <span class="arrow">↗</span>
   </a>
 
   <div class="stats">
     <div class="stat">
-      <span class="stat-num">{{ $totalModul }}<span>+</span></span>
+      <span class="stat-num">{{ $totalModul ?? 0 }}<span>+</span></span>
       <span class="stat-label">Modules</span>
     </div>
     <div class="stat-divider"></div>

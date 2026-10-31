@@ -10,6 +10,8 @@ use App\Http\Controllers\NewsKontenController;
 use App\Http\Controllers\ModulController;
 use App\Http\Controllers\ModulKontenController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\JoinController;
 use Illuminate\Support\Facades\Storage;
 
 // Route::get('/test-minio', function () {
@@ -34,12 +36,20 @@ Route::get('/organization', function () {
     return view('pages.organization.index');
 });
 
+Route::get('/publications', [PublicationController::class, 'index']);
+Route::get('/publications/{id}', [PublicationController::class, 'show']);
+Route::get('/join', [JoinController::class, 'index'])->name('join');
+Route::get('/oprec', function() {
+    return redirect('/join');
+});
+
 
 Route::resource('jabatan', JabatanController::class);
 Route::resource('divisi', DivisiController::class);
 Route::resource('anggota', AnggotaController::class);
 Route::resource('news', NewsController::class);
 Route::resource('news-konten', NewsKontenController::class);
+Route::get('/modules', [ModulController::class, 'index']);
 Route::resource('modul', ModulController::class);
 Route::resource('modul-konten', ModulKontenController::class);
 Route::resource('sponsor', SponsorController::class);

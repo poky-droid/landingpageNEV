@@ -1,25 +1,26 @@
-@include('pages.layout.navbarforconten')
+@include('pages.layout.navbar')
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>NEV — Cybersecurity Division</title>
+<title>NEV — Divisi Cyber Security</title>
 <link rel="icon" type="image/png" href="{{ asset('images/logoatas.png') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --red: #e02020;
-    --red-dim: #8b1010;
-    --bg: #0a0a0a;
-    --bg2: #111111;
-    --bg3: #181818;
+    --red: #FF0033;
+    --red-dim: rgba(255, 0, 51, 0.15);
+    --bg: #040406;
+    --bg2: #090a0f;
+    --bg3: #11131a;
     --text: #f0f0f0;
-    --muted: #666;
-    --border: #222;
+    --muted: #8A8A8A;
+    --border: rgba(255, 255, 255, 0.08);
   }
 
   html { scroll-behavior: smooth; }
@@ -27,126 +28,95 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'Syne', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
   }
 
-  /* NOISE OVERLAY */
-  body::before {
-    content: '';
+  /* NOISE / CYBER GRID OVERLAY */
+  .cyber-grid-overlay {
     position: fixed;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-image: 
+        linear-gradient(rgba(255, 0, 51, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 51, 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.4;
   }
 
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 60px;
-    border-bottom: 1px solid var(--border);
-    background: rgba(10,10,10,0.9);
-    backdrop-filter: blur(12px);
-    z-index: 100;
+  .page-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
   }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-  }
-
-  .nav-logo svg { width: 32px; height: 32px; }
-
-  .nav-logo span {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    color: var(--red);
-    letter-spacing: 2px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 36px;
-    list-style: none;
-  }
-
-  .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover,
-  .nav-links a.active { color: var(--text); }
-
-  .nav-links a.active { color: var(--red); }
 
   /* HERO */
   .hero {
-    padding: 160px 60px 80px;
+    padding: 120px 0 60px;
     position: relative;
     border-bottom: 1px solid var(--border);
     overflow: hidden;
   }
 
-  /* Scanning line animation */
+  /* Laser Scanning Line Animation - Crisp, thin & subtle */
   .hero::after {
     content: '';
     position: absolute;
-    left: 0; right: 0;
+    left: 0;
+    right: 0;
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--red), transparent);
-    animation: scanline 4s linear infinite;
-    opacity: 0.3;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 0, 51, 0.25) 20%, #FF0033 50%, rgba(255, 0, 51, 0.25) 80%, transparent 100%);
+    box-shadow: none;
+    animation: scanline 4.5s linear infinite;
+    opacity: 0.4;
     pointer-events: none;
+    z-index: 5;
   }
 
   @keyframes scanline {
-    0%   { top: 0; }
-    100% { top: 100%; }
+    0%   { top: 0%; opacity: 0; }
+    8%   { opacity: 0.4; }
+    92%  { opacity: 0.4; }
+    100% { top: 100%; opacity: 0; }
   }
 
   .hero-label {
-    font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
-    color: var(--muted);
+    font-weight: 600;
+    color: var(--red);
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 24px;
-    display: flex;
+    margin-bottom: 20px;
+    display: inline-flex;
     align-items: center;
     gap: 12px;
   }
 
   .hero-label::before {
-    content: '03';
-    color: var(--red);
-    font-size: 10px;
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--red);
   }
 
   .hero-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(80px, 12vw, 160px);
-    line-height: 0.9;
-    letter-spacing: -1px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(48px, 9vw, 100px);
+    font-weight: 900;
+    line-height: 0.98;
+    letter-spacing: -0.04em;
     color: var(--text);
-    margin-bottom: 40px;
+    margin-bottom: 28px;
+    text-transform: uppercase;
   }
 
-  .hero-title span { color: var(--red); }
+  .hero-title span { color: var(--red); text-shadow: 0 0 30px rgba(255, 0, 51, 0.4); }
 
   .hero-desc {
-    max-width: 480px;
+    max-width: 580px;
     font-size: 15px;
     color: var(--muted);
     line-height: 1.8;
@@ -154,102 +124,300 @@
 
   .hero-tags {
     display: flex;
-    gap: 10px;
-    margin-top: 40px;
+    gap: 12px;
+    margin-top: 36px;
     flex-wrap: wrap;
   }
 
   .tag {
-    border: 1px solid var(--border);
-    padding: 7px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    padding: 6px 14px;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 1px;
-    transition: all 0.2s;
+    color: #7a7a7a;
+    letter-spacing: 0.5px;
+    border-radius: 0;
+    transition: all 0.2s ease;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
   }
 
   .tag:hover {
     border-color: var(--red);
-    color: var(--red);
-  }
-
-  .hero-number {
-    position: absolute;
-    right: 60px;
-    bottom: 80px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 200px;
-    color: rgba(255,255,255,0.02);
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
+    color: #ffffff;
+    background: rgba(255, 0, 51, 0.06);
   }
 
   /* THREAT TICKER */
   .ticker-wrap {
-    overflow: hidden;
-    border-bottom: 1px solid var(--border);
     border-top: 1px solid var(--border);
-    background: var(--bg2);
-    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    background: #090a0f;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 40px;
     position: relative;
+    z-index: 5;
   }
 
   .ticker-label {
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    font-weight: 600;
+    color: #fff;
+    background: #e02020;
+    padding: 0 18px;
+    height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 20px;
-    background: var(--red);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 9px;
-    font-weight: 500;
     letter-spacing: 2px;
-    color: #fff;
-    z-index: 2;
     white-space: nowrap;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+  }
+
+  .ticker-viewport {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
 
   .ticker-track {
     display: flex;
-    gap: 60px;
+    align-items: center;
+    gap: 50px;
+    width: max-content;
     animation: ticker 28s linear infinite;
     white-space: nowrap;
-    padding-left: 160px;
+    will-change: transform;
+    padding-left: 20px;
+  }
+
+  .ticker-wrap:hover .ticker-track {
+    animation-play-state: paused;
   }
 
   .ticker-item {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
-    color: var(--muted);
+    color: #777777;
     letter-spacing: 1px;
-    display: flex;
+    text-transform: uppercase;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
   }
 
   .ticker-item::before {
     content: '▸';
-    color: var(--red);
-    font-size: 8px;
+    color: #e02020;
+    font-size: 9px;
+    line-height: 1;
   }
 
   @keyframes ticker {
     from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* TEAM SECTION */
+  .team-section {
+    padding: 60px 0 70px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .team-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--red);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin: 0;
+  }
+
+  .team-count {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: transparent;
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .member-card {
+    background: #06070a;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 36px 28px;
+    transition: background 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    height: 100%;
+  }
+
+  /* RED ACCENT LINE ON LEFT BORDER UPON HOVER */
+  .member-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5px;
+    height: 0;
+    background: #FF0033;
+    box-shadow: 0 0 10px rgba(255, 0, 51, 0.7);
+    transition: height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 5;
+  }
+
+  .member-card:hover {
+    background: #0d0e14;
+  }
+
+  .member-card:hover::before {
+    height: 100%;
+  }
+
+  .member-circle-wrap {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #ffffff;
+    overflow: hidden;
+    margin: 0 0 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
+  }
+
+  .member-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+
+  .member-card:hover .member-avatar-img {
+    transform: scale(1.08);
+  }
+
+  .member-initials-fallback {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    user-select: none;
+    transition: transform 0.35s ease;
+  }
+
+  .member-card:hover .member-initials-fallback {
+    transform: scale(1.06);
+  }
+
+  .member-initials-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: #0b0c10;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    display: flex;
+    align-items: baseline;
+  }
+
+  .member-initials-text .dot {
+    color: #FF0033;
+    font-size: 42px;
+    line-height: 0;
+    margin-left: 2px;
+  }
+
+  .member-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    text-transform: capitalize;
+  }
+
+  .member-role {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 18px;
+    line-height: 1.4;
+  }
+
+  .member-status {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #00FF66;
+    border: 1px solid rgba(0, 255, 102, 0.35);
+    background: rgba(0, 255, 102, 0.04);
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-top: auto;
   }
 
   /* STATS ROW */
   .stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--red);
     border-bottom: 1px solid var(--border);
   }
 
   .stat-item {
-    padding: 48px 60px;
+    padding: 40px 24px;
     border-right: 1px solid var(--border);
     position: relative;
     overflow: hidden;
@@ -257,7 +425,6 @@
   }
 
   .stat-item:last-child { border-right: none; }
-
   .stat-item:hover { background: var(--bg2); }
 
   .stat-item::after {
@@ -266,28 +433,29 @@
     bottom: 0; left: 0;
     width: 0; height: 2px;
     background: var(--red);
-    transition: width 0.4s ease;
+    transition: width 0.35s ease;
   }
 
   .stat-item:hover::after { width: 100%; }
 
   .stat-number {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px;
+    font-size: clamp(1.65rem, 2.4vw, 2.15rem);
+    font-weight: 700;
     color: var(--red);
-    line-height: 1;
+    line-height: 1.2;
     margin-bottom: 8px;
+    letter-spacing: -0.4px;
   }
 
   .stat-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
+    font-size: 11px;
     color: var(--muted);
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
+    font-weight: 500;
   }
 
-  /* SECTIONS LAYOUT */
+  /* CONTENT GRID */
   .content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -295,53 +463,33 @@
   }
 
   .content-left {
-    padding: 80px 60px;
+    padding: 60px 36px 60px 0;
     border-right: 1px solid var(--border);
   }
 
   .content-right {
-    padding: 80px 60px;
+    padding: 60px 0 60px 36px;
   }
 
-  .section-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    color: var(--red);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-  }
-
-  .section-title {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    line-height: 1.2;
-  }
-
-  /* RESPONSIBILITIES */
   .resp-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0;
   }
 
   .resp-item {
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    padding: 20px 0;
+    padding: 22px 0;
     border-bottom: 1px solid var(--border);
-    transition: background 0.2s;
-    cursor: default;
   }
 
   .resp-item:last-child { border-bottom: none; }
 
   .resp-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
+    font-weight: 700;
     color: var(--red);
     min-width: 24px;
     padding-top: 2px;
@@ -368,21 +516,21 @@
     gap: 1px;
     background: var(--border);
     border: 1px solid var(--border);
-    margin-top: 8px;
+    border-radius: 4px;
+    overflow: hidden;
   }
 
   .tool-card {
-    background: var(--bg);
+    background: #06070a;
     padding: 24px;
     transition: background 0.2s;
-    cursor: default;
   }
 
-  .tool-card:hover { background: var(--bg2); }
+  .tool-card:hover { background: #0e0f16; }
 
   .tool-icon {
-    font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
+    font-weight: 700;
     color: var(--red);
     letter-spacing: 2px;
     margin-bottom: 10px;
@@ -392,6 +540,7 @@
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 6px;
+    color: #fff;
   }
 
   .tool-desc {
@@ -400,132 +549,67 @@
     line-height: 1.6;
   }
 
-  /* TEAM SECTION */
-  .team-section {
-    padding: 80px 60px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .team-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 48px;
-  }
-
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-  }
-
-  .member-card {
-    background: var(--bg);
-    padding: 32px 24px;
-    transition: background 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .member-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 0;
-    background: var(--red);
-    transition: height 0.3s ease;
-  }
-
-  .member-card:hover { background: var(--bg2); }
-  .member-card:hover::before { height: 100%; }
-
-  .member-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 0;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    color: var(--red);
-    margin-bottom: 16px;
-  }
-
-  .member-name {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-
-  .member-role {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 1px;
-  }
-
-  .member-status {
-    display: inline-block;
-    margin-top: 14px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 1px;
-    padding: 3px 8px;
-    border: 1px solid;
-  }
-
-  .status-active {
-    color: #3db868;
-    border-color: #1a4a2a;
-  }
-
-  .status-lead {
-    color: var(--red);
-    border-color: var(--red-dim);
-  }
-
-  /* ALERT / INCIDENT SECTION */
+  /* ACTIVE ENGAGEMENTS */
   .incident-section {
+    padding: 60px 0 70px;
     border-bottom: 1px solid var(--border);
   }
 
   .incident-header {
-    padding: 48px 60px 32px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .live-indicator {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+  }
+
+  .blink-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+    animation: blink 1.2s ease infinite;
+    margin-right: 8px;
+    box-shadow: 0 0 8px var(--red);
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
   }
 
   .incident-row {
     display: grid;
-    grid-template-columns: 80px 1fr auto;
-    align-items: center;
-    padding: 32px 60px;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    padding: 24px 0;
     border-bottom: 1px solid var(--border);
-    gap: 40px;
-    transition: background 0.2s;
-    cursor: default;
+    align-items: baseline;
   }
 
   .incident-row:last-child { border-bottom: none; }
-  .incident-row:hover { background: var(--bg2); }
 
   .incident-idx {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 36px;
-    color: var(--border);
-    line-height: 1;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--red);
+    opacity: 0.8;
   }
 
   .incident-name {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
+    color: #fff;
     margin-bottom: 6px;
   }
 
@@ -535,444 +619,481 @@
     line-height: 1.6;
   }
 
-  .incident-meta { text-align: right; }
-
-  .incident-status {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 1px;
-    padding: 5px 12px;
-    border: 1px solid;
-    display: inline-block;
-  }
-
-  .incident-uptime {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 10px;
-  }
-
-  .is-secured { color: #3db868; border-color: #1a4a2a; }
-  .is-monitoring { color: #e09020; border-color: #5a3a10; }
-  .is-active { color: var(--red); border-color: var(--red-dim); }
-
-  /* CONTACT / JOIN */
-  .cta-section {
-    padding: 100px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-  }
-
-  .cta-left { max-width: 500px; }
-
-  .cta-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 64px;
-    line-height: 0.95;
+  /* TOP NAV BREADCRUMB */
+  .hero-top-nav {
     margin-bottom: 24px;
-  }
-
-  .cta-title span { color: var(--red); }
-
-  .cta-desc {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.8;
-  }
-
-  .cta-right {
     display: flex;
-    flex-direction: column;
-    gap: 16px;
-    min-width: 260px;
+    align-items: center;
   }
 
-  .btn-primary {
+  .back-nav-btn {
     display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 18px 28px;
-    background: var(--red);
-    color: #fff;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    color: #a0a5b5;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
-    transition: background 0.2s;
-    cursor: pointer;
-    border: none;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .btn-primary:hover { background: #c01818; }
-
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 18px 28px;
-    background: transparent;
-    color: var(--text);
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border: 1px solid var(--border);
-    transition: border-color 0.2s, color 0.2s;
-    cursor: pointer;
+  .back-nav-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 0, 51, 0.12);
+    border-color: rgba(255, 0, 51, 0.45);
+    transform: translateX(-3px);
   }
 
-  .btn-secondary:hover {
-    border-color: var(--muted);
-    color: var(--text);
+  .back-nav-btn svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s ease;
+  }
+
+  .back-nav-btn:hover svg {
+    transform: translateX(-3px);
+    stroke: var(--red);
   }
 
   /* FOOTER */
-  footer {
+  .division-footer {
     border-top: 1px solid var(--border);
-    padding: 32px 60px;
+    padding: 36px clamp(24px, 5vw, 60px);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
   }
 
   .footer-left {
-    font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
     color: var(--muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
   }
 
-  .back-link {
-    display: flex;
+  .footer-top-btn {
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
     color: var(--muted);
     text-decoration: none;
-    font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
-    letter-spacing: 1px;
-    transition: color 0.2s;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
   }
 
-  .back-link:hover { color: var(--red); }
-
-  .back-link svg {
-    width: 16px;
-    height: 16px;
-    transition: transform 0.2s;
+  .footer-top-btn:hover {
+    color: #ffffff;
   }
 
-  .back-link:hover svg { transform: translateX(-4px); }
-
-  /* RED LINE ACCENT */
-  .red-line {
-    height: 1px;
-    background: linear-gradient(to right, var(--red), transparent);
-    margin: 0;
-  }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .fade-up { animation: fadeUp 0.7s ease forwards; }
-  .fade-up-d1 { animation-delay: 0.1s; opacity: 0; }
-  .fade-up-d2 { animation-delay: 0.2s; opacity: 0; }
-  .fade-up-d3 { animation-delay: 0.3s; opacity: 0; }
-  .fade-up-d4 { animation-delay: 0.4s; opacity: 0; }
-
-  /* SCROLLBAR */
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: var(--red-dim); }
-
-  /* BLINKING DOT */
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-  .blink {
-    display: inline-block;
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--red);
-    animation: blink 1.2s ease infinite;
-    margin-right: 8px;
-  }
-
-  @media (max-width: 900px) {
-    nav, .hero, .content-left, .content-right, .team-section, .cta-section, footer { padding-left: 24px; padding-right: 24px; }
+  /* RESPONSIVE */
+  @media (max-width: 992px) {
     .content-grid { grid-template-columns: 1fr; }
     .content-left { border-right: none; border-bottom: 1px solid var(--border); }
-    .stats { grid-template-columns: 1fr 1fr; }
-    .team-grid { grid-template-columns: 1fr 1fr; }
-    .incident-row { padding: 24px; grid-template-columns: 50px 1fr auto; gap: 16px; }
-    .cta-section { flex-direction: column; }
-    .hero-title { font-size: 72px; }
-    .incident-header { padding: 32px 24px 24px; }
   }
-  .member-avatar-img {
-    width: 100%;                  /* Fills the wrapper container fully */
-    max-width: 150px;             /* Max size on larger screens */
-    aspect-ratio: 1 / 1;          /* Keeps the image a perfect circle (1:1 square) */
-    height: auto;                 /* Follows the aspect ratio */
-    border-radius: 50%;
-    object-fit: cover;
-    background: transparent;
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 90px 0 40px;
+    }
+    .hero-title {
+      font-size: clamp(38px, 9vw, 64px);
+    }
+    .hero-desc {
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+    .section-title {
+      font-size: clamp(1.45rem, 5vw, 1.95rem);
+    }
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .member-name {
+      font-size: 1rem;
+    }
+    .member-role {
+      font-size: 0.8rem;
+    }
+    .tools-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .tool-name {
+      font-size: 15px;
+    }
+    .tool-desc {
+      font-size: 12px;
+    }
+    .content-left, .content-right {
+      padding: 36px 0;
+    }
+    .stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .stat-item {
+      padding: 24px 16px;
+    }
+    .stat-number, .stat-num {
+      font-size: clamp(1.45rem, 5vw, 1.85rem);
+    }
+    .team-section {
+      padding: 40px 0 50px;
+    }
+    .ticker-label {
+      padding: 0 14px;
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+    .stats {
+      grid-template-columns: 1fr;
+    }
+    .stat-item {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-tags {
+      gap: 6px;
+    }
+    .tag {
+      font-size: 10px;
+      padding: 4px 10px;
+    }
+    .hero-top-nav {
+      margin-bottom: 24px;
+    }
+    .back-nav-btn {
+      font-size: 10px;
+      padding: 7px 14px;
+    }
   }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-label fade-up fade-up-d1">DIVISION DETAIL — CYBERSECURITY</div>
-  <h1 class="hero-title fade-up fade-up-d2">CYBER<span>SEC</span></h1>
-  <p class="hero-desc fade-up fade-up-d3">
-    Protects digital assets, detects cyber threats, and responds to incidents in real time. From penetration testing to threat intelligence and SIEM, this team is the organization's last line of defense.
-  </p>
-  <div class="hero-tags fade-up fade-up-d4">
-    <span class="tag">Penetration Testing</span>
-    <span class="tag">SIEM</span>
-    <span class="tag">Threat Intelligence</span>
-    <span class="tag">Incident Response</span>
-    <span class="tag">SOC</span>
-    <span class="tag">Forensics</span>
-  </div>
-  <div class="hero-number"></div>
-</section>
+<div class="cyber-grid-overlay"></div>
 
-<!-- THREAT TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-label">LIVE THREATS</div>
-  <div class="ticker-track">
-    <span class="ticker-item">SQL INJECTION ATTEMPT — BLOCKED</span>
-    <span class="ticker-item">PORT SCAN DETECTED — 192.168.4.21</span>
-    <span class="ticker-item">BRUTE FORCE SSH — MITIGATED</span>
-    <span class="ticker-item">MALWARE SIGNATURE MATCH — QUARANTINED</span>
-    <span class="ticker-item">PHISHING URL FLAGGED — DOMAIN BLACKLISTED</span>
-    <span class="ticker-item">PRIVILEGE ESCALATION ATTEMPT — DENIED</span>
-    <span class="ticker-item">ANOMALOUS TRAFFIC — EAST-WEST ANALYSIS RUNNING</span>
-    <span class="ticker-item">CVE-2024-3094 SCAN — PATCHED</span>
-    <!-- duplicated for seamless loop -->
-    <span class="ticker-item">SQL INJECTION ATTEMPT — BLOCKED</span>
-    <span class="ticker-item">PORT SCAN DETECTED — 192.168.4.21</span>
-    <span class="ticker-item">BRUTE FORCE SSH — MITIGATED</span>
-    <span class="ticker-item">MALWARE SIGNATURE MATCH — QUARANTINED</span>
-    <span class="ticker-item">PHISHING URL FLAGGED — DOMAIN BLACKLISTED</span>
-    <span class="ticker-item">PRIVILEGE ESCALATION ATTEMPT — DENIED</span>
-    <span class="ticker-item">ANOMALOUS TRAFFIC — EAST-WEST ANALYSIS RUNNING</span>
-    <span class="ticker-item">CVE-2024-3094 SCAN — PATCHED</span>
-  </div>
-</div>
+<div class="page-container">
 
-<!-- TEAM SECTION -->
-<section class="team-section">
-  <div class="team-header">
-    <div>
-      <div class="section-label">OUR PEOPLE</div>
-      <h2 class="section-title">The Team</h2>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-top-nav">
+      <a href="{{ url('/#divisions') }}" class="back-nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        <span>KEMBALI KE DIVISI</span>
+      </a>
     </div>
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);">{{ $totalAnggota }} ENGINEERS TOTAL</div>
+    <div class="hero-label">DETAIL DIVISI — KEAMANAN SIBER</div>
+    <h1 class="hero-title">CYBER<span>SEC</span></h1>
+    <p class="hero-desc">
+      Melindungi aset digital, mendeteksi potensi ancaman siber, dan merespons insiden secara real-time. Mulai dari penetration testing, threat intelligence, hingga SIEM, tim ini menjadi garda pertahanan utama keamanan organisasi.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">Penetration Testing</span>
+      <span class="tag">SIEM</span>
+      <span class="tag">Threat Intelligence</span>
+      <span class="tag">Incident Response</span>
+      <span class="tag">SOC</span>
+      <span class="tag">Forensics</span>
+    </div>
+  </section>
+
+  <!-- THREAT TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-label">LIVE THREATS</div>
+    <div class="ticker-viewport">
+      <div class="ticker-track">
+        <span class="ticker-item">SQL INJECTION ATTEMPT — BLOCKED</span>
+        <span class="ticker-item">PORT SCAN DETECTED — 192.168.4.21</span>
+        <span class="ticker-item">BRUTE FORCE SSH — MITIGATED</span>
+        <span class="ticker-item">MALWARE SIGNATURE MATCH — QUARANTINED</span>
+        <span class="ticker-item">PHISHING URL FLAGGED — DOMAIN BLACKLISTED</span>
+        <span class="ticker-item">PRIVILEGE ESCALATION ATTEMPT — DENIED</span>
+        <span class="ticker-item">ANOMALOUS TRAFFIC — EAST-WEST ANALYSIS RUNNING</span>
+        <span class="ticker-item">CVE-2024-3094 SCAN — PATCHED</span>
+        <!-- duplicated for seamless loop -->
+        <span class="ticker-item">SQL INJECTION ATTEMPT — BLOCKED</span>
+        <span class="ticker-item">PORT SCAN DETECTED — 192.168.4.21</span>
+        <span class="ticker-item">BRUTE FORCE SSH — MITIGATED</span>
+        <span class="ticker-item">MALWARE SIGNATURE MATCH — QUARANTINED</span>
+        <span class="ticker-item">PHISHING URL FLAGGED — DOMAIN BLACKLISTED</span>
+        <span class="ticker-item">PRIVILEGE ESCALATION ATTEMPT — DENIED</span>
+        <span class="ticker-item">ANOMALOUS TRAFFIC — EAST-WEST ANALYSIS RUNNING</span>
+        <span class="ticker-item">CVE-2024-3094 SCAN — PATCHED</span>
+      </div>
+    </div>
   </div>
-  <div class="team-grid">
-    @foreach ($anggota as $item)
+
+  <!-- TEAM SECTION (PERSIS DENGAN REFERENSI DESAIN) -->
+  <section class="team-section">
+    <div class="team-header">
+      <div>
+        <div class="section-label">TALENTA DIVISI</div>
+        <h2 class="section-title">Anggota Tim</h2>
+      </div>
+      <div class="team-count">{{ ($totalAnggota ?? 0) > 0 ? $totalAnggota : 8 }} ANGGOTA AKTIF</div>
+    </div>
+
+    @php
+      $cyberMembers = [
+        [
+          'nama' => 'Desi Yuniar Nur Rahmah',
+          'jurusan' => 'S1 Teknik Telekomunikasi',
+          'foto' => null,
+        ],
+        [
+          'nama' => 'Dwi Okta Suryaningrum',
+          'jurusan' => 'S1 Teknik Informatika',
+          'foto' => null,
+        ],
+        [
+          'nama' => 'Anissa Fauzia Isyanti',
+          'jurusan' => 'S1 Teknik Informatika',
+          'foto' => null,
+        ],
+        [
+          'nama' => 'Naufal Auriga Heryanto',
+          'jurusan' => 'S1 Informatika',
+          'foto' => null,
+        ],
+        [
+          'nama' => 'Masyul Khofif',
+          'jurusan' => 'S1 Teknik Telekomunikasi',
+          'foto' => null,
+        ],
+        [
+          'nama' => 'Vita Amellia Putri',
+          'jurusan' => 'S1 Teknik Telekomunikasi',
+          'foto' => null,
+        ],
+        [
+          'nama' => 'Rio Adi Setiono',
+          'jurusan' => 'S1 Teknik Telekomunikasi',
+          'foto' => null,
+        ],
+        [
+          'nama' => 'Gilang Hukma R.',
+          'jurusan' => 'S1 Teknik Telekomunikasi',
+          'foto' => null,
+        ],
+      ];
+
+      $formatMemberName = function($name) {
+        $name = preg_replace('/([A-Za-z]\.)([A-Za-z])/', '$1 $2', $name);
+        return ucwords(strtolower(trim($name)));
+      };
+
+      // Sinkronkan dengan foto dari database jika tersedia
+      if (isset($anggota) && $anggota->count() > 0) {
+        $dbMap = [];
+        foreach ($anggota as $a) {
+          $dbMap[strtolower(trim($a->nama))] = $a;
+        }
+        foreach ($cyberMembers as &$cm) {
+          $key = strtolower(trim($cm['nama']));
+          if (isset($dbMap[$key]) && !empty($dbMap[$key]->foto)) {
+            $cm['foto'] = $dbMap[$key]->foto;
+          }
+        }
+        unset($cm);
+      }
+    @endphp
+
+    <div class="team-grid">
+      @foreach ($cyberMembers as $item)
         <div class="member-card">
-
-            @if ($item->foto)
-                <img src="{{ Storage::disk('s3')->url($item->foto) }}"
-                alt="{{ $item->nama }}"
-                class="member-avatar-img">
+          <div class="member-circle-wrap">
+            @if (!empty($item['foto']))
+              <img src="{{ Storage::disk('s3')->url($item['foto']) }}"
+                   alt="{{ $item['nama'] }}"
+                   class="member-avatar-img"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="member-initials-fallback" style="display: none;">
+                <span class="member-initials-text">{{ strtoupper(substr($item['nama'], 0, 2)) }}<span class="dot">.</span></span>
+              </div>
             @else
-                <div class="member-avatar">
-                    {{ strtoupper(substr($item->nama, 0, 2)) }}
-                </div>
+              <div class="member-initials-fallback">
+                <span class="member-initials-text">{{ strtoupper(substr($item['nama'], 0, 2)) }}<span class="dot">.</span></span>
+              </div>
             @endif
+          </div>
 
-            <div class="member-name">
-                {{ $item->nama }}
-            </div>
-
-            <div class="member-role">
-                {{ $item->jurusan }}
-            </div>
-
-            <span class="member-status status-active">
-                ACTIVE
-            </span>
-
+          <div class="member-name">{{ $formatMemberName($item['nama']) }}</div>
+          <div class="member-role">{{ $item['jurusan'] }}</div>
+          <span class="member-status">ACTIVE</span>
         </div>
-    @endforeach
+      @endforeach
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-number">{{ ($totalAnggota ?? 0) > 0 ? $totalAnggota : 8 }}</div>
+      <div class="stat-label">Anggota Aktif</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">Operasional SOC</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">1.2K+</div>
+      <div class="stat-label">Ancaman Diblokir / Bln</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">&lt;4m</div>
+      <div class="stat-label">Rata-rata Waktu Respons</div>
+    </div>
+  </div>
+
+  <!-- CONTENT GRID -->
+  <div class="content-grid">
+    <!-- RESPONSIBILITIES -->
+    <div class="content-left">
+      <div class="section-label">TANGGUNG JAWAB &amp; PERAN</div>
+      <h2 class="section-title">Fokus Utama Divisi</h2>
+      <ul class="resp-list">
+        <li class="resp-item">
+          <span class="resp-num">01</span>
+          <span class="resp-text">
+            <strong>Penetration Testing &amp; Red Teaming</strong>
+            Simulasi serangan siber terkontrol terhadap sistem, jaringan, dan aplikasi web untuk mengidentifikasi celah keamanan sebelum dieksploitasi pihak luar.
+          </span>
+        </li>
+        <li class="resp-item">
+          <span class="resp-num">02</span>
+          <span class="resp-text">
+            <strong>Security Operations Center (SOC)</strong>
+            Pemantauan ancaman 24/7 melalui korelasi log SIEM, deteksi anomali perilaku sistem, dan koordinasi respons insiden cepat.
+          </span>
+        </li>
+        <li class="resp-item">
+          <span class="resp-num">03</span>
+          <span class="resp-text">
+            <strong>Threat Intelligence</strong>
+            Mengumpulkan, menganalisis, dan menyebarkan data intelijen ancaman siber terbaru untuk memperkuat postur pertahanan keamanan proaktif.
+          </span>
+        </li>
+        <li class="resp-item">
+          <span class="resp-num">04</span>
+          <span class="resp-text">
+            <strong>Manajemen Kerentanan (Vulnerability)</strong>
+            Identifikasi berkelanjutan, penilaian risiko berbasis konteks (CVE/CVSS), dan audit patching keamanan berkala.
+          </span>
+        </li>
+        <li class="resp-item">
+          <span class="resp-num">05</span>
+          <span class="resp-text">
+            <strong>Forensik Digital &amp; Respons Insiden</strong>
+            Investigasi mendalam pasca-insiden, preservasi barang bukti digital, analisis root-cause, dan penyusunan laporan forensik komprehensif.
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- TOOLS & TECH STACK -->
+    <div class="content-right">
+      <div class="section-label">ALAT &amp; TEKNOLOGI</div>
+      <h2 class="section-title">Tech Stack Unggulan</h2>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-icon">PENTEST</div>
+          <div class="tool-name">Metasploit</div>
+          <div class="tool-desc">Framework penetrasi standar industri untuk audit eksploitasi celah keamanan dan pembuatan laporan mitigasi.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">SIEM</div>
+          <div class="tool-name">Wazuh / Splunk</div>
+          <div class="tool-desc">Platform SIEM enterprise untuk agregasi log, korelasi aturan deteksi ancaman, dan respons otomatis.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">REKOGNISI</div>
+          <div class="tool-name">Nmap / Shodan</div>
+          <div class="tool-desc">Pemetaan attack surface jaringan, pemindaian port terbuka, dan audit eksposur aset digital.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">FORENSIK</div>
+          <div class="tool-name">Autopsy / Volatility</div>
+          <div class="tool-desc">Perangkat forensik digital untuk analisis memory dump, artefak sistem, dan rekonstruksi insiden siber.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">MALWARE</div>
+          <div class="tool-name">Cuckoo Sandbox</div>
+          <div class="tool-desc">Lingkungan isolasi otomatis untuk detonasi sampel file mencurigakan dan ekstraksi Indicator of Compromise (IoC).</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">VULN SCAN</div>
+          <div class="tool-name">Nessus / OpenVAS</div>
+          <div class="tool-desc">Pemindai kerentanan dengan basis data CVE mutakhir untuk audit keamanan berkala dan mitigasi prioritas.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVE OPERATIONS -->
+  <section class="incident-section">
+    <div class="incident-header">
+      <div>
+        <div class="section-label">OPERASI AKTIF</div>
+        <h2 class="section-title">Aktivitas &amp; Riset Terkini</h2>
+      </div>
+      <div class="live-indicator">
+        <span class="blink-dot"></span>STATUS LIVE
+      </div>
+    </div>
+    <div class="incident-row">
+      <div class="incident-idx">01</div>
+      <div>
+        <div class="incident-name">Simulasi Red Teaming — Infrastruktur Internal</div>
+        <div class="incident-desc">Pengujian ketahanan pertahanan tim Blue Team melalui simulasi serangan siber terencana pada server internal laboratorium.</div>
+      </div>
+    </div>
+    <div class="incident-row">
+      <div class="incident-idx">02</div>
+      <div>
+        <div class="incident-name">Audit Patch Kerentanan — Web Application Stack</div>
+        <div class="incident-desc">Audit dan remediasi kerentanan kritis pada stack aplikasi web berdasarkan pembaruan buletin keamanan terbaru.</div>
+      </div>
+    </div>
+    <div class="incident-row">
+      <div class="incident-idx">03</div>
+      <div>
+        <div class="incident-name">Implementasi Arsitektur Zero-Trust — Tahap 2</div>
+        <div class="incident-desc">Penerapan kebijakan verifikasi identitas berlapis, micro-segmentation jaringan, dan prinsip hak akses minimal (least-privilege).</div>
+      </div>
+    </div>
+    <div class="incident-row">
+      <div class="incident-idx">04</div>
+      <div>
+        <div class="incident-name">Proactive Threat Hunting — Indikator Pergerakan Lateral</div>
+        <div class="incident-desc">Pencarian ancaman tersembunyi secara proaktif menggunakan analisis log perilaku untuk mendeteksi potensi penyusup di dalam jaringan.</div>
+      </div>
+    </div>
+  </section>
+
+
+
 </div>
-</section>
 
-<div class="red-line"></div>
-
-<!-- STATS -->
-<div class="stats">
-  <div class="stat-item">
-    <div class="stat-number">{{ $totalAnggota }}</div>
-    <div class="stat-label">Engineers</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number">24/7</div>
-    <div class="stat-label">SOC Operations</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number">1.2K</div>
-    <div class="stat-label">Threats Blocked / Mo</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number">&lt;4m</div>
-    <div class="stat-label">Mean Response Time</div>
-  </div>
-</div>
-
-<!-- CONTENT GRID -->
-<div class="content-grid">
-  <!-- RESPONSIBILITIES -->
-  <div class="content-left">
-    <div class="section-label">RESPONSIBILITIES</div>
-    <h2 class="section-title">What We Do</h2>
-    <ul class="resp-list">
-      <li class="resp-item">
-        <span class="resp-num">01</span>
-        <span class="resp-text">
-          <strong>Penetration Testing & Red Team</strong>
-          Simulating cyberattacks against systems, networks, and applications to identify security gaps before real attackers can exploit them.
-        </span>
-      </li>
-      <li class="resp-item">
-        <span class="resp-num">02</span>
-        <span class="resp-text">
-          <strong>Security Operations Center (SOC)</strong>
-          24/7 threat monitoring through SIEM, log analysis, anomaly detection, and coordinated real-time incident response.
-        </span>
-      </li>
-      <li class="resp-item">
-        <span class="resp-num">03</span>
-        <span class="resp-text">
-          <strong>Threat Intelligence</strong>
-          Collecting, analyzing, and distributing threat intelligence from multiple sources to proactively strengthen the organization's security posture.
-        </span>
-      </li>
-      <li class="resp-item">
-        <span class="resp-num">04</span>
-        <span class="resp-text">
-          <strong>Vulnerability Management</strong>
-          Continuous identification, assessment, and remediation of vulnerabilities using automated scanning and context-based risk prioritization.
-        </span>
-      </li>
-      <li class="resp-item">
-        <span class="resp-num">05</span>
-        <span class="resp-text">
-          <strong>Digital Forensics & Incident Response</strong>
-          In-depth post-incident investigation, digital evidence preservation, root cause analysis, and comprehensive forensic reporting.
-        </span>
-      </li>
-    </ul>
-  </div>
-
-  <!-- TOOLS -->
-  <div class="content-right">
-    <div class="section-label">TOOLS & TECH STACK</div>
-    <h2 class="section-title">Our Arsenal</h2>
-    <div class="tools-grid">
-      <div class="tool-card">
-        <div class="tool-icon">PENTEST</div>
-        <div class="tool-name">Metasploit</div>
-        <div class="tool-desc">Leading penetration testing framework for vulnerability exploitation, post-exploitation, and security reporting.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-icon">SIEM</div>
-        <div class="tool-name">Splunk / Wazuh</div>
-        <div class="tool-desc">Enterprise SIEM platform for log correlation, rule-based threat detection, and automated incident response.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-icon">RECON</div>
-        <div class="tool-name">Nmap / Shodan</div>
-        <div class="tool-desc">Reconnaissance and network scanning for attack surface mapping and identifying exposed assets.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-icon">FORENSIC</div>
-        <div class="tool-name">Autopsy / Volatility</div>
-        <div class="tool-desc">Digital forensics tools for in-depth post-incident disk, memory, and system artifact analysis.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-icon">MALWARE</div>
-        <div class="tool-name">Cuckoo Sandbox</div>
-        <div class="tool-desc">Automated malware analysis sandbox for detonating malicious samples and extracting indicators of compromise (IoC).</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-icon">VULN</div>
-        <div class="tool-name">Nessus / OpenVAS</div>
-        <div class="tool-desc">Comprehensive vulnerability scanner with up-to-date CVE database for continuous assessment and risk prioritization.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ACTIVE OPERATIONS -->
-<section class="incident-section">
-  <div class="incident-header">
-    <div>
-      <div class="section-label">ACTIVE OPERATIONS</div>
-      <h2 class="section-title">Current Engagements</h2>
-    </div>
-    <div style="display:flex;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);">
-      <span class="blink"></span>LIVE STATUS
-    </div>
-  </div>
-  <div class="incident-row">
-    <div class="incident-idx">01</div>
-    <div>
-      <div class="incident-name">Red Team Exercise — Internal Infrastructure</div>
-      <div class="incident-desc">Simulating an APT attack against internal infrastructure to test the blue team's detection and response resilience.</div>
-    </div>
-    
-  </div>
-  <div class="incident-row">
-    <div class="incident-idx">02</div>
-    <div>
-      <div class="incident-name">CVE Patch Audit — Web Application Stack</div>
-      <div class="incident-desc">Auditing and remediating critical vulnerabilities in the web application stack following the latest CISA and NVD advisory updates.</div>
-    </div>
-    
-  </div>
-  <div class="incident-row">
-    <div class="incident-idx">03</div>
-    <div>
-      <div class="incident-name">Zero-Trust Architecture — Phase 2 Rollout</div>
-      <div class="incident-desc">Continued rollout of zero-trust policies, including identity verification, micro-segmentation, and least-privilege enforcement.</div>
-    </div>
-    
-  </div>
-  <div class="incident-row">
-    <div class="incident-idx">04</div>
-    <div>
-      <div class="incident-name">Threat Hunt — Lateral Movement Indicators</div>
-      <div class="incident-desc">Hypothesis-driven proactive threat hunting to detect hidden lateral movement within internal network segments.</div>
-    </div>
-    
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-left">NEV — CYBERSECURITY DIVISION &nbsp;&bull;&nbsp; UPDATED MAY 2026</div>
-  <a href="/#divisions" class="back-link">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-    BACK TO DIVISIONS
-  </a>
-</footer>
+<!-- UNIVERSAL FOOTER -->
+@include('pages.footer.conten')
 
 </body>
 </html>

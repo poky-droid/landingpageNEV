@@ -16,15 +16,24 @@
     <div class="navbar-menu" id="navMenu">
         <ul class="navbar-nav">
             <li><a class="nav-link" href="/#home">Home</a></li>
-            <li><a class="nav-link" href="/news">News</a></li>
-            <li><a class="nav-link {{ request()->is('organization*') ? 'active' : '' }}" href="/organization">Organization</a></li>
-            <li><a class="nav-link" href="/#divisions">Divisions</a></li>
-            <li><a class="nav-link" href="/#conten-modul">Modules</a></li>
+            <li><a class="nav-link {{ request()->is('news*') ? 'active' : '' }}" href="/news">News</a></li>
+            <li><a class="nav-link {{ request()->is('modules*') || request()->is('modul*') ? 'active' : '' }}" href="/modules">Modules</a></li>
+            <li><a class="nav-link {{ request()->is('publications*') ? 'active' : '' }}" href="/publications">Publications</a></li>
         </ul>
+
+        <div class="nav-actions">
+            <a class="btn-join {{ request()->is('join*') || request()->is('oprec*') ? 'active-join' : '' }}" href="{{ url('/join') }}">Let's Join</a>
+        </div>
     </div>
 </nav>
 
 <style>
+body {
+    background: #040406 !important;
+    background-color: #040406 !important;
+    color: #fff !important;
+}
+
 /* ===== NAVBAR ===== */
 .navbar-custom {
     position: fixed;
@@ -120,7 +129,7 @@
 .custom-toggler:hover .bar { background: #FF0033; }
 
 /* ===== MOBILE ===== */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .custom-toggler { display: block; }
 
     .navbar-menu {
@@ -160,6 +169,41 @@
         width: 100%;
     }
     .nav-link::after { display: none; }
+    .nav-actions {
+        display: block;
+        padding: 16px 20px 0;
+    }
+    .btn-join {
+        display: block;
+        padding: 14px 16px;
+        text-align: center;
+    }
+}
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+.btn-join {
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    background: #E6002E;
+    border-radius: 999px;
+    box-shadow: 0 0 16px rgba(255, 0, 51, 0.45);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+.btn-join:hover {
+    color: #fff;
+    background: #FF0033;
+    box-shadow: 0 0 22px rgba(255, 0, 51, 0.7);
+}
+.btn-join.active-join {
+    background: #FF0033;
+    box-shadow: 0 0 24px rgba(255, 0, 51, 0.95);
+    outline: 2px solid rgba(255, 255, 255, 0.35);
+    outline-offset: 2px;
 }
 </style>
 

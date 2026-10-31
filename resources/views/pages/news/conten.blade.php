@@ -1,1628 +1,2657 @@
-<div class="news-wrap">
-    <!-- 1. CAROUSEL HEADER -->
-    <div class="carousel-header">
-        <div class="carousel-header-text">
-            <h2 class="carousel-title">Galeri & <span class="title-accent">Agenda Kegiatan</span></h2>
-            <p class="carousel-subtitle">
-                Geser ke samping untuk menjelajahi dokumentasi riset, studi banding, malam keakraban, dan kegiatan laboratorium.
-            </p>
+<!-- ==========================================================
+     NEV NEWS & COMMUNITY CSR DASHBOARD
+     100% Replication of Reference Layout in Dark Mode (NEV Theme)
+     Typography: Inter (Matches Web NEV)
+     ========================================================== -->
+
+<!-- ==========================================================
+     TOP BANNER: TICKER STRIP + PHOTO BANNER WITH "NEWS"
+     100% Full-Width Mentok Kanan Kiri & NEWS di Tengah
+     ========================================================== -->
+<header class="ref-banner-header">
+    <!-- Top Running Marquee Strip (Red with Left Blue Accent) -->
+    <div class="banner-top-strip">
+        <div class="strip-blue-accent"></div>
+        <div class="strip-red-marquee">
+            <div class="marquee-text-track">
+                <span>📢 NEV Activity Update: Jelajahi dokumentasi kegiatan terbaru mulai dari Studi Banding, Sharing Knowledge, hingga Expo Riset — 🚀 Terus aktif berkolaborasi dan berinovasi bersama Network Evolution Research Group — 💡 Advancing Knowledge, Building a Secure and Connected Future.&nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span>📢 NEV Activity Update: Jelajahi dokumentasi kegiatan terbaru mulai dari Studi Banding, Sharing Knowledge, hingga Expo Riset — 🚀 Terus aktif berkolaborasi dan berinovasi bersama Network Evolution Research Group — 💡 Advancing Knowledge, Building a Secure and Connected Future.&nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
         </div>
     </div>
 
-    <!-- 2. CATEGORY FILTER BAR (TABS DI BAWAH JUDUL) -->
-    <div class="news-category-bar">
-        <button type="button" class="category-pill active" data-filter="all">Semua Agenda</button>
-        <button type="button" class="category-pill" data-filter="studi-banding">Studi Banding</button>
-        <button type="button" class="category-pill" data-filter="makrab">Makrab & Gathering</button>
-        <button type="button" class="category-pill" data-filter="open-lab">Open Lab</button>
-        <button type="button" class="category-pill" data-filter="pengmas">Pengmas</button>
+    <!-- Photo Banner with Dark Overlay & Centered "NEWS" -->
+    <div class="banner-photo-wrap">
+        <img src="{{ asset('images/news/AYP09997.JPG') }}" alt="News Header Banner" class="banner-bg-img">
+        <div class="banner-dark-overlay"></div>
+
+        <div class="banner-news-title-box">
+            <h1 class="banner-news-text">NEWS</h1>
+        </div>
     </div>
+</header>
 
-    <!-- 3. HORIZONTAL CAROUSEL DENGAN TOMBOL NAVIGASI DI SISI KANAN & KIRI -->
-    <div class="carousel-outer-wrap">
-        <!-- TOMBOL GESER KIRI (SIDE FLOATING PREV) -->
-        <button type="button" class="carousel-float-btn prev" id="carouselPrevBtn" aria-label="Geser ke kiri">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        </button>
+<div class="ref-news-wrapper">
 
-        <div class="carousel-viewport" id="carouselViewport">
-            <div class="carousel-track" id="carouselTrack">
+    <!-- ==========================================================
+         MAIN CONTENT CONTAINER (100% REPLICATION OF REFERENCE)
+         ========================================================== -->
+    <main class="ref-main-content">
 
-            <!-- CARD 1: STUDI BANDING TELKOM UNIVERSITY -->
-            <article class="carousel-card" data-category="studi-banding">
-                <div class="card-media">
-                    <img src="{{ asset('images/news/studibanding-cover.jpg') }}" alt="Studi Banding Telkom University" loading="lazy">
-                    <span class="news-badge badge-red">STUDI BANDING</span>
-                    <div class="card-media-overlay"></div>
+        <!-- ======================================================
+             SECTION 1: NEWS (1 UNIFIED CARD - AGENDA RESMI NEV)
+             ====================================================== -->
+        <section class="news-unified-card">
+            <!-- LEFT: Hero Full-Bleed Image with 4-Photo Auto-Slider & Bottom Overlay Text -->
+            <article class="unified-hero-pane news-open-modal" 
+                     data-id="1"
+                     data-title="Recap of Studi Banding: Diskusi & Sharing Bersama Telkom University Bandung" 
+                     data-category="STUDI BANDING" 
+                     data-date="12 DES 2025" 
+                     data-img="{{ asset('images/news/studibanding-cover.jpg') }}" 
+                     data-content="[RECAP OF STUDI BANDING]&#10;&#10;Network Evolution berkesempatan melakukan studi banding bersama mahasiswa dari Telkom University dalam sesi diskusi dan sharing mengenai pengembangan Adaptive Network Laboratory & Mobile Communication Laboratory🚀&#10;&#10;Kegiatan ini menjadi momen berharga untuk saling bertukar wawasan, pengalaman, serta memperluas relasi dalam dunia teknologi dan jaringan. Semoga kolaborasi dan silaturahmi yang terjalin dapat membawa inovasi serta semangat baru untuk terus berkembang bersama 💡✨&#10;&#10;Terima kasih atas kunjungan dan sharing session yang luar biasa, NEVERS!&#10;Sampai jumpa di kesempatan berikutnya 🙌">
+                
+                <!-- 4-PHOTO AUTO SLIDER TRACK (UNCROPPED DENGAN AMBIENT BACKDROP) -->
+                <div class="hero-slider-track" id="heroPhotoSlider">
+                    <div class="hero-slide-item slide-active">
+                        <img src="{{ asset('images/news/studibanding-cover.jpg') }}" alt="" class="hero-backdrop-blur" aria-hidden="true">
+                        <img src="{{ asset('images/news/studibanding-cover.jpg') }}" alt="Studi Banding Telkom University Bandung" class="unified-hero-img">
+                    </div>
+                    <div class="hero-slide-item">
+                        <img src="{{ asset('images/news/studibanding-slide2.jpg') }}" alt="" class="hero-backdrop-blur" aria-hidden="true">
+                        <img src="{{ asset('images/news/studibanding-slide2.jpg') }}" alt="Studi Banding Sesi Diskusi 2" class="unified-hero-img">
+                    </div>
+                    <div class="hero-slide-item">
+                        <img src="{{ asset('images/news/studibanding-diskusi.jpg') }}" alt="" class="hero-backdrop-blur" aria-hidden="true">
+                        <img src="{{ asset('images/news/studibanding-diskusi.jpg') }}" alt="Studi Banding Diskusi Laboratorium" class="unified-hero-img">
+                    </div>
+                    <div class="hero-slide-item">
+                        <img src="{{ asset('images/news/studibanding-group.jpg') }}" alt="" class="hero-backdrop-blur" aria-hidden="true">
+                        <img src="{{ asset('images/news/studibanding-group.jpg') }}" alt="Studi Banding Foto Bersama Delegasi" class="unified-hero-img">
+                    </div>
                 </div>
-                <div class="card-body">
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                            12 Des 2025
-                        </span>
-                        <span class="meta-sep">•</span>
-                        <span class="meta-item">Telkom University</span>
+
+                <!-- SLIDER INDICATORS & COUNTER -->
+                <div class="hero-slider-controls">
+                    <div class="hero-slider-dots">
+                        <span class="slider-dot active" data-slide="0"></span>
+                        <span class="slider-dot" data-slide="1"></span>
+                        <span class="slider-dot" data-slide="2"></span>
+                        <span class="slider-dot" data-slide="3"></span>
                     </div>
-                    <h3 class="card-title">
-                        <a href="javascript:void(0)" class="open-modal-trigger" data-agenda="studi-banding">Recap of Studi Banding: Diskusi & Sharing Bersama Telkom University Bandung</a>
-                    </h3>
-                    <p class="card-excerpt">
-                        Network Evolution berkesempatan melakukan studi banding bersama mahasiswa dari Telkom University dalam sesi diskusi dan sharing mengenai pengembangan Adaptive Network Lab & Mobile Communication Lab.
+                    <span class="slider-counter" id="heroSliderCounter">1 / 4</span>
+                </div>
+
+                <div class="unified-hero-overlay"></div>
+
+                <div class="unified-hero-content">
+                    <div class="featured-tag-row">
+                        <span class="badge-pill badge-coral">STUDI BANDING</span>
+                        <span class="featured-date">12 DES 2025</span>
+                    </div>
+
+                    <h2 class="featured-title">Recap of Studi Banding: Diskusi &amp; Sharing Bersama Telkom University Bandung</h2>
+
+                    <p class="featured-desc">
+                        Network Evolution berkesempatan melakukan studi banding bersama mahasiswa dari Telkom University dalam sesi diskusi dan sharing mengenai pengembangan Adaptive Network Laboratory &amp; Mobile Communication Laboratory 🚀
                     </p>
-                    <div class="card-footer">
-                        <a href="javascript:void(0)" class="card-action-btn open-modal-trigger" data-agenda="studi-banding">
-                            <span>Baca Selengkapnya</span>
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                    </div>
+
+                    <a href="{{ url('/news/1') }}" class="read-more-link coral-link">Read More ...</a>
                 </div>
             </article>
 
-            <!-- CARD 2: MALAM KEAKRABAN (MAKRAB) -->
-            <article class="carousel-card" data-category="makrab">
-                <div class="card-media">
-                    <img src="{{ asset('images/news/makrab-cover.jpg') }}" alt="Malam Keakraban Network Evolution" loading="lazy">
-                    <span class="news-badge badge-red">MAKRAB</span>
-                    <div class="card-media-overlay"></div>
-                </div>
-                <div class="card-body">
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                            10–11 Jan 2026
-                        </span>
-                        <span class="meta-sep">•</span>
-                        <span class="meta-item">Internal NEV</span>
+            <!-- RIGHT: 6 News Rows Inside The Exact Same Card -->
+            <div class="unified-list-pane">
+                <!-- 1. STUDI BANDING UNSOED -->
+                <a href="{{ url('/news/7') }}" class="unified-row-item news-open-modal" 
+                   data-id="7"
+                   data-title="Studi Banding: UKM ITC FMIPA UNSOED x NEV Telkom Purwokerto" 
+                   data-category="STUDI BANDING" 
+                   data-date="03 MEI 2026" 
+                   data-img="{{ asset('images/news/stuban-1.jpg') }}" 
+                   data-content="Satu pertemuan, banyak pengalaman dan inspirasi. Melalui kegiatan studi banding ini, UKM ITC FMIPA UNSOED bersama NEV Telkom Purwokerto saling berbagi wawasan, pengalaman, serta inovasi dalam bidang teknologi dan organisasi.">
+                    <div class="stacked-thumb-wrap">
+                        <img src="{{ asset('images/news/stuban-1.jpg') }}" alt="Studi Banding UNSOED x NEV" class="stacked-thumb">
+                        <span class="stacked-badge tag-coral">STUDI BANDING</span>
                     </div>
-                    <h3 class="card-title">
-                        <a href="javascript:void(0)" class="open-modal-trigger" data-agenda="makrab">Recap of Malam Keakraban: Mempererat Solidaritas & Kekeluargaan</a>
-                    </h3>
-                    <p class="card-excerpt">
-                        Momen berharga untuk mempererat solidaritas, membangun komunikasi, dan memperkuat rasa kekeluargaan antar anggota melalui kebersamaan, canda tawa, dan teamwork yang kuat.
-                    </p>
-                    <div class="card-footer">
-                        <a href="javascript:void(0)" class="card-action-btn open-modal-trigger" data-agenda="makrab">
-                            <span>Baca Selengkapnya</span>
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
+                    <div class="stacked-content">
+                        <h3 class="stacked-title">Studi Banding: UKM ITC FMIPA UNSOED x NEV Telkom Purwokerto</h3>
+                        <span class="stacked-date">03 MEI 2026 • <span class="row-read-more">Detail &rarr;</span></span>
                     </div>
-                </div>
-            </article>
+                </a>
 
-            <!-- CARD 3: NEV OPEN LAB (DATA DUMMY / DATA KOSONG) -->
-            <article class="carousel-card is-dummy" data-category="open-lab">
-                <div class="card-media card-media-placeholder">
-                    <div class="placeholder-inner">
-                        <div class="placeholder-icon-wrap">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                <polyline points="21 15 16 10 5 21"></polyline>
-                            </svg>
+                <!-- 2. SHARING KNOWLEDGE -->
+                <a href="{{ url('/news/3') }}" class="unified-row-item news-open-modal" 
+                   data-id="3"
+                   data-title="Recap of Sharing Knowledge: Kolaborasi Bersama Adaptive Network Telkom University" 
+                   data-category="SHARING KNOWLEDGE" 
+                   data-date="13 DES 2025" 
+                   data-img="{{ asset('images/news/adaptive-1.jpg') }}" 
+                   data-content="Network Evolution kembali mengadakan kegiatan Sharing Knowledge sebagai wadah untuk berbagi wawasan, pengalaman, dan ilmu pengetahuan antar anggota 🚀">
+                    <div class="stacked-thumb-wrap">
+                        <img src="{{ asset('images/news/adaptive-1.jpg') }}" alt="Sharing Knowledge Adaptive Network" class="stacked-thumb">
+                        <span class="stacked-badge tag-green">SHARING</span>
+                    </div>
+                    <div class="stacked-content">
+                        <h3 class="stacked-title">Recap of Sharing Knowledge: Kolaborasi Bersama Adaptive Network Telkom University</h3>
+                        <span class="stacked-date">13 DES 2025 • <span class="row-read-more">Detail &rarr;</span></span>
+                    </div>
+                </a>
+
+                <!-- 3. MAKRAB -->
+                <a href="{{ url('/news/2') }}" class="unified-row-item news-open-modal" 
+                   data-id="2"
+                   data-title="Recap of Malam Keakraban: Mempererat Solidaritas & Rasa Kekeluargaan" 
+                   data-category="MAKRAB" 
+                   data-date="11 JAN 2026" 
+                   data-img="{{ asset('images/news/makrab-cover.jpg') }}" 
+                   data-content="Network Evolution kembali mengadakan malam keakraban sebagai momen untuk mempererat solidaritas, membangun komunikasi, serta memperkuat rasa kekeluargaan antar anggota 🤝🔥">
+                    <div class="stacked-thumb-wrap">
+                        <img src="{{ asset('images/news/makrab-cover.jpg') }}" alt="Recap of Malam Keakraban" class="stacked-thumb">
+                        <span class="stacked-badge tag-purple">MAKRAB</span>
+                    </div>
+                    <div class="stacked-content">
+                        <h3 class="stacked-title">Recap of Malam Keakraban: Mempererat Solidaritas & Rasa Kekeluargaan</h3>
+                        <span class="stacked-date">11 JAN 2026 • <span class="row-read-more">Detail &rarr;</span></span>
+                    </div>
+                </a>
+
+                <!-- 4. EXPO 2026 -->
+                <a href="{{ url('/news/4') }}" class="unified-row-item news-open-modal" 
+                   data-id="4"
+                   data-title="Recap of Mini Research Expo HMTT 2026: Inovasi & Pengembangan Jaringan" 
+                   data-category="EXPO 2026" 
+                   data-date="01 MAR 2026" 
+                   data-img="{{ asset('images/news/expo-cover.jpg') }}" 
+                   data-content="Network Evolution turut berpartisipasi dalam kegiatan Mini Research Expo HMTT 2026 sebagai wadah untuk memperkenalkan inovasi, riset, dan pengembangan di bidang teknologi serta jaringan 🌐✨">
+                    <div class="stacked-thumb-wrap">
+                        <img src="{{ asset('images/news/expo-cover.jpg') }}" alt="Mini Research Expo HMTT 2026" class="stacked-thumb">
+                        <span class="stacked-badge tag-green">EXPO 2026</span>
+                    </div>
+                    <div class="stacked-content">
+                        <h3 class="stacked-title">Recap of Mini Research Expo HMTT 2026: Inovasi & Pengembangan Jaringan</h3>
+                        <span class="stacked-date">01 MAR 2026 • <span class="row-read-more">Detail &rarr;</span></span>
+                    </div>
+                </a>
+
+                <!-- 5. PENGMAS LKS -->
+                <a href="{{ url('/news/5') }}" class="unified-row-item news-open-modal" 
+                   data-id="5"
+                   data-title="Recap of Pengabdian Masyarakat: Lomba Kompetensi Siswa (LKS) SMK 2026" 
+                   data-category="PENGMAS" 
+                   data-date="15 FEB 2026" 
+                   data-img="{{ asset('images/news/lks-1.jpg') }}" 
+                   data-content="Network Evolution turut berpartisipasi dalam kegiatan Pengabdian Masyarakat pada ajang Lomba Kompetensi Siswa (LKS) SMK 2026 sebagai bentuk kontribusi dalam mendukung pengembangan kompetensi dan semangat belajar siswa di bidang teknologi jaringan 🌐🚀">
+                    <div class="stacked-thumb-wrap">
+                        <img src="{{ asset('images/news/lks-1.jpg') }}" alt="Pengmas LKS SMK 2026" class="stacked-thumb">
+                        <span class="stacked-badge tag-coral">PENGMAS</span>
+                    </div>
+                    <div class="stacked-content">
+                        <h3 class="stacked-title">Recap of Pengabdian Masyarakat: Lomba Kompetensi Siswa (LKS) SMK 2026</h3>
+                        <span class="stacked-date">15 FEB 2026 • <span class="row-read-more">Detail &rarr;</span></span>
+                    </div>
+                </a>
+
+                <!-- 6. BOOTCAMP MASTERING VPN -->
+                <a href="{{ url('/news/6') }}" class="unified-row-item news-open-modal" 
+                   data-id="6"
+                   data-title="Recap of Bootcamp: Mastering VPN — Building Your Own Gateway to the Internet" 
+                   data-category="BOOTCAMP" 
+                   data-date="28 FEB 2026" 
+                   data-img="{{ asset('images/news/bootcamp-1.jpg') }}" 
+                   data-content="Network Evolution telah sukses menyelenggarakan Bootcamp Mastering VPN: Building Your Own Gateway to the Internet, memperdalam pemahaman teknologi Virtual Private Network (VPN) serta konektivitas aman dan andal 🚀">
+                    <div class="stacked-thumb-wrap">
+                        <img src="{{ asset('images/news/bootcamp-1.jpg') }}" alt="Bootcamp Mastering VPN" class="stacked-thumb">
+                        <span class="stacked-badge tag-purple">BOOTCAMP</span>
+                    </div>
+                    <div class="stacked-content">
+                        <h3 class="stacked-title">Recap of Bootcamp: Mastering VPN — Building Your Own Gateway to the Internet</h3>
+                        <span class="stacked-date">28 FEB 2026 • <span class="row-read-more">Detail &rarr;</span></span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ======================================================
+             SECTION 2: AGENDA & JADWAL KEGIATAN LAB (PERSIS REFERENSI)
+             ====================================================== -->
+        <section class="agenda-exact-section">
+            <div class="agenda-exact-card">
+                
+                <!-- TOP HEADER BAR -->
+                <div class="agenda-exact-header">
+                    <div class="agenda-title-wrap">
+                        <span class="agenda-glow-dot"></span>
+                        <h2 class="agenda-main-title">AGENDA &amp; JADWAL KEGIATAN LAB</h2>
+                        <span class="agenda-pill-badge">NEV 2026</span>
+                    </div>
+
+                    <!-- Filter Tabs -->
+                    <div class="agenda-filter-tabs">
+                        <button type="button" class="agenda-tab-btn active" data-filter="all">Semua</button>
+                        <button type="button" class="agenda-tab-btn" data-filter="workshop">Workshop</button>
+                        <button type="button" class="agenda-tab-btn" data-filter="pelatihan">Pelatihan Lab</button>
+                        <button type="button" class="agenda-tab-btn" data-filter="event">Event Publik</button>
+                    </div>
+                </div>
+
+                <!-- 2 COLUMNS: CALENDAR + AGENDA LIST -->
+                <div class="agenda-exact-body">
+                    
+                    <!-- LEFT COLUMN: CALENDAR -->
+                    <div class="agenda-cal-box">
+                        <div class="agenda-cal-nav">
+                            <button type="button" class="cal-nav-btn" id="calPrevBtn" aria-label="Bulan Sebelumnya">«</button>
+                            <span class="cal-month-heading" id="calMonthDisplay">OKTOBER, 2026</span>
+                            <button type="button" class="cal-nav-btn" id="calNextBtn" aria-label="Bulan Berikutnya">»</button>
                         </div>
-                        <span class="placeholder-text">[ DOKUMENTASI KOSONG ]</span>
-                        <span class="placeholder-sub">Dokumentasi Belum Tersedia</span>
-                    </div>
-                    <span class="news-badge badge-placeholder">COMING SOON</span>
-                    <div class="card-media-overlay"></div>
-                </div>
-                <div class="card-body">
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            Jadwal Menyusul
-                        </span>
-                        <span class="meta-sep">•</span>
-                        <span class="meta-item">Data Dummy</span>
-                    </div>
-                    <h3 class="card-title">
-                        <a href="javascript:void(0)" class="open-modal-trigger" data-agenda="open-lab">[Data Dummy] NEV Open Lab: Live Showcase Riset & Eksplorasi Hardware</a>
-                    </h3>
-                    <p class="card-excerpt">
-                        Slot dummy agenda mendatang. Dokumentasi riset rack-server, routing enterprise lab, dan live cyber defense akan diperbarui setelah kegiatan terselenggara.
-                    </p>
-                    <div class="card-footer">
-                        <a href="javascript:void(0)" class="card-action-btn open-modal-trigger" data-agenda="open-lab">
-                            <span>Lihat Pratinjau</span>
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
 
-            <!-- CARD 4: PENGMAS (DATA DUMMY / DATA KOSONG) -->
-            <article class="carousel-card is-dummy" data-category="pengmas">
-                <div class="card-media card-media-placeholder">
-                    <div class="placeholder-inner">
-                        <div class="placeholder-icon-wrap">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                <polyline points="21 15 16 10 5 21"></polyline>
-                            </svg>
+                        <div class="cal-weekdays-row">
+                            <span>MIN</span><span>SEN</span><span>SEL</span><span>RAB</span><span>KAM</span><span>JUM</span><span>SAB</span>
                         </div>
-                        <span class="placeholder-text">[ DOKUMENTASI KOSONG ]</span>
-                        <span class="placeholder-sub">Dokumentasi Belum Tersedia</span>
-                    </div>
-                    <span class="news-badge badge-placeholder">COMING SOON</span>
-                    <div class="card-media-overlay"></div>
-                </div>
-                <div class="card-body">
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            Jadwal Menyusul
-                        </span>
-                        <span class="meta-sep">•</span>
-                        <span class="meta-item">Data Dummy</span>
-                    </div>
-                    <h3 class="card-title">
-                        <a href="javascript:void(0)" class="open-modal-trigger" data-agenda="pengmas">[Data Dummy] Pengabdian Masyarakat: Literasi Cyber Security & Jaringan</a>
-                    </h3>
-                    <p class="card-excerpt">
-                        Slot dummy agenda mendatang. Dokumentasi program literasi keamanan siber dan pembenahan jaringan sekolah akan diunggah setelah kegiatan berlangsung.
-                    </p>
-                    <div class="card-footer">
-                        <a href="javascript:void(0)" class="card-action-btn open-modal-trigger" data-agenda="pengmas">
-                            <span>Lihat Pratinjau</span>
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
 
+                        <div class="cal-grid-cells" id="calDatesGrid">
+                            <!-- Dynamic Calendar Cells via JS -->
+                        </div>
+
+                        <!-- Calendar Legend -->
+                        <div class="cal-legend-exact">
+                            <span class="legend-item"><span class="dot-color dot-green"></span> Workshop &amp; Expo</span>
+                            <span class="legend-item"><span class="dot-color dot-purple"></span> Pelatihan &amp; Makrab</span>
+                            <span class="legend-item"><span class="dot-color dot-coral"></span> Event / Studi Banding</span>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN: DAFTAR AGENDA KEGIATAN LAB -->
+                    <div class="agenda-list-box">
+                        <div class="agenda-list-topbar">
+                            <div class="list-heading-wrap">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                <span>DAFTAR AGENDA KEGIATAN LAB</span>
+                            </div>
+                            <span class="agenda-count-badge" id="agendaCountDisplay">9 Agenda</span>
+                        </div>
+
+                        <div class="agenda-items-container" id="agendaItemsContainer">
+                            
+                            <!-- ITEM 1: 29 OKT 2026 (OPREC NEV) -->
+                            <article class="agenda-row-card" data-category="event" data-day="29" data-month="9" data-year="2026">
+                                <div class="agenda-date-square">
+                                    <span class="agenda-day-big">29</span>
+                                    <span class="agenda-month-sub">OKT</span>
+                                </div>
+                                <div class="agenda-info-wrap">
+                                    <div class="agenda-tag-line">
+                                        <span class="badge-custom badge-event">OPREC NEV</span>
+                                        <span class="agenda-time-text">08.00 – Selesai</span>
+                                    </div>
+                                    <h4 class="agenda-row-title">Open Recruitment Calon Anggota Baru NEV 2026</h4>
+                                    <span class="agenda-loc-text">📍 Lab Network Evolution (NEV)</span>
+                                </div>
+                                <a href="{{ url('/news/8') }}" class="agenda-detail-btn" title="Buka Detail Agenda">Detail &rarr;</a>
+                            </article>
+
+                            <!-- ITEM 2: 24 OKT 2026 (OPEN LABORATORY) -->
+                            <article class="agenda-row-card" data-category="workshop" data-day="24" data-month="9" data-year="2026">
+                                <div class="agenda-date-square">
+                                    <span class="agenda-day-big">24</span>
+                                    <span class="agenda-month-sub">OKT</span>
+                                </div>
+                                <div class="agenda-info-wrap">
+                                    <div class="agenda-tag-line">
+                                        <span class="badge-custom badge-workshop">OPEN LABORATORY</span>
+                                        <span class="agenda-time-text">09.30 – 15.30 WIB</span>
+                                    </div>
+                                    <h4 class="agenda-row-title">Open Laboratory Network Evolution (NEV)</h4>
+                                    <span class="agenda-loc-text">📍 Lab NETSEC</span>
+                                </div>
+                                <a href="{{ url('/news/9') }}" class="agenda-detail-btn" title="Buka Detail Agenda">Detail &rarr;</a>
+                            </article>
+
+                            <!-- ITEM 3: 03 MEI 2026 (STUDI BANDING UNSOED) -->
+                            <article class="agenda-row-card" data-category="event" data-day="3" data-month="4" data-year="2026">
+                                <div class="agenda-date-square">
+                                    <span class="agenda-day-big">03</span>
+                                    <span class="agenda-month-sub">MEI</span>
+                                </div>
+                                <div class="agenda-info-wrap">
+                                    <div class="agenda-tag-line">
+                                        <span class="badge-custom badge-event">STUDI BANDING</span>
+                                        <span class="agenda-time-text">09.00 – 15.00 WIB</span>
+                                    </div>
+                                    <h4 class="agenda-row-title">Studi Banding: UKM ITC FMIPA UNSOED x NEV Telkom Purwokerto</h4>
+                                    <span class="agenda-loc-text">📍 Aula &amp; Lab Network Evolution Telkom Purwokerto</span>
+                                </div>
+                                <a href="{{ url('/news/7') }}" class="agenda-detail-btn" title="Buka Detail Agenda">Detail &rarr;</a>
+                            </article>
+
+                            <!-- ITEM 4: 01 MAR 2026 (MINI RESEARCH EXPO) -->
+                            <article class="agenda-row-card" data-category="workshop" data-day="1" data-month="2" data-year="2026">
+                                <div class="agenda-date-square">
+                                    <span class="agenda-day-big">01</span>
+                                    <span class="agenda-month-sub">MAR</span>
+                                </div>
+                                <div class="agenda-info-wrap">
+                                    <div class="agenda-tag-line">
+                                        <span class="badge-custom badge-workshop">RESEARCH EXPO</span>
+                                        <span class="agenda-time-text">08.30 – 16.00 WIB</span>
+                                    </div>
+                                    <h4 class="agenda-row-title">Mini Research Expo HMTT 2026: Inovasi &amp; Pengembangan Jaringan</h4>
+                                    <span class="agenda-loc-text">📍 Hall Utama Telkom University Purwokerto</span>
+                                </div>
+                                <a href="{{ url('/news/4') }}" class="agenda-detail-btn" title="Buka Detail Agenda">Detail &rarr;</a>
+                            </article>
+
+                            <!-- ITEM 5: 28 FEB 2026 (BOOTCAMP MASTERING VPN) -->
+                            <article class="agenda-row-card" data-category="pelatihan" data-day="28" data-month="1" data-year="2026">
+                                <div class="agenda-date-square">
+                                    <span class="agenda-day-big">28</span>
+                                    <span class="agenda-month-sub">FEB</span>
+                                </div>
+                                <div class="agenda-info-wrap">
+                                    <div class="agenda-tag-line">
+                                        <span class="badge-custom badge-pelatihan">BOOTCAMP</span>
+                                        <span class="agenda-time-text">09.00 – 16.00 WIB</span>
+                                    </div>
+                                    <h4 class="agenda-row-title">Bootcamp: Mastering VPN — Gateway to the Internet</h4>
+                                    <span class="agenda-loc-text">📍 Lab Komputer Network Evolution (NEV)</span>
+                                </div>
+                                <a href="{{ url('/news/6') }}" class="agenda-detail-btn" title="Buka Detail Agenda">Detail &rarr;</a>
+                            </article>
+
+                            <!-- ITEM 6: 15 FEB 2026 (PENGMAS LKS SMK) -->
+                            <article class="agenda-row-card" data-category="event" data-day="15" data-month="1" data-year="2026">
+                                <div class="agenda-date-square">
+                                    <span class="agenda-day-big">15</span>
+                                    <span class="agenda-month-sub">FEB</span>
+                                </div>
+                                <div class="agenda-info-wrap">
+                                    <div class="agenda-tag-line">
+                                        <span class="badge-custom badge-event">PENGMAS</span>
+                                        <span class="agenda-time-text">08.00 – Selesai</span>
+                                    </div>
+                                    <h4 class="agenda-row-title">Pengabdian Masyarakat: Lomba Kompetensi Siswa (LKS) SMK 2026</h4>
+                                    <span class="agenda-loc-text">📍 SMK Mitra Binaan &amp; Lab Jaringan Banyumas</span>
+                                </div>
+                                <a href="{{ url('/news/5') }}" class="agenda-detail-btn" title="Buka Detail Agenda">Detail &rarr;</a>
+                            </article>
+
+                            <!-- ITEM 7: 11 JAN 2026 (MALAM KEAKRABAN) -->
+                            <article class="agenda-row-card" data-category="pelatihan" data-day="11" data-month="0" data-year="2026">
+                                <div class="agenda-date-square">
+                                    <span class="agenda-day-big">11</span>
+                                    <span class="agenda-month-sub">JAN</span>
+                                </div>
+                                <div class="agenda-info-wrap">
+                                    <div class="agenda-tag-line">
+                                        <span class="badge-custom badge-pelatihan">MAKRAB</span>
+                                        <span class="agenda-time-text">16.00 – Selesai</span>
+                                    </div>
+                                    <h4 class="agenda-row-title">Malam Keakraban: Mempererat Solidaritas &amp; Rasa Kekeluargaan</h4>
+                                    <span class="agenda-loc-text">📍 Villa Baturraden, Purwokerto</span>
+                                </div>
+                                <a href="{{ url('/news/2') }}" class="agenda-detail-btn" title="Buka Detail Agenda">Detail &rarr;</a>
+                            </article>
+
+                            <!-- ITEM 8: 13 DES 2025 (SHARING KNOWLEDGE) -->
+                            <article class="agenda-row-card" data-category="workshop" data-day="13" data-month="11" data-year="2025">
+                                <div class="agenda-date-square">
+                                    <span class="agenda-day-big">13</span>
+                                    <span class="agenda-month-sub">DES</span>
+                                </div>
+                                <div class="agenda-info-wrap">
+                                    <div class="agenda-tag-line">
+                                        <span class="badge-custom badge-workshop">SHARING KNOWLEDGE</span>
+                                        <span class="agenda-time-text">09.00 – 12.00 WIB</span>
+                                    </div>
+                                    <h4 class="agenda-row-title">Sharing Knowledge: Bersama Adaptive Network Telkom University</h4>
+                                    <span class="agenda-loc-text">📍 Hybrid / Lab Network Evolution</span>
+                                </div>
+                                <a href="{{ url('/news/3') }}" class="agenda-detail-btn" title="Buka Detail Agenda">Detail &rarr;</a>
+                            </article>
+
+                            <!-- ITEM 9: 12 DES 2025 (STUDI BANDING TELKOM BANDUNG) -->
+                            <article class="agenda-row-card" data-category="event" data-day="12" data-month="11" data-year="2025">
+                                <div class="agenda-date-square">
+                                    <span class="agenda-day-big">12</span>
+                                    <span class="agenda-month-sub">DES</span>
+                                </div>
+                                <div class="agenda-info-wrap">
+                                    <div class="agenda-tag-line">
+                                        <span class="badge-custom badge-event">STUDI BANDING</span>
+                                        <span class="agenda-time-text">13.30 – 17.00 WIB</span>
+                                    </div>
+                                    <h4 class="agenda-row-title">Studi Banding: Diskusi &amp; Sharing Bersama Telkom University Bandung</h4>
+                                    <span class="agenda-loc-text">📍 Telkom University Bandung</span>
+                                </div>
+                                <a href="{{ url('/news/1') }}" class="agenda-detail-btn" title="Buka Detail Agenda">Detail &rarr;</a>
+                            </article>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+    <!-- ==========================================================
+         INTERACTIVE MODAL: DETAIL READING
+         ========================================================== -->
+    <div class="modal-backdrop-custom" id="newsArticleModal" style="display: none;">
+        <div class="modal-dialog-custom">
+            <div class="modal-header-custom">
+                <div class="modal-badge-group">
+                    <span class="modal-cat-badge" id="modalCategory">POPULAR</span>
+                    <span class="modal-date-text" id="modalDate">NOV 25, 2018</span>
+                </div>
+                <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Tutup">&times;</button>
+            </div>
+            <div class="modal-body-custom">
+                <img id="modalImage" src="" alt="News Image" class="modal-article-img" style="display: none;">
+                <h3 class="modal-article-title" id="modalTitle">Article Title</h3>
+                <div class="modal-article-content" id="modalContent"></div>
+                <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: flex-end;">
+                    <a id="modalDetailLink" href="{{ url('/news/1') }}" class="green-link" style="font-size: 0.82rem; font-weight: 700; text-decoration: none;">Buka Halaman Berita Selengkapnya &rarr;</a>
+                </div>
+            </div>
         </div>
     </div>
 
-        <!-- TOMBOL GESER KANAN (SIDE FLOATING NEXT) -->
-        <button type="button" class="carousel-float-btn next" id="carouselNextBtn" aria-label="Geser ke kanan">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </button>
-    </div>
-
-    <!-- 4. CAROUSEL PROGRESS BAR / TRACK INDICATOR -->
-    <div class="carousel-progress-wrap">
-        <div class="carousel-progress-bar">
-            <div class="carousel-progress-fill" id="carouselProgressFill"></div>
+    <!-- ==========================================================
+         INTERACTIVE MODAL: ADD EVENT
+         ========================================================== -->
+    <div class="modal-backdrop-custom" id="addEventModal" style="display: none;">
+        <div class="modal-dialog-custom" style="max-width: 520px;">
+            <div class="modal-header-custom">
+                <h4 style="margin: 0; font-size: 1.12rem; font-weight: 700; color: #fff;">+ Add New Event</h4>
+                <button type="button" class="modal-close-btn" id="addEventCloseBtn" aria-label="Tutup">&times;</button>
+            </div>
+            <form id="addEventForm" class="modal-body-custom">
+                <div class="form-group-custom">
+                    <label>Event Title</label>
+                    <input type="text" id="inputEventTitle" placeholder="e.g. Help the children" required class="input-custom">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div class="form-group-custom">
+                        <label>Date (e.g. 24)</label>
+                        <input type="text" id="inputEventDay" placeholder="24" required class="input-custom">
+                    </div>
+                    <div class="form-group-custom">
+                        <label>Month (e.g. SEP)</label>
+                        <input type="text" id="inputEventMonth" placeholder="SEP" required class="input-custom">
+                    </div>
+                </div>
+                <div class="form-group-custom">
+                    <label>Time &amp; Location</label>
+                    <input type="text" id="inputEventMeta" placeholder="9.00 AM - 1.00PM / Location : Jakarta" required class="input-custom">
+                </div>
+                <div class="form-group-custom">
+                    <label>Short Description</label>
+                    <textarea id="inputEventDesc" rows="3" placeholder="Deskripsi singkat kegiatan..." class="input-custom"></textarea>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+                    <button type="button" class="btn-cancel-custom" id="addEventCancelBtn">Batal</button>
+                    <button type="submit" class="btn-submit-custom">Simpan Event</button>
+                </div>
+            </form>
         </div>
     </div>
+
 </div>
 
-<!-- =========================================================
-     CYBER DETAIL MODAL (BACA SELENGKAPNYA / DETAIL KEGIATAN)
-     ========================================================= -->
-<div id="newsDetailModal" class="news-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="news-modal-backdrop" id="modalBackdrop"></div>
-    <div class="news-modal-dialog">
-        <!-- CLOSE BUTTON -->
-        <button type="button" class="news-modal-close" id="modalCloseBtn" aria-label="Tutup Detail">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
-
-        <!-- MODAL GALLERY SLIDER -->
-        <div class="modal-gallery" id="modalGallery">
-            <div class="modal-main-image-wrap">
-                <img id="modalMainImg" src="" alt="Dokumentasi Agenda" class="modal-main-img">
-                <div class="modal-placeholder-view" id="modalPlaceholderView" style="display: none;">
-                    <div class="placeholder-icon-wrap" style="width: 54px; height: 54px;">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                            <polyline points="21 15 16 10 5 21"></polyline>
-                        </svg>
-                    </div>
-                    <span class="placeholder-text" style="margin-top: 8px;">[ DOKUMENTASI KOSONG ]</span>
-                    <span class="placeholder-sub">Foto kegiatan belum tersedia • Akan diperbarui setelah agenda resmi</span>
-                </div>
-                <button type="button" class="modal-nav-btn prev" id="modalPrevBtn" aria-label="Foto Sebelumnya">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                </button>
-                <button type="button" class="modal-nav-btn next" id="modalNextBtn" aria-label="Foto Selanjutnya">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </button>
-                <div class="modal-counter-pill" id="modalCounter">1 / 1</div>
-            </div>
-            <!-- THUMBNAILS STRIP -->
-            <div class="modal-thumbnails" id="modalThumbnails"></div>
-        </div>
-
-        <!-- CYBER MODAL BODY -->
-        <div class="cyber-modal-body">
-            <div class="modal-header-meta">
-                <span id="modalBadge" class="news-badge badge-red"></span>
-                <span class="modal-date" id="modalDate"></span>
-            </div>
-
-            <h2 class="cyber-modal-title" id="modalTitle"></h2>
-
-            <div class="cyber-modal-text" id="modalContent"></div>
-
-            <div class="cyber-modal-tags" id="modalTags"></div>
-        </div>
-    </div>
-</div>
-
-<script>
-(function() {
-    // =========================================================
-    // PILIHAN 3: CYBER HORIZONTAL CAROUSEL ENGINE
-    // =========================================================
-    function initCyberCarousel() {
-        const track = document.getElementById('carouselTrack');
-        const prevBtn = document.getElementById('carouselPrevBtn');
-        const nextBtn = document.getElementById('carouselNextBtn');
-        const currentIdxEl = document.getElementById('carouselCurrentIndex');
-        const totalCountEl = document.getElementById('carouselTotalCount');
-        const progressFill = document.getElementById('carouselProgressFill');
-        const filterPills = document.querySelectorAll('.news-category-bar .category-pill');
-
-        if (!track) return;
-
-        const cards = Array.from(track.querySelectorAll('.carousel-card'));
-        let activeFilter = 'all';
-        let autoplayTimer = null;
-        const autoplayInterval = 3800; // 3.8s
-
-        function getVisibleCards() {
-            return cards.filter(function(card) {
-                return !card.classList.contains('is-hidden');
-            });
-        }
-
-        function updateProgress() {
-            const visible = getVisibleCards();
-            if (totalCountEl) totalCountEl.textContent = String(visible.length).padStart(2, '0');
-
-            const maxScroll = track.scrollWidth - track.clientWidth;
-            const progress = maxScroll > 0 ? (track.scrollLeft / maxScroll) : 0;
-            if (progressFill) progressFill.style.width = Math.min(100, Math.max(12, (progress * 100))) + '%';
-
-            if (visible.length > 0 && currentIdxEl) {
-                const cardWidth = visible[0].offsetWidth + 24;
-                const currentIdx = Math.min(visible.length, Math.floor((track.scrollLeft + cardWidth / 2) / cardWidth) + 1);
-                currentIdxEl.textContent = String(Math.max(1, currentIdx)).padStart(2, '0');
-            }
-        }
-
-        function scrollNext() {
-            const visible = getVisibleCards();
-            if (!visible.length) return;
-            const cardWidth = visible[0].offsetWidth + 24;
-            const maxScroll = track.scrollWidth - track.clientWidth;
-
-            if (track.scrollLeft >= maxScroll - 20) {
-                track.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                track.scrollBy({ left: cardWidth, behavior: 'smooth' });
-            }
-        }
-
-        function scrollPrev() {
-            const visible = getVisibleCards();
-            if (!visible.length) return;
-            const cardWidth = visible[0].offsetWidth + 24;
-            if (track.scrollLeft <= 20) {
-                track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
-            } else {
-                track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-            }
-        }
-
-        function startAutoplay() {
-            stopAutoplay();
-            autoplayTimer = setInterval(scrollNext, autoplayInterval);
-        }
-
-        function stopAutoplay() {
-            if (autoplayTimer) {
-                clearInterval(autoplayTimer);
-                autoplayTimer = null;
-            }
-        }
-
-        if (nextBtn) {
-            nextBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                scrollNext();
-                startAutoplay();
-            });
-        }
-
-        if (prevBtn) {
-            prevBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                scrollPrev();
-                startAutoplay();
-            });
-        }
-
-        track.addEventListener('scroll', updateProgress, { passive: true });
-        track.addEventListener('mouseenter', stopAutoplay);
-        track.addEventListener('mouseleave', startAutoplay);
-
-        // Drag to scroll (Mouse)
-        let isDown = false;
-        let startX = 0;
-        let scrollLeftPos = 0;
-
-        track.addEventListener('mousedown', function(e) {
-            isDown = true;
-            track.classList.add('grabbing');
-            startX = e.pageX - track.offsetLeft;
-            scrollLeftPos = track.scrollLeft;
-            stopAutoplay();
-        });
-
-        window.addEventListener('mouseup', function() {
-            if (isDown) {
-                isDown = false;
-                track.classList.remove('grabbing');
-                startAutoplay();
-            }
-        });
-
-        track.addEventListener('mousemove', function(e) {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - track.offsetLeft;
-            const walk = (x - startX) * 1.5;
-            track.scrollLeft = scrollLeftPos - walk;
-        });
-
-        // Touch support
-        track.addEventListener('touchstart', stopAutoplay, { passive: true });
-        track.addEventListener('touchend', startAutoplay, { passive: true });
-
-        // Category Filter
-        filterPills.forEach(function(pill) {
-            pill.addEventListener('click', function() {
-                filterPills.forEach(function(p) { p.classList.remove('active'); });
-                this.classList.add('active');
-                activeFilter = this.getAttribute('data-filter');
-
-                cards.forEach(function(card) {
-                    const cat = card.getAttribute('data-category');
-                    if (activeFilter === 'all' || cat === activeFilter) {
-                        card.classList.remove('is-hidden');
-                    } else {
-                        card.classList.add('is-hidden');
-                    }
-                });
-
-                track.scrollTo({ left: 0, behavior: 'smooth' });
-                setTimeout(updateProgress, 120);
-            });
-        });
-
-        updateProgress();
-        startAutoplay();
-    }
-
-    // =========================================================
-    // MODAL DETAIL AGENDA INTERACTION
-    // =========================================================
-    const newsAgendas = {
-        'studi-banding': {
-            badge: 'STUDI BANDING',
-            badgeClass: 'badge-red',
-            date: '12 Desember 2025 • Telkom University Bandung',
-            title: 'Recap of Studi Banding: Diskusi & Sharing Bersama Telkom University Bandung',
-            images: [
-                "{{ asset('images/news/studibanding-cover.jpg') }}",
-                "{{ asset('images/news/studibanding-slide2.jpg') }}",
-                "{{ asset('images/news/studibanding-diskusi.jpg') }}",
-                "{{ asset('images/news/studibanding-group.jpg') }}"
-            ],
-            paragraphs: [
-                "Halo, NEVERS! 👋✨",
-                "<strong>[RECAP OF STUDI BANDING]</strong> Network Evolution berkesempatan melakukan studi banding bersama mahasiswa dari Telkom University dalam sesi diskusi dan sharing mengenai pengembangan Adaptive Network Laboratory & Mobile Communication Laboratory 🚀",
-                "Kegiatan ini menjadi momen berharga untuk saling bertukar wawasan, pengalaman, serta memperluas relasi dalam dunia teknologi dan jaringan komputer. Diskusi hangat mencakup arsitektur server, manajemen laboratorium jaringan, riset bersama, hingga praktik terbaik pengelolaan sistem cloud lab.",
-                "Semoga kolaborasi dan silaturahmi yang terjalin dapat membawa inovasi serta semangat baru untuk terus berkembang bersama 💡✨",
-                "Terima kasih atas kunjungan dan sharing session yang luar biasa, NEVERS! Sampai jumpa di kesempatan berikutnya 🙌"
-            ],
-            tags: ['#NetworkEvolution', '#NEVERS', '#StudiBanding', '#AdaptiveNetwork', '#TelkomUniversity', '#NetworkEngineering', '#Kolaborasi', '#OraKonekOraKepenak']
-        },
-        'makrab': {
-            badge: 'MAKRAB',
-            badgeClass: 'badge-red',
-            date: '10–11 Januari 2026 • Internal NEV',
-            title: 'Recap of Malam Keakraban: Mempererat Solidaritas & Kekeluargaan',
-            images: [
-                "{{ asset('images/news/makrab-cover.jpg') }}",
-                "{{ asset('images/news/makrab-sate.jpg') }}",
-                "{{ asset('images/news/makrab-collage.jpg') }}",
-                "{{ asset('images/news/makrab-text.jpg') }}"
-            ],
-            paragraphs: [
-                "Halo, NEVERS! 👋✨",
-                "<strong>[RECAP OF MALAM KEAKRABAN]</strong> Network Evolution kembali mengadakan malam keakraban sebagai momen untuk mempererat solidaritas, membangun komunikasi, serta memperkuat rasa kekeluargaan antar anggota 🤝🔥",
-                "Melalui kebersamaan, canda tawa, dan berbagai aktivitas yang dilakukan bersama—mulai dari fun games, masak & makan bersama, hingga sharing santai seputar perjalanan divisi—diharapkan seluruh anggota dapat semakin kompak dalam bertumbuh, belajar, dan berkembang bersama di lingkungan Network Evolution 🚀",
-                "Karena di NEV, ini bukan hanya tentang konfigurasi jaringan, tapi juga tentang membangun hubungan dan teamwork yang kuat 💡",
-                "See you on the next journey, NEVERS! 🙌"
-            ],
-            tags: ['#NetworkEvolution', '#NEVERS', '#MalamKeakraban', '#TeamWork', '#Solidarity', '#AdaptiveNetwork', '#OraKonekOraKepenak']
-        },
-        'open-lab': {
-            badge: 'COMING SOON',
-            badgeClass: 'badge-placeholder',
-            date: 'Jadwal Menyusul • Research Showcase',
-            title: '[Data Dummy] NEV Open Lab: Live Showcase Riset & Eksplorasi Hardware',
-            isDummy: true,
-            images: [],
-            paragraphs: [
-                "Halo, NEVERS! 🌐",
-                "<strong>[DATA DUMMY / AGENDA MENDATANG]</strong> Ini adalah kartu placeholder untuk agenda Open Lab mendatang.",
-                "Dokumentasi lengkap, galeri foto demonstrasi rack-server laboratorium, simulasi routing enterprise, serta showcase pertahanan siber akan otomatis diperbarui di sini setelah kegiatan resmi terselenggara.",
-                "Nantikan jadwal dan informasi selengkapnya melalui kanal resmi media sosial Network Evolution! 🚀"
-            ],
-            tags: ['#ComingSoon', '#DataDummy', '#OpenLab', '#NetworkEvolution', '#AdaptiveNetwork']
-        },
-        'pengmas': {
-            badge: 'COMING SOON',
-            badgeClass: 'badge-placeholder',
-            date: 'Jadwal Menyusul • Sosialisasi & Edukasi',
-            title: '[Data Dummy] Pengabdian Masyarakat: Literasi Cyber Security & Jaringan Sekolah',
-            isDummy: true,
-            images: [],
-            paragraphs: [
-                "Halo, NEVERS! 🤝",
-                "<strong>[DATA DUMMY / AGENDA MENDATANG]</strong> Ini adalah kartu placeholder untuk agenda Pengabdian Masyarakat (Pengmas).",
-                "Dokumentasi kegiatan dan arsip publikasi sosialisasi literasi keamanan siber serta instalasi jaringan sekolah mitra akan diunggah setelah pelaksanaan kegiatan selesai.",
-                "Stay tuned untuk pembaruan agenda sosial NEV berikutnya! 🙌"
-            ],
-            tags: ['#ComingSoon', '#DataDummy', '#Pengmas', '#NetworkEvolution', '#SocialImpact']
-        }
-    };
-
-    function initNewsModal() {
-        const modal = document.getElementById('newsDetailModal');
-        const modalBackdrop = document.getElementById('modalBackdrop');
-        const modalCloseBtn = document.getElementById('modalCloseBtn');
-        const modalMainImg = document.getElementById('modalMainImg');
-        const modalPlaceholderView = document.getElementById('modalPlaceholderView');
-        const modalPrevBtn = document.getElementById('modalPrevBtn');
-        const modalNextBtn = document.getElementById('modalNextBtn');
-        const modalCounter = document.getElementById('modalCounter');
-        const modalThumbnails = document.getElementById('modalThumbnails');
-        const modalBadge = document.getElementById('modalBadge');
-        const modalDate = document.getElementById('modalDate');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalContent = document.getElementById('modalContent');
-        const modalTags = document.getElementById('modalTags');
-
-        if (!modal) return;
-
-        let currentAgenda = null;
-        let currentImgIdx = 0;
-
-        function updateModalImage(idx) {
-            if (!currentAgenda || !currentAgenda.images || !currentAgenda.images.length) return;
-            currentImgIdx = (idx + currentAgenda.images.length) % currentAgenda.images.length;
-            modalMainImg.src = currentAgenda.images[currentImgIdx];
-            modalCounter.textContent = (currentImgIdx + 1) + ' / ' + currentAgenda.images.length;
-
-            const thumbs = modalThumbnails.querySelectorAll('.modal-thumb-item');
-            thumbs.forEach(function(thumb, i) {
-                if (i === currentImgIdx) thumb.classList.add('active');
-                else thumb.classList.remove('active');
-            });
-        }
-
-        function openModal(agendaKey) {
-            const data = newsAgendas[agendaKey];
-            if (!data) return;
-            currentAgenda = data;
-            currentImgIdx = 0;
-
-            modalBadge.className = 'news-badge ' + data.badgeClass;
-            modalBadge.textContent = data.badge;
-            modalDate.textContent = data.date;
-            modalTitle.textContent = data.title;
-
-            modalContent.innerHTML = data.paragraphs.map(function(p) { return '<p>' + p + '</p>'; }).join('');
-
-            modalTags.innerHTML = data.tags.map(function(t) {
-                const isHighlight = t.indexOf('OraKonekOraKepenak') !== -1;
-                return '<span class="hashtag-pill' + (isHighlight ? ' highlight' : '') + '">' + t + '</span>';
-            }).join('');
-
-            // Tampilkan galeri foto untuk agenda nyata, atau placeholder untuk data dummy
-            if (data.isDummy || !data.images || data.images.length === 0) {
-                if (modalPlaceholderView) modalPlaceholderView.style.display = 'flex';
-                modalMainImg.style.display = 'none';
-                modalPrevBtn.style.display = 'none';
-                modalNextBtn.style.display = 'none';
-                modalCounter.style.display = 'none';
-                modalThumbnails.style.display = 'none';
-                modalThumbnails.innerHTML = '';
-            } else {
-                if (modalPlaceholderView) modalPlaceholderView.style.display = 'none';
-                modalMainImg.style.display = 'block';
-                modalMainImg.src = data.images[0];
-                modalCounter.textContent = '1 / ' + data.images.length;
-
-                if (data.images.length > 1) {
-                    modalPrevBtn.style.display = 'flex';
-                    modalNextBtn.style.display = 'flex';
-                    modalCounter.style.display = 'block';
-                    modalThumbnails.style.display = 'flex';
-
-                    modalThumbnails.innerHTML = data.images.map(function(img, i) {
-                        return '<button type="button" class="modal-thumb-item' + (i === 0 ? ' active' : '') + '" data-idx="' + i + '" aria-label="Pilih foto ' + (i+1) + '"><img src="' + img + '" alt="Thumbnail"></button>';
-                    }).join('');
-
-                    modalThumbnails.querySelectorAll('.modal-thumb-item').forEach(function(btn) {
-                        btn.addEventListener('click', function() {
-                            const idx = parseInt(this.getAttribute('data-idx'));
-                            updateModalImage(idx);
-                        });
-                    });
-                } else {
-                    modalPrevBtn.style.display = 'none';
-                    modalNextBtn.style.display = 'none';
-                    modalCounter.style.display = 'none';
-                    modalThumbnails.style.display = 'none';
-                    modalThumbnails.innerHTML = '';
-                }
-            }
-
-            modal.classList.add('active');
-            modal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            modal.classList.remove('active');
-            modal.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-        }
-
-        modalPrevBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            updateModalImage(currentImgIdx - 1);
-        });
-
-        modalNextBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            updateModalImage(currentImgIdx + 1);
-        });
-
-        modalCloseBtn.addEventListener('click', closeModal);
-        modalBackdrop.addEventListener('click', closeModal);
-
-        document.addEventListener('keydown', function(e) {
-            if (!modal.classList.contains('active')) return;
-            if (e.key === 'Escape') closeModal();
-            if (e.key === 'ArrowLeft') updateModalImage(currentImgIdx - 1);
-            if (e.key === 'ArrowRight') updateModalImage(currentImgIdx + 1);
-        });
-
-        document.querySelectorAll('.open-modal-trigger').forEach(function(trigger) {
-            trigger.addEventListener('click', function(e) {
-                e.preventDefault();
-                const key = this.getAttribute('data-agenda');
-                if (key) openModal(key);
-            });
-        });
-    }
-
-    function initPage() {
-        initCyberCarousel(); // Inisialisasi Carousel Horizontal Interaktif (Pilihan 3)
-        initNewsModal();     // Inisialisasi pop-up detail cyber
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initPage);
-    } else {
-        initPage();
-    }
-})();
-</script>
-
+<!-- ==========================================================
+     CSS STYLES: 100% MATCHING REFERENCE WITH DARK NEV THEME
+     & SOFT/FADED HOVER EFFECT (NO SUDDEN RED BORDERS)
+     ========================================================== -->
 <style>
-/* WRAPPER & CONTAINER */
-.news-wrap {
+/* CSS VARIABLES — MATCHING MODULES PALETTE & CONSISTENT TYPOGRAPHY */
+:root {
+    --n-bg-dark: #080808;
+    --n-card-bg: rgba(255, 255, 255, 0.05);
+    --n-card-inner: #050505;
+    --n-card-border: rgba(255, 255, 255, 0.08);
+    --n-text-white: #ffffff;
+    --n-text-muted: rgba(255, 255, 255, 0.65);
+    --n-text-dim: rgba(255, 255, 255, 0.45);
+    --n-red-brand: #FF0033;
+    --n-red-header: #99001b;
+    --n-purple-header: #4c1d95;
+    --n-navy-header: #1e3a8a;
+    --n-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Typographic Hierarchy (Konsisten & Proporsional) */
+    --font-heading-main: clamp(1.8rem, 3.2vw, 2.3rem);
+    --font-subbab: 1.15rem;
+    --font-subbab-card: 1.1rem;
+    --font-title-hero: clamp(1.2rem, 1.5vw, 1.35rem);
+    --font-title-card: 0.92rem;
+    --font-body: 0.85rem;
+    --font-meta: 0.78rem;
+    --font-badge: 0.68rem;
+}
+
+/* BASE WRAPPER (Lebar & Margin Persis Sama dengan Navbar: max-width 1180px) */
+.ref-news-wrapper {
+    width: 100%;
     max-width: 1180px;
-    width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
-    font-family: 'Inter', sans-serif;
-    color: #fff;
+    font-family: var(--n-font);
+    color: var(--n-text-white);
+    padding: 0 16px 50px;
     box-sizing: border-box;
 }
 
-/* =========================================================
-   PILIHAN 3: MODERN CYBER HORIZONTAL CAROUSEL
-   ========================================================= */
-
-/* 1. CAROUSEL HEADER */
-.carousel-header {
-    margin-bottom: 24px;
-}
-
-.carousel-header-text {
-    max-width: 720px;
-}
-
-.carousel-title {
-    font-size: clamp(1.7rem, 2.5vw, 2.2rem);
-    font-weight: 700;
-    color: #ffffff;
-    line-height: 1.2;
-    margin: 0 0 10px;
-    letter-spacing: -0.4px;
-}
-
-.carousel-title .title-accent {
-    color: #FF0033;
-    text-shadow: 0 0 24px rgba(255, 0, 51, 0.45);
-}
-
-.carousel-subtitle {
-    color: rgba(255, 255, 255, 0.62);
-    font-size: 0.92rem;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* 2. CATEGORY FILTER BAR (TABS DI BAWAH JUDUL) */
-.news-category-bar {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0 0 28px;
-    padding-bottom: 12px;
-    overflow-x: auto;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    scrollbar-width: none;
-}
-.news-category-bar::-webkit-scrollbar {
-    display: none;
-}
-
-.category-pill {
-    background: transparent;
+/* ============================================================
+   1. TOP BANNER HEADER (100% FULL WIDTH MENTOK KANAN KIRI)
+   ============================================================ */
+.ref-banner-header {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: -10px;
+    margin-bottom: 32px;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
     border: none;
-    color: rgba(255, 255, 255, 0.6);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 500;
-    padding: 8px 18px;
-    cursor: pointer;
-    border-radius: 999px;
-    white-space: nowrap;
-    transition: all 0.25s ease;
-    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: #000;
 }
 
-.category-pill:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.category-pill.active {
-    color: #fff;
-    font-weight: 700;
-    background: rgba(255, 0, 51, 0.14);
-    box-shadow: inset 0 0 0 1px rgba(255, 0, 51, 0.45);
-}
-
-/* BADGES */
-.news-badge {
-    display: inline-flex;
-    align-items: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    padding: 6px 14px;
-    border-radius: 999px;
-    text-transform: uppercase;
-    backdrop-filter: blur(8px);
-}
-
-.badge-red {
-    background: #FF0033;
-    color: #fff;
-    box-shadow: 0 0 16px rgba(255, 0, 51, 0.55);
-}
-
-.badge-blue {
-    background: rgba(0, 150, 255, 0.22);
-    color: #60b5ff;
-    border: 1px solid rgba(0, 150, 255, 0.4);
-}
-
-.badge-cyan {
-    background: rgba(0, 207, 255, 0.2);
-    color: #00e5ff;
-    border: 1px solid rgba(0, 207, 255, 0.4);
-}
-
-.badge-amber {
-    background: rgba(255, 170, 0, 0.2);
-    color: #ffbe33;
-    border: 1px solid rgba(255, 170, 0, 0.4);
-}
-
-.hashtag-pill {
-    font-size: 0.74rem;
-    color: #999;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 3px 10px;
-    border-radius: 999px;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-.hashtag-pill.highlight {
-    color: #FF0033;
-    border-color: rgba(255, 0, 51, 0.3);
-    background: rgba(255, 0, 51, 0.06);
-}
-
-/* 3. CAROUSEL OUTER WRAPPER & SIDE FLOATING BUTTONS (GESER KIRI & KANAN) */
-.carousel-outer-wrap {
-    position: relative;
+/* Top Strip (Blue Accent + Red Marquee) */
+.banner-top-strip {
+    display: flex;
+    height: 38px;
     width: 100%;
-}
-
-.carousel-float-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: rgba(12, 12, 18, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    z-index: 15;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 16px rgba(255, 0, 51, 0.25);
-    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.carousel-float-btn.prev {
-    left: -24px;
-}
-
-.carousel-float-btn.next {
-    right: -24px;
-}
-
-.carousel-float-btn:hover {
-    background: #FF0033;
-    border-color: #FF0033;
-    transform: translateY(-50%) scale(1.12);
-    box-shadow: 0 0 24px rgba(255, 0, 51, 0.9);
-}
-
-@media (max-width: 991px) {
-    .carousel-float-btn.prev {
-        left: -10px;
-    }
-    .carousel-float-btn.next {
-        right: -10px;
-    }
-}
-
-@media (max-width: 768px) {
-    .carousel-float-btn {
-        width: 40px;
-        height: 40px;
-    }
-    .carousel-float-btn.prev {
-        left: 2px;
-    }
-    .carousel-float-btn.next {
-        right: 2px;
-    }
-}
-
-.carousel-viewport {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    margin: 0 -4px;
-    padding: 4px;
-}
-
-.carousel-track {
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    padding: 12px 4px 28px;
-    scrollbar-width: none;
-    cursor: grab;
-}
-
-.carousel-track.grabbing {
-    cursor: grabbing;
-    scroll-behavior: auto;
-    scroll-snap-type: none;
-    user-select: none;
-}
-
-.carousel-track::-webkit-scrollbar {
-    display: none;
-}
-
-/* 4. GLASSMORPHISM CAROUSEL CARDS */
-.carousel-card {
-    flex: 0 0 350px;
-    max-width: 350px;
-    scroll-snap-align: start;
-    background: rgba(14, 14, 20, 0.72);
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    border-radius: 22px;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
-                border-color 0.35s ease,
-                box-shadow 0.35s ease,
-                opacity 0.3s ease;
-}
-
-.carousel-card.is-hidden {
-    display: none;
-}
-
-.carousel-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(255, 0, 51, 0.45);
-    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.75), 0 0 26px rgba(255, 0, 51, 0.18);
-}
-
-/* DUMMY / DATA KOSONG CARDS & PLACEHOLDER STYLES */
-.carousel-card.is-dummy {
-    border-style: dashed;
-    border-color: rgba(255, 255, 255, 0.14);
-}
-
-.carousel-card.is-dummy:hover {
-    border-style: solid;
-    border-color: rgba(255, 0, 51, 0.45);
-}
-
-.card-media-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #07070a 0%, #111118 100%);
+    background: #c62828;
     position: relative;
     overflow: hidden;
-}
-
-.card-media-placeholder::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-    background-size: 20px 20px;
-    pointer-events: none;
-}
-
-.placeholder-inner {
-    position: relative;
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 0 16px;
-    gap: 6px;
 }
 
-.placeholder-icon-wrap {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.45);
-    margin-bottom: 2px;
-}
-
-.placeholder-text {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.65);
-}
-
-.placeholder-sub {
-    font-size: 0.72rem;
-    color: rgba(255, 255, 255, 0.38);
-}
-
-.badge-placeholder {
-    background: rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.75);
-    border: 1px dashed rgba(255, 255, 255, 0.25);
-}
-
-/* MODAL PLACEHOLDER VIEW */
-.modal-placeholder-view {
-    width: 100%;
+.strip-blue-accent {
+    width: 44px;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #07070b 0%, #101018 100%);
-    position: relative;
-    text-align: center;
-    padding: 24px;
-    box-sizing: border-box;
-    gap: 8px;
-}
-
-.modal-placeholder-view::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-    background-size: 24px 24px;
-    pointer-events: none;
-}
-
-.card-media {
-    position: relative;
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    background: #08080a;
-}
-
-.card-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.carousel-card:hover .card-media img {
-    transform: scale(1.06);
-}
-
-.card-media .news-badge {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    z-index: 5;
-    font-size: 0.65rem;
-    padding: 5px 12px;
-}
-
-.card-media-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 50%, rgba(14, 14, 20, 0.8) 100%);
-    pointer-events: none;
+    background: #1d4ed8;
+    clip-path: polygon(0 0, 100% 0, 52% 100%, 0% 100%);
+    flex-shrink: 0;
     z-index: 2;
 }
 
-.carousel-card .card-body,
-.card-body {
-    background: transparent !important;
-    border: none !important;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
+.strip-red-marquee {
     flex: 1;
-}
-
-.card-meta {
+    overflow: hidden;
+    white-space: nowrap;
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
-    font-size: 0.78rem;
-    color: rgba(255, 255, 255, 0.55);
-    font-family: 'JetBrains Mono', monospace;
+    background: linear-gradient(90deg, #d32f2f 0%, #b71c1c 100%);
+    padding: 0 12px;
 }
 
-.card-meta .meta-item {
-    display: inline-flex;
+.marquee-text-track {
+    display: inline-block;
+    color: #ffffff;
+    font-size: var(--font-body, 0.85rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    animation: bannerMarqueeScroll 32s linear infinite;
+}
+.marquee-text-track:hover {
+    animation-play-state: paused;
+}
+@keyframes bannerMarqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Photo Banner with Dark Overlay & Centered "NEWS" */
+.banner-photo-wrap {
+    position: relative;
+    width: 100%;
+    height: clamp(230px, 26vw, 300px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.banner-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.75);
+    transform: scale(1.02);
+}
+
+.banner-dark-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(4, 4, 6, 0.2) 0%, rgba(4, 4, 6, 0.75) 100%);
+    pointer-events: none;
+}
+
+/* Centered NEWS Title (Ditempatkan di bagian atas agar pas di atas card overlap) */
+.banner-news-title-box {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.banner-news-text {
+    font-size: var(--font-heading-main, clamp(1.8rem, 3.2vw, 2.3rem));
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 35px rgba(0, 0, 0, 0.85);
+}
+
+
+/* ============================================================
+   2. MAIN CONTENT LAYOUT
+   ============================================================ */
+.ref-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+/* ============================================================
+   HOVER BEHAVIOR SPECIFICATION (AS REQUESTED):
+   "hovernya jangan selalu tbtb ada border merah, kasih yang misal 
+   pas kursornya diarahin ke card nanti jadinya warnanya lebih pudar 
+   atau gimana gitu."
+   Smooth background transition to softer/faded tint, gentle brightness,
+   no abrupt red borders!
+   ============================================================ */
+.news-unified-card,
+.panel-card,
+.event-item,
+.bottom-card,
+.upcoming-accordion-item {
+    transition: background-color 0.28s ease, 
+                opacity 0.28s ease, 
+                transform 0.28s ease, 
+                box-shadow 0.28s ease, 
+                border-color 0.28s ease;
+}
+
+/* ============================================================
+   SECTION 1: UNIFIED NEWS SHOWCASE CARD (100% PERSIS REFERENSI)
+   1 Card Tunggal: Hero Full-Bleed Kiri & 5 Baris List di Kanan
+   ============================================================ */
+.news-unified-card {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    width: 100%;
+    margin-top: -150px;
+    margin-bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    box-shadow: 
+        0 24px 50px rgba(0, 0, 0, 0.85),
+        0 10px 20px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.news-unified-card:hover {
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.95),
+        0 14px 28px rgba(0, 0, 0, 0.7),
+        0 0 40px rgba(255, 0, 51, 0.1);
+}
+
+/* Left Hero: Full bleed image with bottom overlay text */
+.unified-hero-pane {
+    position: relative;
+    min-height: 440px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    cursor: pointer;
+    background: #000;
+}
+
+/* 4-PHOTO AUTO SLIDER ENGINE (UNCROPPED) */
+.hero-slider-track {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-slide-item {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.85s ease-in-out, visibility 0.85s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-slide-item.slide-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hero-backdrop-blur {
+    display: none;
+}
+
+.hero-slide-item .unified-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    z-index: 1;
+    transition: transform 0.6s ease;
+}
+
+.unified-hero-pane:hover .hero-slide-item.slide-active .unified-hero-img {
+    transform: scale(1.03);
+}
+
+.hero-slider-controls {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 5;
+    background: rgba(4, 4, 6, 0.65);
+    padding: 5px 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hero-slider-dots {
+    display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.card-meta .meta-sep {
-    color: rgba(255, 255, 255, 0.25);
+.slider-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.28s ease;
 }
 
-.card-title {
-    font-size: 1.08rem;
+.slider-dot.active {
+    width: 18px;
+    border-radius: 8px;
+    background: var(--n-red-brand, #FF0033);
+}
+
+.slider-counter {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.04em;
+}
+
+.unified-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.38) 45%, rgba(8, 8, 8, 0.92) 82%, #080808 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.unified-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 22px 24px 18px;
+}
+
+.featured-tag-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.badge-pill.badge-green {
+    background: #16a34a;
+    color: #ffffff;
+    font-size: var(--font-badge, 0.68rem);
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.badge-pill.badge-coral {
+    background: #f43f5e;
+    color: #ffffff;
+    font-size: var(--font-badge, 0.68rem);
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.coral-link {
+    color: #fb7185;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s ease;
+}
+.coral-link:hover {
+    text-decoration: underline;
+    opacity: 0.85;
+}
+
+.featured-date {
+    font-size: var(--font-meta, 0.78rem);
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.featured-title {
+    font-size: var(--font-title-hero, clamp(1.2rem, 1.5vw, 1.35rem));
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 0 8px;
+    color: #ffffff;
+}
+
+.featured-desc {
+    font-size: var(--font-body, 0.85rem);
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0 0 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.green-link {
+    color: #22c55e;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s ease;
+}
+.green-link:hover {
+    text-decoration: underline;
+    opacity: 0.85;
+}
+
+/* Right Pane: Max 5 rows visible, scrollable if > 5 items */
+.unified-list-pane {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    height: 440px;
+    max-height: 440px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 4px;
+}
+
+/* Custom Scrollbar persis seperti Section Agenda (Image Referensi User) */
+.unified-list-pane::-webkit-scrollbar {
+    width: 6px;
+}
+
+.unified-list-pane::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+    margin: 8px 0;
+}
+
+.unified-list-pane::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.35);
+    border-radius: 4px;
+}
+
+.unified-list-pane::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 189, 248, 0.7);
+}
+
+/* Firefox Fallback */
+@supports not selector(::-webkit-scrollbar) {
+    .unified-list-pane {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(56, 189, 248, 0.4) rgba(255, 255, 255, 0.04);
+    }
+}
+
+.unified-row-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    height: 88px;
+    min-height: 88px;
+    max-height: 88px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.25s ease;
+}
+
+.unified-row-item:last-child {
+    border-bottom: none;
+}
+
+/* Faded hover on each row (No Red Border!) */
+.unified-row-item:hover {
+    background: rgba(255, 255, 255, 0.045);
+    color: inherit;
+}
+
+.unified-row-item:hover .stacked-title {
+    color: #ff0033;
+}
+
+.unified-row-item:hover .row-read-more {
+    color: #ff0033;
+    padding-left: 2px;
+}
+
+.stacked-thumb-wrap {
+    position: relative;
+    width: 68px;
+    height: 68px;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.stacked-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stacked-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 0.50rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 2.5px 2px 2px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tag-magenta,
+.tag-blue,
+.tag-teal,
+.tag-green,
+.tag-purple,
+.tag-coral,
+.tag-orange,
+.tag-amber {
+    background: rgba(15, 17, 23, 0.88);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: #e2e8f0;
+}
+.stacked-row-card:hover .stacked-badge {
+    color: #ff3355;
+    border-top-color: rgba(255, 0, 51, 0.4);
+}
+
+.stacked-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.stacked-title {
+    font-size: var(--font-title-card, 0.92rem);
     font-weight: 700;
     line-height: 1.4;
-    margin: 0 0 12px;
-}
-
-.card-title a {
+    margin: 0 0 4px;
     color: #ffffff;
-    text-decoration: none;
-    transition: color 0.25s;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-.card-title a:hover {
-    color: #FF0033;
-}
-
-.card-excerpt {
-    color: rgba(255, 255, 255, 0.62);
-    font-size: 0.86rem;
-    line-height: 1.6;
-    margin: 0 0 20px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    flex: 1;
-}
-
-.carousel-card .card-footer,
-.card-footer {
-    background: transparent !important;
-    border: none !important;
-    margin-top: auto;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-.card-action-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #FF0033;
-    font-size: 0.86rem;
+.stacked-date {
+    font-size: var(--font-meta, 0.76rem);
     font-weight: 600;
+    color: var(--n-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.row-read-more {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.74rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.agenda-detail-btn {
+    margin-left: auto;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ff0033;
     text-decoration: none;
-    transition: all 0.25s ease;
+    padding: 5px 12px;
+    border-radius: 6px;
+    background: rgba(255, 0, 51, 0.08);
+    border: 1px solid rgba(255, 0, 51, 0.3);
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
 }
 
-.card-action-btn svg {
-    transition: transform 0.25s ease;
+.agenda-detail-btn:hover {
+    background: #ff0033;
+    color: #ffffff !important;
+    border-color: #ff0033;
+    box-shadow: 0 0 12px rgba(255, 0, 51, 0.5);
+    transform: translateY(-1px);
 }
 
-.card-action-btn:hover {
-    color: #ff335c;
+
+/* ============================================================
+   AGENDA & JADWAL KEGIATAN LAB (PERSIS REFERENSI USER)
+   ============================================================ */
+.agenda-exact-section {
+    width: 100%;
+    margin-top: 0;
 }
 
-.card-action-btn:hover svg {
-    transform: translateX(4px);
-}
-
-/* 5. CAROUSEL PROGRESS BAR */
-.carousel-progress-wrap {
-    margin-top: 16px;
-    display: flex;
-    justify-content: center;
-}
-
-.carousel-progress-bar {
-    width: 220px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 999px;
+.agenda-exact-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
     overflow: hidden;
-    position: relative;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
 }
 
-.carousel-progress-fill {
-    height: 100%;
-    width: 20%;
-    background: #FF0033;
-    border-radius: 999px;
-    box-shadow: 0 0 8px rgba(255, 0, 51, 0.8);
-    transition: width 0.2s ease;
-}
-
-
-/* =========================================================
-   CYBER DETAIL MODAL (POP-UP BACA SELENGKAPNYA)
-   ========================================================= */
-.news-modal-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px 16px;
-    box-sizing: border-box;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.news-modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.news-modal-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(4, 4, 7, 0.88);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-}
-
-.news-modal-dialog {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 820px;
-    max-height: 90vh;
-    background: #0c0c10;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 24px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 32px rgba(255, 0, 51, 0.18);
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
-    transform: scale(0.95) translateY(18px);
-    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.news-modal-overlay.active .news-modal-dialog {
-    transform: scale(1) translateY(0);
-}
-
-/* Custom scrollbar for modal */
-.news-modal-dialog::-webkit-scrollbar {
-    width: 6px;
-}
-.news-modal-dialog::-webkit-scrollbar-track {
-    background: #09090c;
-}
-.news-modal-dialog::-webkit-scrollbar-thumb {
-    background: rgba(255, 0, 51, 0.4);
-    border-radius: 999px;
-}
-.news-modal-dialog::-webkit-scrollbar-thumb:hover {
-    background: #FF0033;
-}
-
-/* CLOSE BUTTON */
-.news-modal-close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    z-index: 10;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    backdrop-filter: blur(8px);
-    transition: all 0.25s ease;
-}
-
-.news-modal-close:hover {
-    background: #FF0033;
-    border-color: #FF0033;
-    transform: rotate(90deg) scale(1.05);
-    box-shadow: 0 0 16px rgba(255, 0, 51, 0.8);
-}
-
-/* MODAL GALLERY */
-.modal-gallery {
-    position: relative;
-    width: 100%;
-    background: #050508;
+/* Header */
+.agenda-exact-header {
+    background: rgba(0, 0, 0, 0.4);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.modal-main-image-wrap {
-    position: relative;
-    width: 100%;
-    height: 420px;
-    overflow: hidden;
-    background: #060608;
+    padding: 16px 24px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
-.modal-main-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: opacity 0.25s ease;
+.agenda-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.modal-nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
+.agenda-glow-dot {
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    backdrop-filter: blur(8px);
-    transition: all 0.25s ease;
-    z-index: 5;
+    background: #22c55e;
+    box-shadow: 0 0 10px #22c55e;
+    flex-shrink: 0;
 }
 
-.modal-nav-btn.prev { left: 16px; }
-.modal-nav-btn.next { right: 16px; }
-
-.modal-nav-btn:hover {
-    background: #FF0033;
-    border-color: #FF0033;
-    transform: translateY(-50%) scale(1.08);
-    box-shadow: 0 0 16px rgba(255, 0, 51, 0.8);
+.agenda-main-title {
+    font-size: var(--font-subbab, 1.15rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 0.02em;
 }
 
-.modal-counter-pill {
-    position: absolute;
-    bottom: 14px;
-    right: 16px;
-    background: rgba(0, 0, 0, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.9);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
+.agenda-pill-badge {
+    background: rgba(30, 58, 138, 0.4);
+    border: 1px solid #1d4ed8;
+    color: #60a5fa;
+    border-radius: 20px;
+    font-size: 0.75rem;
     font-weight: 700;
     padding: 3px 10px;
-    border-radius: 999px;
-    backdrop-filter: blur(6px);
-    z-index: 5;
+    margin-left: 4px;
 }
 
-/* THUMBNAILS STRIP */
-.modal-thumbnails {
+/* Filter Tabs */
+.agenda-filter-tabs {
     display: flex;
-    gap: 10px;
-    padding: 12px 20px;
-    background: rgba(8, 8, 12, 0.85);
-    overflow-x: auto;
     align-items: center;
+    background: #050505;
+    padding: 3px;
+    border-radius: 8px;
+    border: 1px solid #1a1a1a;
+    gap: 4px;
 }
 
-.modal-thumb-item {
-    width: 58px;
-    height: 58px;
-    border-radius: 10px;
-    border: 2px solid transparent;
-    padding: 0;
+.agenda-tab-btn {
     background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: var(--font-meta, 0.78rem);
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 6px;
     cursor: pointer;
-    overflow: hidden;
-    flex-shrink: 0;
-    opacity: 0.55;
-    transition: all 0.25s ease;
+    transition: all 0.2s ease;
 }
 
-.modal-thumb-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+.agenda-tab-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
 }
 
-.modal-thumb-item:hover {
-    opacity: 0.85;
+.agenda-tab-btn.active,
+.agenda-tab-btn[data-filter="workshop"].active,
+.agenda-tab-btn[data-filter="pelatihan"].active,
+.agenda-tab-btn[data-filter="event"].active {
+    background: linear-gradient(135deg, #ff0033, #c40027) !important;
+    border: 1px solid #ff0033 !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    box-shadow: 0 2px 10px rgba(255, 0, 51, 0.35);
 }
 
-.modal-thumb-item.active {
-    opacity: 1;
-    border-color: #FF0033;
-    box-shadow: 0 0 12px rgba(255, 0, 51, 0.6);
-    transform: scale(1.04);
+/* 2-Columns Body */
+.agenda-exact-body {
+    display: grid;
+    grid-template-columns: 0.88fr 1.32fr;
+    gap: 26px;
+    padding: 24px;
 }
 
-/* =========================================================
-   CYBER MODAL BODY & TEXT ISOLATION
-   ========================================================= */
-.cyber-modal-body {
-    padding: 32px 34px 38px;
+@media (max-width: 992px) {
+    .agenda-exact-body {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 16px;
+    }
+}
+
+/* Left Calendar Box */
+.agenda-cal-box {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px 22px;
+}
+
+.agenda-cal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.cal-nav-btn {
+    background: transparent;
+    border: none;
+    color: #38bdf8;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0 6px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.cal-nav-btn:hover {
+    opacity: 0.8;
+    transform: scale(1.15);
+}
+
+.cal-month-heading {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #38bdf8;
+    letter-spacing: 0.04em;
+}
+
+.cal-weekdays-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: var(--font-meta, 0.75rem);
+    font-weight: 700;
+    color: #64748b;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 10px;
+}
+
+.cal-grid-cells {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 8px;
+    column-gap: 4px;
+    text-align: center;
+}
+
+.cal-day-cell {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: #94a3b8;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    width: 36px;
+    height: 36px;
+    margin: 0 auto;
+}
+
+.cal-day-cell:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.cal-day-cell.empty {
+    cursor: default;
     background: transparent !important;
 }
 
-.modal-header-meta {
+/* Selected state */
+.cal-day-cell.selected {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    font-weight: 800;
+    box-shadow: 0 0 14px rgba(37, 99, 235, 0.6);
+}
+
+/* Today indicator */
+.cal-day-cell.is-today {
+    border: 1.5px solid #38bdf8 !important;
+    color: #38bdf8;
+    font-weight: 800;
+}
+
+.cal-day-cell.is-today.selected {
+    background: #2563eb !important;
+    border-color: #38bdf8 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 16px rgba(37, 99, 235, 0.7);
+}
+
+/* Event marker dots */
+.cal-day-cell.has-dot::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+}
+
+.cal-day-cell.dot-workshop::after,
+.cal-day-cell.dot-pelatihan::after,
+.cal-day-cell.dot-event::after {
+    background: #ff0033;
+    box-shadow: 0 0 4px rgba(255, 0, 51, 0.5);
+}
+
+/* In selected cell, adjust dot position */
+.cal-day-cell.selected::after {
+    background: #ffffff !important;
+    box-shadow: 0 0 4px #ffffff !important;
+}
+
+/* Legend */
+.cal-legend-exact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: var(--font-meta, 0.75rem);
+    color: #94a3b8;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot-color {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #ff0033;
+    box-shadow: 0 0 6px rgba(255, 0, 51, 0.35);
+}
+
+/* Right Agenda List Box */
+.agenda-list-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.agenda-list-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.list-heading-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--font-subbab-card, 1.1rem);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+}
+
+.list-heading-wrap svg {
+    color: #94a3b8;
+}
+
+.agenda-count-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+    background: #050505;
+    padding: 3px 12px;
+    border-radius: 20px;
+    border: 1px solid #1a1a1a;
+}
+
+.agenda-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.agenda-items-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.agenda-items-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+}
+
+.agenda-items-container::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.3);
+    border-radius: 4px;
+}
+
+.agenda-items-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 189, 248, 0.6);
+}
+
+.agenda-row-card {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: all 0.22s ease;
+    cursor: pointer;
+}
+
+.agenda-row-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.16);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.agenda-row-card.card-highlight {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #2563eb;
+    box-shadow: 0 0 16px rgba(37, 99, 235, 0.35);
+}
+
+.agenda-date-square {
+    width: 52px;
+    height: 56px;
+    border-radius: 8px;
+    border: 1px solid #1a1a1a;
+    background: #050505;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.agenda-day-big {
+    font-size: 1.22rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.agenda-month-sub {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #38bdf8;
+    margin-top: 3px;
+    letter-spacing: 0.05em;
+}
+
+.agenda-info-wrap {
+    flex: 1;
+    min-width: 0;
+}
+
+.agenda-tag-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 3px;
+}
+
+/* Card Category Left Accent & Month Color (Warna Seragam Per Kategori) */
+.agenda-row-card[data-category="workshop"],
+.agenda-row-card[data-category="pelatihan"],
+.agenda-row-card[data-category="event"] {
+    border-left: 3.5px solid rgba(255, 255, 255, 0.15);
+}
+.agenda-row-card:hover {
+    border-left-color: #ff0033 !important;
+}
+.agenda-row-card .agenda-date-square {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+.agenda-row-card:hover .agenda-date-square {
+    border-color: rgba(255, 0, 51, 0.35);
+}
+.agenda-row-card .agenda-month-sub {
+    color: #94a3b8;
+}
+.agenda-row-card:hover .agenda-month-sub {
+    color: #ff3355;
+}
+
+.badge-custom {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: var(--font-badge, 0.68rem);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.badge-workshop,
+.badge-pelatihan,
+.badge-event {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #cbd5e1;
+    transition: all 0.2s ease;
+}
+
+.agenda-row-card:hover .badge-workshop,
+.agenda-row-card:hover .badge-pelatihan,
+.agenda-row-card:hover .badge-event {
+    border-color: rgba(255, 0, 51, 0.35);
+    color: #ff3355;
+    background: rgba(255, 0, 51, 0.08);
+}
+
+.agenda-time-text {
+    font-size: var(--font-meta, 0.78rem);
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.agenda-row-title {
+    font-size: var(--font-title-card, 0.92rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin: 3px 0 4px;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+}
+
+.agenda-loc-text {
+    font-size: var(--font-meta, 0.78rem);
+    color: #94a3b8;
+    font-weight: 500;
+    display: block;
+}
+
+
+/* ============================================================
+   SECTION 3: BOTTOM ROW (TESTIMONIAL + SUCCESS + LESSONS)
+   ============================================================ */
+.ref-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+}
+
+.bottom-card {
+    background: var(--n-card-bg);
+    border: 1px solid var(--n-card-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+}
+/* Faded / Softer Tint on Hover (No Red Border!) */
+.bottom-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    opacity: 0.94;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+/* Card 1: Testimonial */
+.testimonial-card {
+    padding: 20px;
+    justify-content: space-between;
+}
+.testimonial-text {
+    font-size: var(--font-body, 0.85rem);
+    line-height: 1.6;
+    color: var(--n-text-muted);
+    font-style: italic;
+    margin: 0 0 18px;
+}
+.testimonial-author {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-}
-
-.modal-date {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.85rem;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-.cyber-modal-title {
-    font-size: clamp(1.35rem, 2vw, 1.75rem);
-    font-weight: 700;
-    line-height: 1.35;
-    color: #ffffff !important;
-    margin: 0 0 20px;
-    letter-spacing: -0.3px;
-    background: transparent !important;
-}
-
-/* FIX: ISOLASI PENUH DARI BOOTSTRAP MODAL-CONTENT */
-.cyber-modal-text {
-    background: transparent !important;
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    color: rgba(255, 255, 255, 0.88) !important;
-    font-size: 0.96rem;
-    line-height: 1.8;
-    margin-bottom: 26px;
-}
-
-.cyber-modal-text p {
-    margin: 0 0 16px;
-    color: rgba(255, 255, 255, 0.86) !important;
-    background: transparent !important;
-    line-height: 1.8;
-}
-
-.cyber-modal-text p:last-child {
-    margin-bottom: 0;
-}
-
-.cyber-modal-text strong {
-    color: #ffffff !important;
-    font-weight: 700;
-}
-
-.cyber-modal-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 14px;
+}
+.author-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+}
+.author-info {
+    min-width: 0;
+}
+.author-name {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 2px;
+}
+.author-role {
+    font-size: var(--font-meta, 0.76rem);
+    color: var(--n-text-muted);
+    margin: 0;
 }
 
-/* =========================================================
-   RESPONSIVE MOBILE & TABLET (SENADA DENGAN HOMEPAGE)
-   ========================================================= */
+/* Card 2: Success Stories */
+.success-stories-card {
+    padding: 16px 20px 20px;
+}
+.success-title {
+    font-size: var(--font-subbab-card, 1.1rem);
+    font-weight: 800;
+    color: #38bdf8;
+    margin: 0 0 14px;
+    letter-spacing: 0.02em;
+}
+.success-banner {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 160px;
+    background: #000;
+}
+.success-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.success-stories-card:hover .success-img {
+    transform: scale(1.03);
+}
+.success-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.85) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
+}
+.success-caption {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Card 3: Lessons Learned */
+.red-header {
+    background: linear-gradient(90deg, #99001b 0%, #b82331 100%);
+    padding: 10px 16px;
+}
+.lessons-title {
+    font-size: var(--font-subbab-card, 1.1rem);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+}
+.lessons-body {
+    padding: 16px;
+    flex: 1;
+}
+.lessons-desc {
+    font-size: var(--font-body, 0.85rem);
+    line-height: 1.55;
+    color: #ffffff;
+    margin: 0 0 8px;
+    font-weight: 600;
+}
+.lessons-subdesc {
+    font-size: var(--font-meta, 0.78rem);
+    line-height: 1.45;
+    color: var(--n-text-muted);
+    margin: 0 0 6px;
+}
+.view-more-link {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #38bdf8;
+    text-decoration: none;
+    margin: 10px 0 14px;
+}
+.view-more-link:hover {
+    text-decoration: underline;
+}
+.lessons-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 12px;
+}
+.messages-footer-bar {
+    background: rgba(0, 0, 0, 0.45);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 16px;
+    text-align: center;
+}
+.messages-text {
+    font-size: var(--font-body, 0.85rem);
+    font-weight: 800;
+    color: #38bdf8;
+    letter-spacing: 0.03em;
+}
+
+
+/* ============================================================
+   MODALS (READ MORE & ADD EVENT)
+   ============================================================ */
+.modal-backdrop-custom {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.modal-dialog-custom {
+    background: #080808;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    animation: modalPop 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes modalPop {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-header-custom {
+    padding: 14px 20px;
+    background: #050505;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.modal-badge-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.modal-cat-badge {
+    background: #16a34a;
+    color: #ffffff;
+    font-size: var(--font-badge, 0.68rem);
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 4px;
+}
+.modal-date-text {
+    font-size: var(--font-meta, 0.78rem);
+    color: var(--n-text-muted);
+}
+.modal-close-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+
+.modal-body-custom {
+    padding: 20px;
+    max-height: 75vh;
+    overflow-y: auto;
+}
+.modal-article-img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+.modal-article-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 0 12px;
+    color: #ffffff;
+}
+.modal-article-content {
+    font-size: var(--font-body, 0.85rem);
+    line-height: 1.65;
+    color: var(--n-text-muted);
+}
+
+/* Forms */
+.form-group-custom {
+    margin-bottom: 14px;
+}
+.form-group-custom label {
+    display: block;
+    font-size: var(--font-meta, 0.78rem);
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #ffffff;
+}
+.input-custom {
+    width: 100%;
+    background: #050505;
+    border: 1px solid #1a1a1a;
+    border-radius: 6px;
+    padding: 9px 12px;
+    color: #ffffff;
+    font-size: var(--font-body, 0.85rem);
+    box-sizing: border-box;
+}
+.input-custom:focus {
+    outline: none;
+    border-color: #38bdf8;
+}
+.btn-cancel-custom {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.82rem;
+}
+.btn-submit-custom {
+    background: #4c1d95;
+    border: none;
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES (MOBILE & TABLET OPTIMIZATION)
+   - Width: 720px max-width on mobile/tablet (Persis seperti Beranda)
+   - Proportional typography & touch-friendly tap targets
+   ============================================================ */
+@media (max-width: 992px) {
+    .news-unified-card {
+        grid-template-columns: 1fr;
+        margin-top: -110px;
+    }
+
+    .ref-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-news-text {
+        font-size: 1.9rem;
+    }
+
+    .unified-hero-pane {
+        min-height: 360px;
+    }
+
+    .unified-list-pane {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        height: auto;
+        max-height: 440px;
+        overflow-y: scroll;
+        padding-right: 4px;
+    }
+}
+
+/* TABLET & MOBILE BREAKPOINT (768px — Identik dengan Menu Beranda) */
 @media (max-width: 768px) {
-    .news-wrap {
-        padding: 0 16px;
+    .ref-news-wrapper {
+        max-width: 720px; /* Lebar maksimal 720px seragam dengan section Beranda */
+        padding: 0 12px 40px;
     }
 
-    .carousel-header {
-        margin-bottom: 20px;
+    .ref-main-content {
+        gap: 20px;
     }
 
-    .carousel-title {
-        font-size: clamp(1.45rem, 4.5vw, 1.85rem);
+    /* Top Banner Header */
+    .banner-photo-wrap {
+        height: 180px;
     }
 
-    .carousel-subtitle {
-        font-size: 0.88rem;
-        line-height: 1.55;
+    .banner-news-text {
+        font-size: 1.7rem;
     }
 
-    .news-category-bar {
-        gap: 8px;
-        margin-bottom: 22px;
-        padding-bottom: 10px;
-    }
-
-    .category-pill {
-        font-size: 0.82rem;
-        padding: 6px 14px;
-    }
-
-    .carousel-float-btn {
-        width: 40px;
-        height: 40px;
-    }
-    .carousel-float-btn.prev {
-        left: -8px;
-    }
-    .carousel-float-btn.next {
-        right: -8px;
-    }
-}
-
-@media (max-width: 640px) {
-    .news-wrap {
-        padding: 0 14px;
-    }
-
-    .carousel-header {
-        margin-bottom: 16px;
-    }
-
-    .carousel-title {
-        font-size: 1.38rem;
-        letter-spacing: -0.2px;
-    }
-
-    .carousel-subtitle {
-        font-size: 0.82rem;
-    }
-
-    .news-category-bar {
-        margin-bottom: 16px;
-        gap: 6px;
-    }
-
-    .category-pill {
-        font-size: 0.78rem;
-        padding: 5px 12px;
-    }
-
-    /* Carousel Cards on Mobile: Proporsional & Rapi */
-    .carousel-track {
-        gap: 16px;
-        padding: 8px 4px 20px;
-    }
-
-    .carousel-card {
-        flex: 0 0 min(290px, 80vw);
-        max-width: min(290px, 80vw);
-        border-radius: 18px;
-    }
-
-    .card-media {
-        height: 175px;
-    }
-
-    .carousel-card .card-body,
-    .card-body {
-        padding: 16px 16px 18px !important;
-    }
-
-    .card-meta {
-        font-size: 0.72rem;
-        margin-bottom: 8px;
-        gap: 6px;
-    }
-
-    .card-title {
-        font-size: 0.98rem;
-        line-height: 1.35;
-        margin-bottom: 8px;
-    }
-
-    .card-excerpt {
-        font-size: 0.82rem;
-        line-height: 1.5;
-        margin-bottom: 14px;
-        -webkit-line-clamp: 2;
-    }
-
-    .carousel-card .card-footer,
-    .card-footer {
-        padding-top: 12px;
-    }
-
-    .card-action-btn {
+    .marquee-text-track {
         font-size: 0.8rem;
     }
 
-    .carousel-float-btn {
-        width: 36px;
-        height: 36px;
+    /* Section 1: Unified News Card */
+    .news-unified-card {
+        grid-template-columns: 1fr;
+        margin-top: -85px;
+        border-radius: 12px;
     }
 
-    .carousel-float-btn.prev {
-        left: -6px;
+    .unified-hero-pane {
+        min-height: 290px;
     }
 
-    .carousel-float-btn.next {
-        right: -6px;
+    .unified-hero-content {
+        padding: 16px 16px 14px;
     }
 
-    .carousel-progress-bar {
-        width: 150px;
-        height: 3px;
+    .featured-tag-row {
+        gap: 8px;
+        margin-bottom: 6px;
     }
 
-    /* Modal Responsive on Mobile */
-    .news-modal-overlay {
-        padding: 12px 10px;
-    }
-
-    .news-modal-dialog {
-        max-width: 100%;
-        max-height: 92vh;
-        border-radius: 18px;
-    }
-
-    .modal-main-image-wrap {
-        height: 220px;
-    }
-
-    .cyber-modal-body {
-        padding: 18px 16px 24px !important;
-    }
-
-    .cyber-modal-title {
-        font-size: 1.15rem !important;
+    .featured-title {
+        font-size: 1.15rem;
         line-height: 1.35;
+        margin-bottom: 6px;
+    }
+
+    .featured-desc {
+        font-size: 0.82rem;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        -webkit-line-clamp: 2;
+    }
+
+    .unified-list-pane {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        height: auto;
+        max-height: 410px;
+        overflow-y: scroll;
+        padding-right: 3px;
+    }
+
+    .unified-row-item {
+        padding: 11px 14px;
+        gap: 12px;
+        height: 82px;
+        min-height: 82px;
+        max-height: 82px;
+        flex-shrink: 0;
+    }
+
+    .stacked-thumb-wrap {
+        width: 60px;
+        height: 60px;
+    }
+
+    .stacked-badge {
+        font-size: 0.46rem;
+        padding: 2px 1px;
+    }
+
+    .stacked-title {
+        font-size: 0.86rem;
+        line-height: 1.35;
+        margin-bottom: 3px;
+    }
+
+    .stacked-date {
+        font-size: 0.74rem;
+    }
+
+    /* Section 2: Agenda & Kalender Kegiatan */
+    .agenda-exact-card {
+        border-radius: 12px;
+    }
+
+    .agenda-exact-header {
+        padding: 14px 16px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .agenda-title-wrap {
+        justify-content: flex-start;
+    }
+
+    .agenda-main-title {
+        font-size: 1.05rem;
+    }
+
+    .agenda-filter-tabs {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        padding: 3px;
+        gap: 3px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .agenda-filter-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .agenda-tab-btn {
+        flex: 1;
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .agenda-exact-body {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 16px 14px;
+    }
+
+    .agenda-cal-box {
+        padding: 14px 12px;
+        border-radius: 10px;
+    }
+
+    .agenda-cal-nav {
+        margin-bottom: 10px;
+    }
+
+    .cal-month-heading {
+        font-size: 0.9rem;
+    }
+
+    .cal-weekdays-row {
+        font-size: 0.7rem;
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+    }
+
+    .cal-grid-cells {
+        row-gap: 6px;
+    }
+
+    .cal-day-cell {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+
+    .cal-legend-exact {
+        margin-top: 14px;
+        padding-top: 10px;
+        font-size: 0.7rem;
+        gap: 10px;
+    }
+
+    .agenda-list-topbar {
         margin-bottom: 12px;
     }
 
-    .cyber-modal-text {
-        font-size: 0.86rem !important;
-        line-height: 1.65;
-        margin-bottom: 16px;
+    .list-heading-wrap {
+        font-size: 1rem;
     }
 
-    .cyber-modal-text p {
-        margin-bottom: 10px;
-        line-height: 1.65;
+    .agenda-items-container {
+        gap: 10px;
+        max-height: 380px;
     }
 
-    .modal-nav-btn {
-        width: 32px;
-        height: 32px;
-    }
-    .modal-nav-btn.prev { left: 8px; }
-    .modal-nav-btn.next { right: 8px; }
-
-    .modal-thumb-item {
-        width: 44px;
-        height: 44px;
+    .agenda-row-card {
+        padding: 12px 14px;
+        gap: 12px;
         border-radius: 8px;
     }
 
-    .modal-thumbnails {
-        padding: 8px 14px;
-        gap: 8px;
+    .agenda-date-square {
+        width: 48px;
+        height: 52px;
     }
 
-    .news-modal-close {
-        top: 8px;
-        right: 8px;
-        width: 32px;
-        height: 32px;
+    .agenda-day-big {
+        font-size: 1.15rem;
+    }
+
+    .agenda-month-sub {
+        font-size: 0.65rem;
+    }
+
+    .agenda-row-title {
+        font-size: 0.88rem;
+        line-height: 1.35;
+    }
+
+    .agenda-time-text,
+    .agenda-loc-text {
+        font-size: 0.74rem;
+    }
+
+    /* Section 3: Bottom Row Cards */
+    .ref-bottom-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .bottom-card {
+        border-radius: 10px;
+    }
+
+    .testimonial-card,
+    .success-stories-card,
+    .lessons-body {
+        padding: 16px;
+    }
+
+    .success-title,
+    .lessons-title {
+        font-size: 1.02rem;
+    }
+
+    .testimonial-text,
+    .lessons-desc {
+        font-size: 0.82rem;
+        line-height: 1.55;
+    }
+
+    .success-banner {
+        height: 145px;
+    }
+
+    /* Modal Popup on Mobile */
+    .modal-dialog-custom {
+        max-width: 95vw;
+        border-radius: 10px;
+    }
+
+    .modal-header-custom {
+        padding: 12px 16px;
+    }
+
+    .modal-body-custom {
+        padding: 16px;
+    }
+
+    .modal-article-title {
+        font-size: 1.15rem;
+    }
+
+    .modal-article-content {
+        font-size: 0.84rem;
+    }
+}
+
+/* SMALL MOBILE (MAX-WIDTH 480px) */
+@media (max-width: 480px) {
+    .banner-photo-wrap {
+        height: 155px;
+    }
+
+    .banner-news-text {
+        font-size: 1.45rem;
+    }
+
+    .news-unified-card {
+        margin-top: -65px;
+    }
+
+    .unified-hero-pane {
+        min-height: 250px;
+    }
+
+    .featured-title {
+        font-size: 1.05rem;
+    }
+
+    .agenda-tab-btn {
+        font-size: 0.72rem;
+        padding: 5px 8px;
+    }
+
+    .cal-day-cell {
+        width: 28px;
+        height: 28px;
+        font-size: 0.76rem;
+    }
+
+    .agenda-row-card {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .agenda-detail-btn {
+        padding: 4px 8px;
+        font-size: 0.68rem;
+    }
+
+    .row-read-more {
+        display: none;
     }
 }
 </style>
+
+<!-- ==========================================================
+     INTERACTIVE JAVASCRIPT
+     1. Interactive Monthly Calendar (Switch months, select date)
+     2. Upcoming Training Accordion (Expand / Collapse)
+     3. Article & Event Modals
+     4. Dynamic "+ ADD" Event Handler
+     ========================================================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    /* ========================================================
+       0. AUTO PHOTO SLIDER (HERO CARD - 4 FOTO STUDI BANDING)
+       ======================================================== */
+    const heroSlider = document.getElementById('heroPhotoSlider');
+    if (heroSlider) {
+        const slides = heroSlider.querySelectorAll('.hero-slide-item');
+        const dots = document.querySelectorAll('.hero-slider-dots .slider-dot');
+        const counter = document.getElementById('heroSliderCounter');
+        let currentSlide = 0;
+        let sliderTimer = null;
+        const slideInterval = 3500; // 3.5 detik
+
+        function goToSlide(idx) {
+            slides.forEach((s, i) => {
+                if (i === idx) s.classList.add('slide-active');
+                else s.classList.remove('slide-active');
+            });
+            dots.forEach((d, i) => {
+                if (i === idx) d.classList.add('active');
+                else d.classList.remove('active');
+            });
+            if (counter) counter.textContent = (idx + 1) + ' / ' + slides.length;
+            currentSlide = idx;
+        }
+
+        function nextSlide() {
+            let next = (currentSlide + 1) % slides.length;
+            goToSlide(next);
+        }
+
+        function startSlider() {
+            stopSlider();
+            sliderTimer = setInterval(nextSlide, slideInterval);
+        }
+
+        function stopSlider() {
+            if (sliderTimer) {
+                clearInterval(sliderTimer);
+                sliderTimer = null;
+            }
+        }
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', function(e) {
+                e.stopPropagation();
+                goToSlide(i);
+                startSlider();
+            });
+        });
+
+        const heroPane = heroSlider.closest('.unified-hero-pane');
+        if (heroPane) {
+            heroPane.addEventListener('mouseenter', stopSlider);
+            heroPane.addEventListener('mouseleave', startSlider);
+        }
+
+        startSlider();
+    }
+
+    /* ========================================================
+       1. INTERACTIVE MONTHLY CALENDAR & AGENDA (2025 - 2026)
+       Sinkronisasi Tanggal Real (Hari Ini) & Agenda Resmi NEV
+       ======================================================== */
+    const realToday = new Date();
+    const realCurrentYear = realToday.getFullYear(); // 2026
+    const realCurrentMonth = realToday.getMonth(); // 9 (Oktober, 0-indexed)
+    const realCurrentDay = realToday.getDate(); // 30
+
+    // Default kalender otomatis mengikuti tanggal real hari ini
+    let currentYear = realCurrentYear;
+    let currentMonth = realCurrentMonth;
+    let selectedYear = realCurrentYear;
+    let selectedMonth = realCurrentMonth;
+    let selectedDay = realCurrentDay; // Default lingkaran biru di hari ini (30 Okt)
+
+    const monthNames = [
+        "JANUARI", "FEBRUARI", "MARET", "APRIL", "MEI", "JUNI",
+        "JULI", "AGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DESEMBER"
+    ];
+
+    // Events dots mapping: YYYY-MM-DD -> dot CSS class (Hanya Event Resmi & Real)
+    const agendaEventDots = {
+        '2026-10-29': 'dot-event',      // 29 Okt 2026: Open Recruitment NEV
+        '2026-10-24': 'dot-workshop',   // 24 Okt 2026: Open Laboratory (Lab NETSEC)
+        '2026-05-03': 'dot-event',      // 03 Mei 2026: Studi Banding UNSOED
+        '2026-03-01': 'dot-workshop',   // 01 Mar 2026: Mini Research Expo HMTT
+        '2026-02-28': 'dot-pelatihan',  // 28 Feb 2026: Bootcamp Mastering VPN
+        '2026-02-15': 'dot-event',      // 15 Feb 2026: Pengmas LKS SMK 2026
+        '2026-01-11': 'dot-pelatihan',  // 11 Jan 2026: Malam Keakraban
+        '2025-12-13': 'dot-workshop',   // 13 Des 2025: Sharing Knowledge Adaptive
+        '2025-12-12': 'dot-event',      // 12 Des 2025: Studi Banding Telkom Bandung
+    };
+
+    const calMonthDisplay = document.getElementById('calMonthDisplay');
+    const calDatesGrid = document.getElementById('calDatesGrid');
+    const calPrevBtn = document.getElementById('calPrevBtn');
+    const calNextBtn = document.getElementById('calNextBtn');
+    const agendaCards = document.querySelectorAll('.agenda-row-card');
+    const agendaCountDisplay = document.getElementById('agendaCountDisplay');
+    const filterTabs = document.querySelectorAll('.agenda-tab-btn');
+
+    function renderCalendar() {
+        if (!calDatesGrid || !calMonthDisplay) return;
+
+        calMonthDisplay.textContent = `${monthNames[currentMonth]}, ${currentYear}`;
+        calDatesGrid.innerHTML = '';
+
+        // First day of month (0 = Sun, 1 = Mon, 2 = Tue, etc.)
+        const firstDayIndex = new Date(currentYear, currentMonth, 1).getDay();
+        // Total days in month
+        const totalDays = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+        // Empty cells before first day
+        for (let i = 0; i < firstDayIndex; i++) {
+            const emptyCell = document.createElement('div');
+            emptyCell.className = 'cal-day-cell empty';
+            calDatesGrid.appendChild(emptyCell);
+        }
+
+        // Days
+        for (let day = 1; day <= totalDays; day++) {
+            const dayCell = document.createElement('div');
+            dayCell.className = 'cal-day-cell';
+            dayCell.textContent = day;
+
+            const padMonth = String(currentMonth + 1).padStart(2, '0');
+            const padDay = String(day).padStart(2, '0');
+            const dateKey = `${currentYear}-${padMonth}-${padDay}`;
+
+            // Add dot indicator if event exists in this date
+            if (agendaEventDots[dateKey]) {
+                dayCell.classList.add('has-dot', agendaEventDots[dateKey]);
+            }
+
+            // Real Today indicator
+            if (currentYear === realCurrentYear && currentMonth === realCurrentMonth && day === realCurrentDay) {
+                dayCell.classList.add('is-today');
+                dayCell.setAttribute('title', 'Hari ini (Today)');
+            }
+
+            // Selected cell state
+            if (currentYear === selectedYear && currentMonth === selectedMonth && day === selectedDay) {
+                dayCell.classList.add('selected');
+            }
+
+            dayCell.addEventListener('click', function() {
+                document.querySelectorAll('.cal-day-cell').forEach(c => c.classList.remove('selected'));
+                dayCell.classList.add('selected');
+                selectedYear = currentYear;
+                selectedMonth = currentMonth;
+                selectedDay = day;
+
+                // Sync with right agenda cards
+                agendaCards.forEach(card => card.classList.remove('card-highlight'));
+                const matchedCard = Array.from(agendaCards).find(card => {
+                    const cardDay = parseInt(card.dataset.day, 10);
+                    const cardMonth = parseInt(card.dataset.month, 10);
+                    const cardYear = parseInt(card.dataset.year, 10);
+                    return cardDay === day && cardMonth === currentMonth && cardYear === currentYear;
+                });
+
+                if (matchedCard) {
+                    matchedCard.classList.add('card-highlight');
+                    matchedCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+
+            calDatesGrid.appendChild(dayCell);
+        }
+    }
+
+    if (calPrevBtn) {
+        calPrevBtn.addEventListener('click', function() {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            renderCalendar();
+        });
+    }
+
+    if (calNextBtn) {
+        calNextBtn.addEventListener('click', function() {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            renderCalendar();
+        });
+    }
+
+    // Right agenda cards click interaction: clicks switch calendar to that event's month
+    agendaCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (e.target.closest('.agenda-detail-btn')) return;
+
+            agendaCards.forEach(c => c.classList.remove('card-highlight'));
+            this.classList.add('card-highlight');
+
+            const cardDay = parseInt(this.dataset.day, 10);
+            const cardMonth = parseInt(this.dataset.month, 10);
+            const cardYear = parseInt(this.dataset.year, 10);
+
+            selectedYear = cardYear;
+            selectedMonth = cardMonth;
+            selectedDay = cardDay;
+
+            if (currentYear !== cardYear || currentMonth !== cardMonth) {
+                currentYear = cardYear;
+                currentMonth = cardMonth;
+                renderCalendar();
+            } else {
+                document.querySelectorAll('.cal-day-cell:not(.empty)').forEach(c => {
+                    if (parseInt(c.textContent.trim(), 10) === cardDay) {
+                        document.querySelectorAll('.cal-day-cell').forEach(cell => cell.classList.remove('selected'));
+                        c.classList.add('selected');
+                    }
+                });
+            }
+        });
+    });
+
+    // Filter tabs interaction
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            filterTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+
+            const filter = this.dataset.filter;
+            let visibleCount = 0;
+
+            agendaCards.forEach(card => {
+                const category = card.dataset.category;
+                if (filter === 'all' || category === filter) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (agendaCountDisplay) {
+                agendaCountDisplay.textContent = `${visibleCount} Agenda`;
+            }
+        });
+    });
+
+    // Initial render
+    renderCalendar();
+
+
+    /* ========================================================
+       3. ARTICLE & EVENT MODALS
+       ======================================================== */
+    const articleModal = document.getElementById('newsArticleModal');
+    const modalCategory = document.getElementById('modalCategory');
+    const modalDate = document.getElementById('modalDate');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalContent = document.getElementById('modalContent');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+    // News Article Direct Navigation (Langsung Buka Halaman Detail Tanpa Modal Popup)
+    document.querySelectorAll('.news-open-modal').forEach(item => {
+        item.addEventListener('click', function(e) {
+            // Jika klik indikator titik slider, jangan redirect
+            if (e.target.closest('.slider-dot')) return;
+
+            const articleId = this.dataset.id || '1';
+            window.location.href = '{{ url("/news") }}/' + articleId;
+        });
+    });
+
+    // Event Modal Triggers
+    document.querySelectorAll('.event-open-modal').forEach(item => {
+        item.addEventListener('click', function() {
+            const title = this.dataset.title || '';
+            const date = this.dataset.date || '';
+            const time = this.dataset.time || '';
+            const desc = this.dataset.desc || '';
+
+            if (modalTitle) modalTitle.textContent = title;
+            if (modalCategory) modalCategory.textContent = 'EVENT';
+            if (modalDate) modalDate.textContent = date + ' • ' + time;
+            if (modalContent) modalContent.innerHTML = `<p>${desc}</p><p><strong>Waktu &amp; Lokasi:</strong> ${time}</p>`;
+
+            if (modalImage) modalImage.style.display = 'none';
+            if (articleModal) articleModal.style.display = 'flex';
+        });
+    });
+
+    // Close Modals
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', function() {
+            if (articleModal) articleModal.style.display = 'none';
+        });
+    }
+
+    if (articleModal) {
+        articleModal.addEventListener('click', function(e) {
+            if (e.target === articleModal) {
+                articleModal.style.display = 'none';
+            }
+        });
+    }
+
+
+    /* ========================================================
+       4. DYNAMIC "+ ADD" EVENT MODAL
+       ======================================================== */
+    const addEventModal = document.getElementById('addEventModal');
+    const openAddEventBtn = document.getElementById('openAddEventBtn');
+    const addEventCloseBtn = document.getElementById('addEventCloseBtn');
+    const addEventCancelBtn = document.getElementById('addEventCancelBtn');
+    const addEventForm = document.getElementById('addEventForm');
+    const eventsListContainer = document.getElementById('eventsListContainer');
+
+    if (openAddEventBtn && addEventModal) {
+        openAddEventBtn.addEventListener('click', function() {
+            addEventModal.style.display = 'flex';
+        });
+    }
+
+    function closeAddModal() {
+        if (addEventModal) addEventModal.style.display = 'none';
+        if (addEventForm) addEventForm.reset();
+    }
+
+    if (addEventCloseBtn) addEventCloseBtn.addEventListener('click', closeAddModal);
+    if (addEventCancelBtn) addEventCancelBtn.addEventListener('click', closeAddModal);
+    if (addEventModal) {
+        addEventModal.addEventListener('click', function(e) {
+            if (e.target === addEventModal) closeAddModal();
+        });
+    }
+
+    if (addEventForm) {
+        addEventForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const title = document.getElementById('inputEventTitle').value;
+            const day = document.getElementById('inputEventDay').value;
+            const month = document.getElementById('inputEventMonth').value.toUpperCase();
+            const meta = document.getElementById('inputEventMeta').value;
+            const desc = document.getElementById('inputEventDesc').value;
+
+            // Create new event item element
+            const newEvent = document.createElement('div');
+            newEvent.className = 'event-item event-open-modal';
+            newEvent.dataset.title = title;
+            newEvent.dataset.date = `${day} ${month}`;
+            newEvent.dataset.time = meta;
+            newEvent.dataset.desc = desc;
+
+            newEvent.innerHTML = `
+                <div class="event-date-box">
+                    <span class="ev-day">${day}</span>
+                    <span class="ev-month">${month}</span>
+                </div>
+                <div class="event-details">
+                    <h4 class="event-name">${title}</h4>
+                    <p class="event-meta">${meta}</p>
+                    <a href="javascript:void(0)" class="read-more-link purple-link">Read More ...</a>
+                </div>
+            `;
+
+            // Attach click listener for modal
+            newEvent.addEventListener('click', function() {
+                if (modalTitle) modalTitle.textContent = title;
+                if (modalCategory) modalCategory.textContent = 'EVENT';
+                if (modalDate) modalDate.textContent = `${day} ${month} • ${meta}`;
+                if (modalContent) modalContent.innerHTML = `<p>${desc}</p><p><strong>Waktu &amp; Lokasi:</strong> ${meta}</p>`;
+                if (modalImage) modalImage.style.display = 'none';
+                if (articleModal) articleModal.style.display = 'flex';
+            });
+
+            if (eventsListContainer) {
+                eventsListContainer.prepend(newEvent);
+            }
+
+            closeAddModal();
+        });
+    }
+
+});
+</script>

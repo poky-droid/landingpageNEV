@@ -6,7 +6,7 @@
     <title>About - Network Evolution</title>
 </head>
 <body>
-@include('pages.layout.navbarforconten')
+@include('pages.layout.navbar')
 
 <section class="about-section">
 
@@ -65,15 +65,16 @@
   <div class="inner-section">
     <div class="section-label reveal">Core Principles</div>
     <h2 class="section-title reveal">Vision & Mission</h2>
-    <div class="vm-grid">
+    <div class="vm-grid vm-grid-single">
       <div class="vm-card vision reveal left">
         <div class="vm-number">01</div>
         <span class="vm-tag">Vision</span>
         <h2>Our Vision</h2>
         <p>To establish NEV as a collaborative, disciplined, and progressive research group. A place where all members grow in technical expertise and professional skills, while producing scientific work that has a tangible impact on the advancement of networking, system administration, and cybersecurity.</p>
-      </div>
-      <div class="vm-card mission reveal right">
-        <div class="vm-number">02</div>
+
+        <div class="vm-divider"></div>
+
+        <div class="vm-number" style="margin-top: 8px;">02</div>
         <span class="vm-tag">Mission</span>
         <h2>Our Mission</h2>
         <ul class="vm-list">
@@ -300,28 +301,36 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px; margin-top: 32px;
 }
+.vm-grid-single {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .vm-card {
     border-radius: 16px; padding: 40px;
     position: relative; overflow: hidden;
     transition: transform 0.35s, box-shadow 0.35s;
 }
 .vm-card.vision  { background: rgba(255,0,51,0.06); border: 1px solid rgba(255,0,51,0.2); }
-.vm-card.mission { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08); }
 .vm-card:hover   { transform: translateY(-6px); }
 .vm-card.vision:hover  { box-shadow: 0 24px 60px rgba(255,0,51,0.15); }
-.vm-card.mission:hover { box-shadow: 0 24px 60px rgba(255,255,255,0.04); }
+
+.vm-divider {
+    border: none;
+    border-top: 1px solid rgba(255,0,51,0.15);
+    margin: 32px 0;
+}
 
 .vm-number {
     font-size: 4.5rem; font-weight: 900; line-height: 1;
     letter-spacing: -3px; opacity: 0.1; color: #FF0033; margin-bottom: 16px;
 }
-.vm-card.mission .vm-number { color: #fff; }
 
 .vm-tag {
     font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
     color: #FF0033; margin-bottom: 12px; display: block;
 }
-.vm-card.mission .vm-tag { color: #555; }
 .vm-card h2 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
 .vm-card p  { color: #888; font-size: 0.88rem; line-height: 1.8; font-weight: 300; }
 
@@ -410,6 +419,7 @@ body {
     .vm-card { padding: 28px 22px; }
     .vm-card:hover { transform: none; box-shadow: none; }
     .vm-number { font-size: 3rem; }
+    .vm-divider { margin: 24px 0; }
 
     .values-grid { grid-template-columns: repeat(2, 1fr); }
     .value-item { padding: 20px 16px; }
